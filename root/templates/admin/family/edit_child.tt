@@ -1,0 +1,61 @@
+<h1>Edit Child</h1>
+
+
+<form name="child_edit" method="POST" action="[% c.uri_for('edit_child/' _ form.item_id) %]">
+
+[% IF family_id %]<input type="hidden" name="family_id" value="[% family_id %]">[% END %]
+<table name="child">
+
+  <tr>
+    [% SET f = form.field('firstname') %]
+    <th>
+    <label for="[% f.name %]">First name:</label>
+    </th>
+    <td>
+    <input id="[% f.name %]" name="[% f.name %]" size="24" type="text" />
+    </td>
+  </tr>
+
+  <tr>
+    [% SET f = form.field('lastname') %]
+    <th>
+    <label for="[% f.name %]">Last name:</label>
+    </th>
+    <td>
+    <input id="[% f.name %]" name="[% f.name %]" size="24" type="text" />
+    </td>
+  </tr>
+
+  <tr>
+    [% SET f = form.field('birthday') %]
+    <th>
+    <label for="[% f.name %]">Birthday (YYYY/MM/DD):</label>
+    </th>
+    <td>
+    <input id="[% f.name %]" name="[% f.name %]" size="24" type="text" />
+    </td>
+  </tr>
+
+  <tr>
+    [% SET f = form.field('gender') %]
+    <th>
+    <label for="[% f.name %]">Gender:</label>
+    </th>
+    <td>
+    <input type="radio" name="[% f.name %]" value="m" [% IF f.value == 'm' %]checked[% END %]>Male<br />
+    <input type="radio" name="[% f.name %]" value="f" [% IF f.value == 'f' %]checked[% END %]>Female
+  </tr>
+
+  <tr>
+    [% SET f = form.field('active') %]
+    <th>
+    <label for="[% f.name %]">Active:</label>
+    </th>
+    <td>
+    <input id="[% f.name %]" name="[% f.name %]" type="checkbox" value="1" />
+    </td>
+  </tr>
+</table>
+
+  <input class="submit" name="submit" value="Save" type="submit">
+</form>

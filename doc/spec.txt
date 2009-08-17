@@ -1,0 +1,101 @@
+user Login
+   To access member page
+   Admins can access admin section
+
+Admin
+-----
+Financial
+   paid/not paid
+
+Family information 
+   List page
+   View family page
+   Edit family page
+   Delete family
+   Mark family inactive
+
+Activity information
+   List page
+   View activity page
+   Edit activity page
+   Delete activity
+
+Scheduling
+   List activities
+   Create event for activity (displays info from activity above entry fields)
+   View calendar
+
+Reports
+   Proposal report
+   Enrollment report
+
+Financial (limited to finance admin?)
+   View financial status of families
+   
+Enrollment
+----------
+   Mark people as on waiting list..
+   List activity enrollees with info such as ranking (what else?)
+   Rank classes by interest..
+
+   Class lists by location
+   Shut down enrollment
+   
+   
+Members
+-------
+   information links
+   Create activity proposal
+   List past proposals
+   Add courses from listing to "cart"
+   Enroll in courses in "cart"
+   View calendar of courses enrolled in
+   View list of courses enrolled in
+   View enrolled family list
+   Edit own membership info
+   List of who's doing what
+   Liability form
+   Parent-Youth agreement
+
+
+Public
+-----
+   Same as current, except some things moved to member page
+   Online enrollment form
+
+
+----Jenn's requirements:
+
+- Generate calendar and program listing from one datasource
+- Ability to easily re-order the classes on the program listing (rather than
+  the manual way I do it now)(by what fields? ...)
+- Ability to preserve what people registered for but still able to use the
+  system to create class and waiting lists (right now I make the lists
+separately, just in a document because I don't want to erase what people
+registered for and because I can't use the system to mark people as on the
+waiting list)
+- Ability to list class enrollees in different ways, including by how they
+  ranked the class
+- Ability to generate class lists by location
+- Ability to shut down enrollment when the enrollment period closes
+- Members can access their past program proposals so they will stop asking me
+  to copy them over from term to term
+
+-Members can enter and update their own contact information
+
+   
+If the whole membership knows who has what jobs….  Page with jobs…
+
+Tie contributions to family record so can be tracked.
+Table of which families belonged which sessions (table with family_id and
+session_id)
+Robin activate/inactivate members
+Automatic emails about contributions
+Submit either a Program Proposal or an alternate contribution
+
+
+
+
+
+   
+

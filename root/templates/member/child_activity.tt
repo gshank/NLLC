@@ -1,0 +1,10 @@
+[% WHILE (child = children.next) %]
+<p><strong>[% child.firstname _ " " _ child.lastname %]</strong></p>
+[% SET child_activities = child.search_related_rs('child_activities', {session_id => session}) %]
+   <ul>
+[% WHILE (child_activity = child_activities.next) %]
+<li>[% child_activity.activity.name %]&nbsp;&nbsp;
+   [% IF child_activity.enrolled == 2 %]<span class="font-color: red">[ WAITLIST ]</span>&nbsp;&nbsp;&nbsp;[% END %]<a href="[% c.uri_for('/member', 'view_activity', child_activity.activity_id) %]">View</a></li>
+[% END %]
+   </ul>
+[% END %]

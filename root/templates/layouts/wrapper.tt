@@ -1,0 +1,14 @@
+[% IF template.name.match('\.(css|js|txt)');
+     debug("Passing page through as text: $template.name");
+     content;
+   ELSIF nowrapper;
+     debug("TT no wrapper");
+     content;
+   ELSIF admin;
+     debug("TT wrapper matched admin controller");
+     content WRAPPER layouts/layout2.tt;
+   ELSE;
+     debug("Applying HTML page layout wrappers to $template.name\n");
+     content WRAPPER layouts/layout1.tt;
+   END;
+-%]

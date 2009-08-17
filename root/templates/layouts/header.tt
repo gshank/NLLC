@@ -1,0 +1,22 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<meta name="description" content="A homeschool resource cooperative serving the tompkins county area.">
+<meta name="keywords" content="northern light learning center homeschool cooperative">
+<meta name="robots" content="index, follow">
+<title>Northern Light Learning Center, Ithaca - New York - Welcome!</title>
+<link href="[% c.uri_for('/stylesheets', 'styles.css') %]" rel="stylesheet" type="text/css" />
+[% IF css %]
+<link href="[% c.uri_for('/stylesheets', css ) %]" rel="stylesheet" type="text/css" />
+[% END %]
+<script src="[% c.uri_for('/javascripts', 'jquery.js') %]"></script>
+[% IF javascript %]
+<script src="[% c.uri_for('/javascripts', javascript) %]"></script>
+[% END %] 
+[% IF javascripts %]
+[% FOREACH js IN javascripts %]
+<script src="[% c.uri_for('/javascripts', js) %]"></script>
+[% END %]
+[% END %]
+</head>

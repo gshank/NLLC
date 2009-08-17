@@ -1,0 +1,369 @@
+/* css document */
+body {
+	background-color:#224455;
+	margin: 0px;
+	padding: 0px;
+	color: #000000;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	background-image: url(../images/bg.gif);
+	background-repeat: repeat-y;
+}
+/* Layout Divs */
+#site, #site2 {
+	position: relative;
+	height: 100%;
+	top: 15px;
+	width: 719px;
+	margin: 0 auto;
+	background-color: #ffffff;
+	border-top: 1px solid #000000;
+	border-bottom: 1px solid #000000;
+	border-left: 1px solid #000000;
+	border-right: 1px solid #000000;
+}
+#site2 {
+   width: 915px;
+}
+
+#banner, #banner2 {
+	height:102px;
+	width: 719px;
+	padding: 0px;
+	margin: 0px;
+	background-color: #8393CA;
+	background-image: url(../images/banner.gif);
+}
+#banner2 {
+   height: 124px;
+   width: 915px;
+   background-image: url(../images/banner2.gif);
+}
+
+#body, #body2 {
+	height:100%;
+	width:100%;
+	padding: 0px;
+	margin: 0px;
+	background-color:#FFFFFF;
+	background-position:left;
+	background-image: url(../images/leftlines.gif);
+	background-repeat: repeat-y;
+	border-top: 1px solid #FFFFFF;
+	border-bottom: 1px solid #FFFFFF;
+}
+#body2 {
+   background-image: url(../images/leftlines2.gif);
+}
+#sectiontitle {
+	margin-left: 95px;
+	margin-top: 0px;
+	padding: 0px;
+	float: left;
+	text-decoration: none;
+	color: #9999CC;
+	font: 32px Verdana, Arial, sans-serif, bold;
+}
+
+#leftimage {
+	position: relative;
+	top:15px;
+	width: 381px;
+	height: 181px;
+	background-image: url(../images/dance2.jpg);
+	background-repeat:no-repeat;	
+}
+
+.photo {
+	padding: 0px;
+	border: 1px solid #000000;
+	margin: 5px 5px 5px 8px;
+}
+
+/* Menu Styles */
+.menu {
+	float: right;
+	padding: 0px;
+	margin: 1px;
+}
+.menu ul {
+	margin: 0px;
+	padding: 0px;
+	list-style-type: none;
+	border-top: 1px solid #D4C6DC;
+	border-bottom: 1px solid #D4C6DC;
+	border-right: 1px solid #D4C6DC;
+}
+.menu li {
+	display: inline;
+	padding-right: 20px;
+	padding-left: 20px;
+	margin-top: 1px;
+	height: 25px;
+	text-align: center;
+	background-color: #FFFFFF;
+	border-left: 1px solid #D4C6DC;
+}
+.menu a {
+	text-decoration: none;
+	color: #3366CC;
+	height: 25px;
+}
+
+/* General Content Styles */
+
+#content, #content2 {
+	position:relative;
+	left: 80px;
+	top: 5px;
+	width: 550px;
+	padding: 5px 5px 20px 15px;
+}
+#content2 {
+   width: 790px;
+   left: 104px;
+}
+
+#content .topimage {
+	padding-bottom: 3px;
+	border-bottom: 1px solid #6699FF;
+}
+
+#content h1, #content2 h1 {
+	font-size: 130%;
+	color:#3366CC;
+}
+#content h2, #content2 h2 {
+   font-size: medium;
+}
+
+#content .globe { background-image: url("../images/globe.gif"); }
+#content .dance { background-image: url("../images/dance.gif"); }
+#content .sew { background-image: url("../images/sewing.gif");	}
+#content .bike { background-image: url("../images/bike.gif"); }
+#content .window { background-image: url("../images/window2.gif");	}
+
+#content .rule {
+	width: 100%;
+	border-bottom: 1px solid #3366CC;
+}
+
+#firstword {
+	color: #F68E56;
+}
+#content a {
+	color: #6666CC;
+	text-decoration: none;
+}
+
+.tblhead {
+	background-color: #FFCC99;
+}
+/* Footer Styles */
+#footer, #footer2 {
+	clear: both;
+	text-align: center;
+	width: 719px;
+	height: 30px;
+	background-image: url(../images/lowerbar2.gif);
+	background-repeat: repeat-x;
+	color: #9E0B0E;
+	font-size: 80%;
+}
+#footer2 {
+   width: 875px;
+   background-image: url(../images/lowerbar2.gif);
+}
+#footer p {
+	margin: 0px;
+	padding-top: 3px;
+	line-height: 140%;
+}
+#footer .copyright {
+	font-style: italic;
+}
+
+.familyinput {
+	margin: 0px;
+	padding: 2px;
+	height: 15px;
+	width: 30px;
+}
+
+.familyrow {
+	font-size:10px;
+	background-color:#EEEEFF;
+}
+
+.familytitle {
+	font-size:10px;
+}
+
+.contactcell {
+	padding: 2px;
+	border-left: 1px solid #333399;
+	border-top: 1px solid #333399;	
+	margin: 3px;
+	background-color:#DDDDFF;
+}
+
+.contacttable {
+	border-right: 1px solid #333399;
+	border-bottom: 1px solid #333399;	
+}
+
+.important {
+	color:#FF0000;
+}
+
+.smallp {
+	font-size:small;
+}
+
+.inputcell {
+	width: 510px;
+	padding: 3px;
+	margin: 5px;
+	background-color:#FFFFCC;
+}
+
+.inputcell p {
+	width: 500px;
+	padding: 2px;
+}
+
+.inputcell input {
+	width: 500px;
+}
+
+.inputcell textarea {
+	width: 500px;
+	margin: 2px;
+}
+	
+.proposalcell {
+	width: 530px;
+	padding: 6px;
+	margin: 5px;
+	background-color:#FFF9D4;
+   border: 1px solid #AD7109;
+}
+
+.proposalcell p {
+	margin: 1px;
+	padding: 1px;
+	background-color:#FFEEBB;
+}
+	
+.radiocells {
+	width: 500px;
+	height: 50px;
+	
+}
+
+.radiocells input {
+	width: 20px;
+}
+
+.selectedcell {
+   margin: 5px;
+   padding; 6px;
+   border: 2px solid #6D6CBE; 
+   background-color:#E7DAF7;
+   width: 553px;
+}
+
+ul.nobullet {
+   list-style-type: none;
+}
+
+/****************************************
+ * Table styles
+ * *************************************/
+
+table.tbcss
+{ text-align: center;
+	font-family: Verdana;
+	font-weight: normal;
+	color: #404040;
+/*	width: 900px;*/
+	background-color: #fafafa;
+	border: 1px #3a4b6d solid;
+	border-collapse: collapse;
+	border-spacing: 0px; }
+
+/* following style for emphasis of one cell */
+table.tbcss td.sel
+{
+	background-color: #FFCCCC;
+}
+
+td.tbhead
+{ border-bottom: 2px solid #3a4b6d;
+	border-left: 1px solid #3a4b6d;
+	background-color: #BFC3D3;
+	text-align: left;
+	text-indent: 5px;
+	font-family: Verdana;
+	font-weight: bold;
+	color: #404040; }
+
+td.tbbod
+{ border-bottom: 1px solid #3a4b6d;
+	border-top: 0px;
+	border-left: 1px solid #3a4b6d;
+	border-right: 0px;
+	text-align: left;
+	text-indent: 10px;
+	font-family: Verdana, sans-serif, Arial;
+	font-weight: normal;
+	color: #404040;
+	background-color: #fafafa; }
+
+
+.message, .error {
+    font-size: 110%;
+    border: 2px solid #F65A26;
+    padding: 3px;
+    background: #efefef;
+}
+
+div.ltext {
+   margin-bottom: 1em;
+   padding-bottom: 10px;
+   font-size: 100%;
+}
+.DateTimeDMYHM input {
+   display: inline;
+   float: none;
+   width: 3em;
+   border: 1px solid #555555;
+   padding-left: 5px;
+}
+.tlabel {
+   font-weight: bold;
+}
+
+
+/* Enrollment Cart */
+#cart {
+   float: top;
+   padding-left: 1em;
+   padding-right: 1em;
+   padding-bottom: 1em;
+   width: 30em;
+   background: #FFEFD5;
+	border: 1px solid #3366CC;
+}
+
+/* for async js */
+.red {
+    color: red;
+ }
+
+.box {
+   border: 2px solid #3366CC;
+}
+.boxx {
+   border: 2px solid #3366CC;
+   padding-left: 0.8em;
+}

@@ -1,0 +1,28 @@
+<h1>Activities to Schedule</h1>
+<br />
+<p><a href="[% c.uri_for('') %]">Back to Scheduling</a></p>
+<br />
+<table class="tbcss">
+  <tr><td class="tbhead" colspan="4">Activities</td></tr>
+  <tr>
+    <td class="tbhead">Name</td>
+    <td class="tbhead">Lead email</td>
+    <td class="tbhead"></td>
+  </tr>
+[% WHILE (activity = activities.next) -%]
+  <tr>
+    <td class="tbbod">[% activity.name %]&nbsp;</td>
+    <td class="tbbod"><a href="mailto:[% activity.leademail %]">[% activity.leademail %]</a>&nbsp;</td>
+    <td class="tbbod"><a href="[% c.uri_for('event', 'new', activity.activity_id) %]">Schedule</a>&nbsp;
+  </tr>
+  [% events = activity.events %]
+  [% FOR event IN events %]
+     <tr>
+       <td class="tbbod"></td>
+       <td class="tbbod">[% event.as_string | html_line_break %]&nbsp;</td>
+       <td class="tbbod"><a href="[% c.uri_for('event', event.event_id, activity.id) %]">Edit</a>&nbsp;
+             <a href="[% c.uri_for('delete_event', event.event_id, activity.id) %]">Delete</a>&nbsp;
+     </tr>
+  [% END %]
+[% END -%]
+</table>  

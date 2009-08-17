@@ -1,0 +1,33 @@
+
+   <div id="container">
+
+   [% WHILE (activity = activities.next) %]
+   <div class="activity">
+     <h3>[% activity.name %]</h3>
+     <p>[% activity.description.substr(0, 210) %]...</p>
+     
+     <ul class="actions">
+     </ul> 
+     <div class="thebody proposalcell">
+      <p><strong>Days and Times:</strong> <br />[% activity.daystimes %]</p>
+      <p><strong>Start Date:</strong>[% activity.startdate %]</p>
+      <p><strong>End Date:</strong>[% activity.enddate %]</p>
+      <p><strong>Description:</strong> <br />[% activity.description %]</p>
+      <p><strong>Leader and Co-Leaders:</strong> <br />[% activity.leadname %]</p>
+      <p><strong>Leader Bio:</strong> <br />[% activity.leadbio %]</p>
+      <p><strong>Location Requirements:</strong> <br />[% activity.locreq %]</p>
+      <p><strong>Children Requirements:</strong> <br />[% activity.childreq %]</p>
+      <p><strong>Min Students:</strong> [% activity.min %]<strong>&nbsp;&nbsp;Max Students:</strong> [% activity.max %]</p>
+      <p><strong>Sessions:</strong> [% activity.sessions %]</p>
+      <p><strong>Program Time:</strong> [% activity.progtime %]</p>
+      <p><strong>One Session?:</strong> [% activity.onesession %]</p> 
+      <p><strong>Materials Fee:</strong> [% activity.matsfee %]</p>
+      <p><strong>Materials Needed:</strong> <br /> [% activity.material %]</p>
+      <p><strong>Suggested Preparation:</strong> <br /> [% activity.suggprep %]</p>
+      <p><strong>Support Needs:</strong> <br /> [% activity.support %]</p>
+     </div>
+     
+   </div>
+   [% END %] 
+ </div>
+

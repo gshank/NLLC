@@ -1,0 +1,11 @@
+<h1>Activities of Previous Sessions</h>
+
+<p><a href="[% c.uri_for('/program_list', 5) %]">Fall 2006</a></p>
+<p><a href="[% c.uri_for('/program_list', 6) %]">Winter 2007</a></p>
+<p><a href="[% c.uri_for('/program_list', 7) %]">Spring 2007</a></p>
+<p><a href="[% c.uri_for('/program_list', 9) %]">Fall 2007</a></p>
+<p><a href="[% c.uri_for('/program_list', 10) %]">Winter 2008</a></p>
+<p><a href="[% c.uri_for('/program_list', 11) %]">Spring 2008</a></p>
+<p><a href="[% c.uri_for('/program_list', 13) %]">Fall 2008</a></p>
+<p><a href="[% c.uri_for('/program_list', 14) %]">Winter 2009</a></p>
+

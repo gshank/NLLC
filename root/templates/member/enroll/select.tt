@@ -1,0 +1,92 @@
+[% PROCESS member/enroll/enroll_links.tt %]
+
+ <div id="cart" name="cart">
+   <p><strong>Activities selected for Enrollment:</strong></p>
+   <ul>
+   [% WHILE (cart_item = cart.next) %]
+   <li>[% cart_item.activity.name %]&nbsp;&nbsp;&nbsp;&nbsp;
+       <a href="[% c.uri_for('remove_activity', cart_item.activity_id) %]">Remove</a></li>
+   [% END %]
+   </ul>
+ </div>
+
+
+ <p><a href="[% c.uri_for('cart') %]">[[ I'm done selecting activities, click here to finish enrolling ]]</a><p>
+
+
+<div id="container">
+<hr />
+<h1>Monday Activities</h1>
+   [% WHILE (activity = monday_activities.next) %]
+   <hr />
+   [% PROCESS an_activity %]
+   [% END %] 
+<hr />
+<h1>Tuesday Activities</h1>
+   [% WHILE (activity = tuesday_activities.next) %]
+   <hr />
+   [% PROCESS an_activity %]
+   [% END %] 
+<hr />
+<h1>Wednesday Activities</h1>
+   [% WHILE (activity = wednesday_activities.next) %]
+   <hr />
+   [% PROCESS an_activity %]
+   [% END %] 
+<hr />
+<h1>Thursday Activities</h1>
+   [% WHILE (activity = thursday_activities.next) %]
+   <hr />
+   [% PROCESS an_activity %]
+   [% END %] 
+<hr />
+<h1>Friday Activities</h1>
+   [% WHILE (activity = friday_activities.next) %]
+   <hr />
+   [% PROCESS an_activity %]
+   [% END %] 
+
+[% IF saturday_activities.count > 0 %]
+<hr />
+<h1>Saturday Activities</h1>
+   [% WHILE (activity = saturday_activities.next) %]
+   <hr />
+   [% PROCESS an_activity %]
+   [% END %] 
+[% END %]
+
+[% IF sunday_activities.count > 0 %]
+<hr />
+<h1>Sunday Activities</h1>
+   [% WHILE (activity = sunday_activities.next) %]
+   <hr />
+   [% PROCESS an_activity %]
+   [% END %] 
+[% END %]
+
+</div>
+
+
+[% BLOCK an_activity %]
+      [% events = activity.events %]
+   <div class="activity">
+     <h3>[% activity.name %]</h3>
+     [% IF events %]
+       <p><strong>
+       &nbsp;&nbsp;&nbsp;&nbsp;
+       [% FOREACH event IN events %]
+       [% event.dtstart.day_name %]&nbsp;&nbsp;&nbsp;[% event.dtstart.strftime("%I:%M") %]&nbsp;&nbsp;&nbsp;&nbsp;
+       [% END %]
+       </strong></p>
+     [% END %]
+     <p>[% activity.description.substr(0, 210) %]...</p>
+     
+     <ul class="actions">
+        <li class='readbody'><a href='' title='Read the activity'>Read More</a></li>
+        <li class='add_activity' id="[% activity.id %]"><a href="[% c.uri_for('add_activity', activity.id) %]" title="Add activity">Add to Enrollment List</a></li>
+     </ul> 
+     <div class="thebody">
+     [% PROCESS layouts/view_activity.tt %]
+     </div>
+   </div>
+[% END %]

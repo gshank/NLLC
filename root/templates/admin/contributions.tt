@@ -1,0 +1,6 @@
+<h1>Contributions</h1>
+
+<p><a href="[% c.uri_for( 'contribution_list', session ) %]">Current contribution list</a></p>
+[% IF new_session != session %]
+<p><a href="[% c.uri_for( 'contribution_list', new_session ) %]">New contribution list</a></p>
+[% END %]

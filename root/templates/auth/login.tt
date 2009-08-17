@@ -1,0 +1,24 @@
+[% META title = 'Login' %]
+
+<!-- Login form -->
+<form name="login" method="post" action=" [% c.uri_for('/auth/login') %] ">
+  <table>
+    <tr>
+      <td>Username:</td>
+      <td><input type="text" name="username" size="40" /></td>
+    </tr>
+    <tr>
+      <td>Password:</td>
+      <td><input type="password" name="password" size="40" /></td>
+    </tr>
+    <tr>
+      <td>Keep me logged in:</td>
+      <td><input type="checkbox" name="remember" /></td>
+    </tr>
+    <tr>
+      <td colspan="2"><input type="submit" name="log in" value="Log in" /></td>
+    </tr>
+  </table>
+  <input type="hidden" name="destination" value="[% c.flash.destination %]" />
+</form>
+

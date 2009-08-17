@@ -1,0 +1,7 @@
+<hr />
+<h2>From the activity proposal:</h2>
+<p><strong>Days & Times: </strong>[% activity.daystimes %]</p>
+<p><strong>Sessions: </strong>[% activity.sessions %]</p>
+<p><strong>Start Date: </strong>[% activity.startdate %]</p>
+<p><strong>End Date: </strong>[% activity.enddate %]</p>
+<hr />

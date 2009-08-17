@@ -1,0 +1,195 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><!-- InstanceBegin template="/Templates/nllcTemplate.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<meta name="description" content="A homeschool resource cooperative serving the tompkins county area.">
+<meta name="keywords" content="northern light learning center homeschool cooperative">
+<meta name="robots" content="index, follow">
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Northern Light Learning Center, Ithaca - New York - Welcome!</title>
+<!-- InstanceEndEditable -->
+<!-- InstanceBeginEditable name="head" -->
+
+<!-- InstanceEndEditable -->
+<link href="../include/styles.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<div id="site">
+	<div id="banner"></div>
+	<div id="body">
+		<div id="menu">
+		  <ul><li><a href="../index.html">home</a></li><li><a href="../members.html">members</a></li><li><a href="../aboutus.html">about us</a></li><li><a href="../events.html">events</a></li><li><a href="../contact.html">contact</a></li></ul>
+		</div>
+		<P>&nbsp;</P>
+		<div id="content">
+		 <!-- InstanceBeginEditable name="Content" -->
+		 <h1>Program Selection for the Children of Alano, Peg&nbsp;&nbsp;Alano, Pete </h1>
+		 
+		 
+		<p>If you've chosen the wrong family, click <a href="family.php">here</a> to go back to Family Selection.</p>
+		<p>INSTRUCTIONS:
+		<p>To the right of each program name there is a space to sign up your child by typing a number. If you have more than one child, be careful to enter data in the proper column.</p>
+		<p>Type a 1 next to the program that is the most important to the child, a 2 next to the program that is their second favorite, and so on. There can only be one program ranked #1 for each child, only one at #2, etc. You can type a '0' (zero) to sign up for any programs that you don't care to rank, if you are not concerned about waitlisting. Leave fields blank for programs that you are not signing up for. If you are leading or coordinating a class, and your child(ren) want to particpate, you will need to sign them up (they are not automatically enrolled in your program).</p>
+		<p>Ranking more than one program #1, etc. for a child will be seen as a mistake and you will be contacted to revise your enrollment.</p>
+		<p>If your child does not get into all the programs that they initially enrolled in and you wish to enroll your child in additional programs at that point, you may contact the leader of those programs to ask them to enroll your child in those programs.</p>
+		<p><strong>For more detailed information about the enrollment process, visit the <a href="http://www.northernlightlearning.org/?page_id=12">enrollment information page</a>. </strong></p>
+		<p>IGNORE the 'volunteer to assist' check boxes to the far right (with the parent's names). We are not using that feature this session. If you want to
+		assist or co-lead a class, contact the leader directly.</p>
+		
+		<p>Click one of the SUBMIT buttons (at the top or very bottom) when you are done! <strong>You should see a 'thank you' page after you click submit. If you do not see the thank you, your enrollment has not been processed!</strong></p>
+		
+		<p>You can return to edit your family's choices anytime before the deadline on December 10th.</p>
+		
+		<p>Any questions? Feel free to call Jenn Colt-Demaree at 275-0010 or email <a href="mailto:jenncd@gmail.com">jenncd@gmail.com</a></p>
+	
+		 
+
+		 <form name="mainform" action="getSelect.php" method="post">
+		 <input type="submit" value="submit >" />
+		 <table cellpadding=0 cellspacing=2 border =0>
+		 	<tr>
+				<td></td>
+  	 	   <td>Jack</td><td>Bridie</td>		   		<td>volunteer to assist?</td>
+		   </tr>
+           <tr><td class='familyrow'>MON 1] Creative Writing Workshop</td>					  <td><input type="text" class="familyinput" name="interest-1-438" value="" /></td>
+           					  <td><input type="text" class="familyinput" name="interest-2-438" value="" /></td>
+           <td class='familytitle'><input name='check1-438' type='checkbox' value='check1-438'  />Alano, Peg<br><input name='check2-438' type='checkbox' value='check2-438'  />Alano, Pete</td></tr><tr><td class='familyrow'>MON 2] Writing Games Co-op for 7-11</td>					  <td><input type="text" class="familyinput" name="interest-1-419" value="" /></td>
+           					  <td><input type="text" class="familyinput" name="interest-2-419" value="" /></td>
+           <td class='familytitle'><input name='check1-419' type='checkbox' value='check1-419'  />Alano, Peg<br><input name='check2-419' type='checkbox' value='check2-419'  />Alano, Pete</td></tr><tr><td class='familyrow'>MON 3] Baking for 7-8 year olds</td>					  <td><input type="text" class="familyinput" name="interest-1-425" value="" /></td>
+           					  <td><input type="text" class="familyinput" name="interest-2-425" value="" /></td>
+           <td class='familytitle'><input name='check1-425' type='checkbox' value='check1-425'  />Alano, Peg<br><input name='check2-425' type='checkbox' value='check2-425'  />Alano, Pete</td></tr><tr><td class='familyrow'>MON 4]Introduction to Genetics</td>					  <td><input type="text" class="familyinput" name="interest-1-408" value="" /></td>
+           					  <td><input type="text" class="familyinput" name="interest-2-408" value="" /></td>
+           <td class='familytitle'><input name='check1-408' type='checkbox' value='check1-408'  />Alano, Peg<br><input name='check2-408' type='checkbox' value='check2-408'  />Alano, Pete</td></tr><tr><td class='familyrow'>Mon 4b] Art and Story</td>					  <td><input type="text" class="familyinput" name="interest-1-400" value="" /></td>
+           					  <td><input type="text" class="familyinput" name="interest-2-400" value="" /></td>
+           <td class='familytitle'><input name='check1-400' type='checkbox' value='check1-400'  />Alano, Peg<br><input name='check2-400' type='checkbox' value='check2-400'  />Alano, Pete</td></tr><tr><td class='familyrow'>MON 5] Simon Dice</td>					  <td><input type="text" class="familyinput" name="interest-1-472" value="" /></td>
+           					  <td><input type="text" class="familyinput" name="interest-2-472" value="" /></td>
+           <td class='familytitle'><input name='check1-472' type='checkbox' value='check1-472'  />Alano, Peg<br><input name='check2-472' type='checkbox' value='check2-472'  />Alano, Pete</td></tr><tr><td class='familyrow'>MON 5b] Plant Biology</td>					  <td><input type="text" class="familyinput" name="interest-1-444" value="" /></td>
+           					  <td><input type="text" class="familyinput" name="interest-2-444" value="" /></td>
+           <td class='familytitle'><input name='check1-444' type='checkbox' value='check1-444'  />Alano, Peg<br><input name='check2-444' type='checkbox' value='check2-444'  />Alano, Pete</td></tr><tr><td class='familyrow'>MON 6] Starlab(tm) Planetarium presentation for teens</td>					  <td><input type="text" class="familyinput" name="interest-1-437" value="" /></td>
+           					  <td><input type="text" class="familyinput" name="interest-2-437" value="" /></td>
+           <td class='familytitle'><input name='check1-437' type='checkbox' value='check1-437'  />Alano, Peg<br><input name='check2-437' type='checkbox' value='check2-437'  />Alano, Pete</td></tr><tr><td class='familyrow'>MON 7] Chess Club</td>					  <td><input type="text" class="familyinput" name="interest-1-413" value="" /></td>
+           					  <td><input type="text" class="familyinput" name="interest-2-413" value="" /></td>
+           <td class='familytitle'><input name='check1-413' type='checkbox' value='check1-413'  />Alano, Peg<br><input name='check2-413' type='checkbox' value='check2-413'  />Alano, Pete</td></tr><tr><td class='familyrow'>MON 7b] Nature Walks and Other Fun</td>					  <td><input type="text" class="familyinput" name="interest-1-448" value="" /></td>
+           					  <td><input type="text" class="familyinput" name="interest-2-448" value="" /></td>
+           <td class='familytitle'><input name='check1-448' type='checkbox' value='check1-448'  />Alano, Peg<br><input name='check2-448' type='checkbox' value='check2-448'  />Alano, Pete</td></tr><tr><td class='familyrow'>MON 8] Rituals for kids, the magic, fun, and power!</td>					  <td><input type="text" class="familyinput" name="interest-1-406" value="" /></td>
+           					  <td><input type="text" class="familyinput" name="interest-2-406" value="" /></td>
+           <td class='familytitle'><input name='check1-406' type='checkbox' value='check1-406'  />Alano, Peg<br><input name='check2-406' type='checkbox' value='check2-406'  />Alano, Pete</td></tr><tr><td class='familyrow'>MON 9] GAME TIME FOR 12 AND UP</td>					  <td><input type="text" class="familyinput" name="interest-1-414" value="" /></td>
+           					  <td><input type="text" class="familyinput" name="interest-2-414" value="" /></td>
+           <td class='familytitle'><input name='check1-414' type='checkbox' value='check1-414'  />Alano, Peg<br><input name='check2-414' type='checkbox' value='check2-414'  />Alano, Pete</td></tr><tr><td class='familyrow'>TUE 2] History for 7-11 year olds</td>					  <td><input type="text" class="familyinput" name="interest-1-407" value="" /></td>
+           					  <td><input type="text" class="familyinput" name="interest-2-407" value="" /></td>
+           <td class='familytitle'><input name='check1-407' type='checkbox' value='check1-407'  />Alano, Peg<br><input name='check2-407' type='checkbox' value='check2-407'  />Alano, Pete</td></tr><tr><td class='familyrow'>TUE 3] Belly Dancing with Mina</td>					  <td><input type="text" class="familyinput" name="interest-1-423" value="" /></td>
+           					  <td><input type="text" class="familyinput" name="interest-2-423" value="" /></td>
+           <td class='familytitle'><input name='check1-423' type='checkbox' value='check1-423'  />Alano, Peg<br><input name='check2-423' type='checkbox' value='check2-423'  />Alano, Pete</td></tr><tr><td class='familyrow'>TUE 4] Indoor soccer</td>					  <td><input type="text" class="familyinput" name="interest-1-401" value="" /></td>
+           					  <td><input type="text" class="familyinput" name="interest-2-401" value="" /></td>
+           <td class='familytitle'><input name='check1-401' type='checkbox' value='check1-401'  />Alano, Peg<br><input name='check2-401' type='checkbox' value='check2-401'  />Alano, Pete</td></tr><tr><td class='familyrow'>TUE 7] Head, Heart, and Hands</td>					  <td><input type="text" class="familyinput" name="interest-1-428" value="" /></td>
+           					  <td><input type="text" class="familyinput" name="interest-2-428" value="" /></td>
+           <td class='familytitle'><input name='check1-428' type='checkbox' value='check1-428'  />Alano, Peg<br><input name='check2-428' type='checkbox' value='check2-428'  />Alano, Pete</td></tr><tr><td class='familyrow'>TU 7b] Storybook Cooking</td>					  <td><input type="text" class="familyinput" name="interest-1-403" value="" /></td>
+           					  <td><input type="text" class="familyinput" name="interest-2-403" value="" /></td>
+           <td class='familytitle'><input name='check1-403' type='checkbox' value='check1-403'  />Alano, Peg<br><input name='check2-403' type='checkbox' value='check2-403'  />Alano, Pete</td></tr><tr><td class='familyrow'>TUE 8] Root Children</td>					  <td><input type="text" class="familyinput" name="interest-1-429" value="" /></td>
+           					  <td><input type="text" class="familyinput" name="interest-2-429" value="" /></td>
+           <td class='familytitle'><input name='check1-429' type='checkbox' value='check1-429'  />Alano, Peg<br><input name='check2-429' type='checkbox' value='check2-429'  />Alano, Pete</td></tr><tr><td class='familyrow'>WED 1]Conversational Japanese</td>					  <td><input type="text" class="familyinput" name="interest-1-453" value="" /></td>
+           					  <td><input type="text" class="familyinput" name="interest-2-453" value="" /></td>
+           <td class='familytitle'><input name='check1-453' type='checkbox' value='check1-453'  />Alano, Peg<br><input name='check2-453' type='checkbox' value='check2-453'  />Alano, Pete</td></tr><tr><td class='familyrow'>WED 2] Jr. FIRST Lego League</td>					  <td><input type="text" class="familyinput" name="interest-1-427" value="" /></td>
+           					  <td><input type="text" class="familyinput" name="interest-2-427" value="" /></td>
+           <td class='familytitle'><input name='check1-427' type='checkbox' value='check1-427'  />Alano, Peg<br><input name='check2-427' type='checkbox' value='check2-427'  />Alano, Pete</td></tr><tr><td class='familyrow'>WED 3] Exploring Cultures and Colors</td>					  <td><input type="text" class="familyinput" name="interest-1-417" value="" /></td>
+           					  <td><input type="text" class="familyinput" name="interest-2-417" value="" /></td>
+           <td class='familytitle'><input name='check1-417' type='checkbox' value='check1-417'  />Alano, Peg<br><input name='check2-417' type='checkbox' value='check2-417'  />Alano, Pete</td></tr><tr><td class='familyrow'>WED 4] Gym Time for Little Kids</td>					  <td><input type="text" class="familyinput" name="interest-1-418" value="" /></td>
+           					  <td><input type="text" class="familyinput" name="interest-2-418" value="" /></td>
+           <td class='familytitle'><input name='check1-418' type='checkbox' value='check1-418'  />Alano, Peg<br><input name='check2-418' type='checkbox' value='check2-418'  />Alano, Pete</td></tr><tr><td class='familyrow'>WED 5] Star Wars and Philosophy</td>					  <td><input type="text" class="familyinput" name="interest-1-452" value="" /></td>
+           					  <td><input type="text" class="familyinput" name="interest-2-452" value="" /></td>
+           <td class='familytitle'><input name='check1-452' type='checkbox' value='check1-452'  />Alano, Peg<br><input name='check2-452' type='checkbox' value='check2-452'  />Alano, Pete</td></tr><tr><td class='familyrow'>WED 6] art for everyone</td>					  <td><input type="text" class="familyinput" name="interest-1-405" value="" /></td>
+           					  <td><input type="text" class="familyinput" name="interest-2-405" value="" /></td>
+           <td class='familytitle'><input name='check1-405' type='checkbox' value='check1-405'  />Alano, Peg<br><input name='check2-405' type='checkbox' value='check2-405'  />Alano, Pete</td></tr><tr><td class='familyrow'>WED 8] Pick up Soccer (and maybe some basketball too)</td>					  <td><input type="text" class="familyinput" name="interest-1-421" value="" /></td>
+           					  <td><input type="text" class="familyinput" name="interest-2-421" value="" /></td>
+           <td class='familytitle'><input name='check1-421' type='checkbox' value='check1-421'  />Alano, Peg<br><input name='check2-421' type='checkbox' value='check2-421'  />Alano, Pete</td></tr><tr><td class='familyrow'>WED 9] Costuming and role-play</td>					  <td><input type="text" class="familyinput" name="interest-1-442" value="" /></td>
+           					  <td><input type="text" class="familyinput" name="interest-2-442" value="" /></td>
+           <td class='familytitle'><input name='check1-442' type='checkbox' value='check1-442'  />Alano, Peg<br><input name='check2-442' type='checkbox' value='check2-442'  />Alano, Pete</td></tr><tr><td class='familyrow'>WED 10] History of the War Between the States, 1861-1865</td>					  <td><input type="text" class="familyinput" name="interest-1-445" value="" /></td>
+           					  <td><input type="text" class="familyinput" name="interest-2-445" value="" /></td>
+           <td class='familytitle'><input name='check1-445' type='checkbox' value='check1-445'  />Alano, Peg<br><input name='check2-445' type='checkbox' value='check2-445'  />Alano, Pete</td></tr><tr><td class='familyrow'>WED 11] poetry for 6-9 year olds--writing (and listening) from the senses</td>					  <td><input type="text" class="familyinput" name="interest-1-458" value="" /></td>
+           					  <td><input type="text" class="familyinput" name="interest-2-458" value="" /></td>
+           <td class='familytitle'><input name='check1-458' type='checkbox' value='check1-458'  />Alano, Peg<br><input name='check2-458' type='checkbox' value='check2-458'  />Alano, Pete</td></tr><tr><td class='familyrow'>WED 13] Games for Fun and Learning</td>					  <td><input type="text" class="familyinput" name="interest-1-412" value="" /></td>
+           					  <td><input type="text" class="familyinput" name="interest-2-412" value="" /></td>
+           <td class='familytitle'><input name='check1-412' type='checkbox' value='check1-412'  />Alano, Peg<br><input name='check2-412' type='checkbox' value='check2-412'  />Alano, Pete</td></tr><tr><td class='familyrow'>WED 14] Sitting Around Banging on Things</td>					  <td><input type="text" class="familyinput" name="interest-1-443" value="" /></td>
+           					  <td><input type="text" class="familyinput" name="interest-2-443" value="" /></td>
+           <td class='familytitle'><input name='check1-443' type='checkbox' value='check1-443'  />Alano, Peg<br><input name='check2-443' type='checkbox' value='check2-443'  />Alano, Pete</td></tr><tr><td class='familyrow'>TH 1] Story of the World Part 1: From Bull Jumpers to the Roman Gladiators</td>					  <td><input type="text" class="familyinput" name="interest-1-461" value="" /></td>
+           					  <td><input type="text" class="familyinput" name="interest-2-461" value="" /></td>
+           <td class='familytitle'><input name='check1-461' type='checkbox' value='check1-461'  />Alano, Peg<br><input name='check2-461' type='checkbox' value='check2-461'  />Alano, Pete</td></tr><tr><td class='familyrow'>TH 2] Public Speaking</td>					  <td><input type="text" class="familyinput" name="interest-1-415" value="" /></td>
+           					  <td><input type="text" class="familyinput" name="interest-2-415" value="" /></td>
+           <td class='familytitle'><input name='check1-415' type='checkbox' value='check1-415'  />Alano, Peg<br><input name='check2-415' type='checkbox' value='check2-415'  />Alano, Pete</td></tr><tr><td class='familyrow'>TH 3] Seed Bead Jewelry</td>					  <td><input type="text" class="familyinput" name="interest-1-467" value="" /></td>
+           					  <td><input type="text" class="familyinput" name="interest-2-467" value="" /></td>
+           <td class='familytitle'><input name='check1-467' type='checkbox' value='check1-467'  />Alano, Peg<br><input name='check2-467' type='checkbox' value='check2-467'  />Alano, Pete</td></tr><tr><td class='familyrow'>TH 4] Irish Step Dancing and Ceili Dancing</td>					  <td><input type="text" class="familyinput" name="interest-1-463" value="" /></td>
+           					  <td><input type="text" class="familyinput" name="interest-2-463" value="" /></td>
+           <td class='familytitle'><input name='check1-463' type='checkbox' value='check1-463'  />Alano, Peg<br><input name='check2-463' type='checkbox' value='check2-463'  />Alano, Pete</td></tr><tr><td class='familyrow'>TH 5] Low Carbon Diet – Lose 5000 lbs. In 30 Days</td>					  <td><input type="text" class="familyinput" name="interest-1-457" value="" /></td>
+           					  <td><input type="text" class="familyinput" name="interest-2-457" value="" /></td>
+           <td class='familytitle'><input name='check1-457' type='checkbox' value='check1-457'  />Alano, Peg<br><input name='check2-457' type='checkbox' value='check2-457'  />Alano, Pete</td></tr><tr><td class='familyrow'>TH 6] Music Share and Movement</td>					  <td><input type="text" class="familyinput" name="interest-1-449" value="" /></td>
+           					  <td><input type="text" class="familyinput" name="interest-2-449" value="" /></td>
+           <td class='familytitle'><input name='check1-449' type='checkbox' value='check1-449'  />Alano, Peg<br><input name='check2-449' type='checkbox' value='check2-449'  />Alano, Pete</td></tr><tr><td class='familyrow'>TH 7] French for Ages 4-8</td>					  <td><input type="text" class="familyinput" name="interest-1-433" value="" /></td>
+           					  <td><input type="text" class="familyinput" name="interest-2-433" value="" /></td>
+           <td class='familytitle'><input name='check1-433' type='checkbox' value='check1-433'  />Alano, Peg<br><input name='check2-433' type='checkbox' value='check2-433'  />Alano, Pete</td></tr><tr><td class='familyrow'>THU 9] Magic the Gathering Club</td>					  <td><input type="text" class="familyinput" name="interest-1-409" value="" /></td>
+           					  <td><input type="text" class="familyinput" name="interest-2-409" value="" /></td>
+           <td class='familytitle'><input name='check1-409' type='checkbox' value='check1-409'  />Alano, Peg<br><input name='check2-409' type='checkbox' value='check2-409'  />Alano, Pete</td></tr><tr><td class='familyrow'>THU 9b] Games Club</td>					  <td><input type="text" class="familyinput" name="interest-1-474" value="" /></td>
+           					  <td><input type="text" class="familyinput" name="interest-2-474" value="" /></td>
+           <td class='familytitle'><input name='check1-474' type='checkbox' value='check1-474'  />Alano, Peg<br><input name='check2-474' type='checkbox' value='check2-474'  />Alano, Pete</td></tr><tr><td class='familyrow'>TH 11] Art Class</td>					  <td><input type="text" class="familyinput" name="interest-1-455" value="" /></td>
+           					  <td><input type="text" class="familyinput" name="interest-2-455" value="" /></td>
+           <td class='familytitle'><input name='check1-455' type='checkbox' value='check1-455'  />Alano, Peg<br><input name='check2-455' type='checkbox' value='check2-455'  />Alano, Pete</td></tr><tr><td class='familyrow'>TH 12] French for Ages 12 and Up</td>					  <td><input type="text" class="familyinput" name="interest-1-435" value="" /></td>
+           					  <td><input type="text" class="familyinput" name="interest-2-435" value="" /></td>
+           <td class='familytitle'><input name='check1-435' type='checkbox' value='check1-435'  />Alano, Peg<br><input name='check2-435' type='checkbox' value='check2-435'  />Alano, Pete</td></tr><tr><td class='familyrow'>TH 13] Thou Art Turtle Dreamin’</td>					  <td><input type="text" class="familyinput" name="interest-1-422" value="" /></td>
+           					  <td><input type="text" class="familyinput" name="interest-2-422" value="" /></td>
+           <td class='familytitle'><input name='check1-422' type='checkbox' value='check1-422'  />Alano, Peg<br><input name='check2-422' type='checkbox' value='check2-422'  />Alano, Pete</td></tr><tr><td class='familyrow'>TH 14] Fantasy Book Club</td>					  <td><input type="text" class="familyinput" name="interest-1-426" value="" /></td>
+           					  <td><input type="text" class="familyinput" name="interest-2-426" value="" /></td>
+           <td class='familytitle'><input name='check1-426' type='checkbox' value='check1-426'  />Alano, Peg<br><input name='check2-426' type='checkbox' value='check2-426'  />Alano, Pete</td></tr><tr><td class='familyrow'>TH 15] Pick-up Basketball</td>					  <td><input type="text" class="familyinput" name="interest-1-440" value="" /></td>
+           					  <td><input type="text" class="familyinput" name="interest-2-440" value="" /></td>
+           <td class='familytitle'><input name='check1-440' type='checkbox' value='check1-440'  />Alano, Peg<br><input name='check2-440' type='checkbox' value='check2-440'  />Alano, Pete</td></tr><tr><td class='familyrow'>TH 16] Girl's Empowerment and Social Group</td>					  <td><input type="text" class="familyinput" name="interest-1-454" value="" /></td>
+           					  <td><input type="text" class="familyinput" name="interest-2-454" value="" /></td>
+           <td class='familytitle'><input name='check1-454' type='checkbox' value='check1-454'  />Alano, Peg<br><input name='check2-454' type='checkbox' value='check2-454'  />Alano, Pete</td></tr><tr><td class='familyrow'>TH 17] Dungeons and Dragons</td>					  <td><input type="text" class="familyinput" name="interest-1-460" value="" /></td>
+           					  <td><input type="text" class="familyinput" name="interest-2-460" value="" /></td>
+           <td class='familytitle'><input name='check1-460' type='checkbox' value='check1-460'  />Alano, Peg<br><input name='check2-460' type='checkbox' value='check2-460'  />Alano, Pete</td></tr><tr><td class='familyrow'>FR 1] Children of the Forest</td>					  <td><input type="text" class="familyinput" name="interest-1-424" value="" /></td>
+           					  <td><input type="text" class="familyinput" name="interest-2-424" value="" /></td>
+           <td class='familytitle'><input name='check1-424' type='checkbox' value='check1-424'  />Alano, Peg<br><input name='check2-424' type='checkbox' value='check2-424'  />Alano, Pete</td></tr><tr><td class='familyrow'>FRI 2] Disease Detectives</td>					  <td><input type="text" class="familyinput" name="interest-1-402" value="" /></td>
+           					  <td><input type="text" class="familyinput" name="interest-2-402" value="" /></td>
+           <td class='familytitle'><input name='check1-402' type='checkbox' value='check1-402'  />Alano, Peg<br><input name='check2-402' type='checkbox' value='check2-402'  />Alano, Pete</td></tr><tr><td class='familyrow'>FRI 3] Sing Along Stories</td>					  <td><input type="text" class="familyinput" name="interest-1-473" value="" /></td>
+           					  <td><input type="text" class="familyinput" name="interest-2-473" value="" /></td>
+           <td class='familytitle'><input name='check1-473' type='checkbox' value='check1-473'  />Alano, Peg<br><input name='check2-473' type='checkbox' value='check2-473'  />Alano, Pete</td></tr><tr><td class='familyrow'>FRI 4] Frog Math</td>					  <td><input type="text" class="familyinput" name="interest-1-416" value="" /></td>
+           					  <td><input type="text" class="familyinput" name="interest-2-416" value="" /></td>
+           <td class='familytitle'><input name='check1-416' type='checkbox' value='check1-416'  />Alano, Peg<br><input name='check2-416' type='checkbox' value='check2-416'  />Alano, Pete</td></tr><tr><td class='familyrow'>FRI 5] French for 9-12 Year Olds</td>					  <td><input type="text" class="familyinput" name="interest-1-434" value="" /></td>
+           					  <td><input type="text" class="familyinput" name="interest-2-434" value="" /></td>
+           <td class='familytitle'><input name='check1-434' type='checkbox' value='check1-434'  />Alano, Peg<br><input name='check2-434' type='checkbox' value='check2-434'  />Alano, Pete</td></tr><tr><td class='familyrow'>FR 6] Magic Tree House Coop -4-6</td>					  <td><input type="text" class="familyinput" name="interest-1-439" value="" /></td>
+           					  <td><input type="text" class="familyinput" name="interest-2-439" value="" /></td>
+           <td class='familytitle'><input name='check1-439' type='checkbox' value='check1-439'  />Alano, Peg<br><input name='check2-439' type='checkbox' value='check2-439'  />Alano, Pete</td></tr><tr><td class='familyrow'>FR 7] Magic Tree House Coop -7-9</td>					  <td><input type="text" class="familyinput" name="interest-1-441" value="" /></td>
+           					  <td><input type="text" class="familyinput" name="interest-2-441" value="" /></td>
+           <td class='familytitle'><input name='check1-441' type='checkbox' value='check1-441'  />Alano, Peg<br><input name='check2-441' type='checkbox' value='check2-441'  />Alano, Pete</td></tr><tr><td class='familyrow'>FR 8] Bowling for Fun (with or without Bumpers) AT BOWL-O-DROME</td>					  <td><input type="text" class="familyinput" name="interest-1-446" value="" /></td>
+           					  <td><input type="text" class="familyinput" name="interest-2-446" value="" /></td>
+           <td class='familytitle'><input name='check1-446' type='checkbox' value='check1-446'  />Alano, Peg<br><input name='check2-446' type='checkbox' value='check2-446'  />Alano, Pete</td></tr><tr><td class='familyrow'>FR 9] ARCHITECTURE</td>					  <td><input type="text" class="familyinput" name="interest-1-462" value="" /></td>
+           					  <td><input type="text" class="familyinput" name="interest-2-462" value="" /></td>
+           <td class='familytitle'><input name='check1-462' type='checkbox' value='check1-462'  />Alano, Peg<br><input name='check2-462' type='checkbox' value='check2-462'  />Alano, Pete</td></tr><tr><td class='familyrow'>FR 10] Tumbling Class</td>					  <td><input type="text" class="familyinput" name="interest-1-464" value="" /></td>
+           					  <td><input type="text" class="familyinput" name="interest-2-464" value="" /></td>
+           <td class='familytitle'><input name='check1-464' type='checkbox' value='check1-464'  />Alano, Peg<br><input name='check2-464' type='checkbox' value='check2-464'  />Alano, Pete</td></tr><tr><td class='familyrow'>FR 12] Roots and Shoots</td>					  <td><input type="text" class="familyinput" name="interest-1-466" value="" /></td>
+           					  <td><input type="text" class="familyinput" name="interest-2-466" value="" /></td>
+           <td class='familytitle'><input name='check1-466' type='checkbox' value='check1-466'  />Alano, Peg<br><input name='check2-466' type='checkbox' value='check2-466'  />Alano, Pete</td></tr><tr><td class='familyrow'>FR 13] Children's Classics Book Club</td>					  <td><input type="text" class="familyinput" name="interest-1-432" value="" /></td>
+           					  <td><input type="text" class="familyinput" name="interest-2-432" value="" /></td>
+           <td class='familytitle'><input name='check1-432' type='checkbox' value='check1-432'  />Alano, Peg<br><input name='check2-432' type='checkbox' value='check2-432'  />Alano, Pete</td></tr><tr><td class='familyrow'>FR 14] Go group</td>					  <td><input type="text" class="familyinput" name="interest-1-450" value="" /></td>
+           					  <td><input type="text" class="familyinput" name="interest-2-450" value="" /></td>
+           <td class='familytitle'><input name='check1-450' type='checkbox' value='check1-450'  />Alano, Peg<br><input name='check2-450' type='checkbox' value='check2-450'  />Alano, Pete</td></tr><tr><td class='familyrow'>OTHER] Boat Building</td>					  <td><input type="text" class="familyinput" name="interest-1-468" value="" /></td>
+           					  <td><input type="text" class="familyinput" name="interest-2-468" value="" /></td>
+           <td class='familytitle'><input name='check1-468' type='checkbox' value='check1-468'  />Alano, Peg<br><input name='check2-468' type='checkbox' value='check2-468'  />Alano, Pete</td></tr><tr><td class='familyrow'>OTHER] Shadow Puppets</td>					  <td><input type="text" class="familyinput" name="interest-1-420" value="" /></td>
+           					  <td><input type="text" class="familyinput" name="interest-2-420" value="" /></td>
+           		   <td class='familytitle'><input name='check1-420' type='checkbox' value='check1-420'  />Alano, Peg<br><input name='check2-420' type='checkbox' value='check2-420'  />Alano, Pete</td></tr>
+		 </table>
+	 		 
+		 <input name="numrows" type="hidden" value="420">
+		 <input name="childids" type="hidden" value="1,2" /> 
+		 <input name="familyid" type="hidden" value="1" />
+
+		 <input type="submit" value="submit >" />		 
+		 </form>
+		 <!-- InstanceEndEditable -->	
+		</div>
+		<div id="footer">
+			<p class="copyright">Copyright &#xA9; 2005 Northern Light Learning Center. All Rights Reserved.</p>
+		</div>
+	</div>
+</div>
+<P>&nbsp;</P>
+</body>
+<!-- InstanceEnd --></html>

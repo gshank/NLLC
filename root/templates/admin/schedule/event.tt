@@ -1,0 +1,110 @@
+<h1>Schedule an Event</h1>
+[% PROCESS layouts/form_errors.tt %]
+[% IF form.item_id; item_id = form.item_id; ELSE; item_id = 'new'; END %]
+<form name="event" method="POST" 
+action="[% IF activity; c.uri_for('event', item_id, activity.id); ELSE;
+                        c.uri_for('event', item_id); END %]">
+ 
+<p>Repeating schedules on a daily, weekly,
+and biweekly basis work. A single, non-repeating event works. 
+You can't enter monthly repeats yet.
+In some cases you may need to 
+enter multiple events for irregular schedules. In the worst case, 
+every occurrence could be entered individually.</p>
+[% IF activity; PROCESS admin/schedule/time_request.tt; END %]
+
+[% f = form.field('summary') %]
+<p><label for="summary">Name of event:</label>
+<input type="text" name="summary" id="summary" [% IF activity %]value="[% activity.name %]"[% END %] />
+</p>
+
+[% f = form.field('description') %]
+<p>
+<label for="description">Description:</label>
+<input type="text" name="description" id="description" size="40"
+   [% IF activity %]value="[% c.uri_for('/member', 'view_activity', activity.activity_id ) %]"[% END %]/>
+(URL for activity)
+</p>
+
+[% f = form.field('location') %]
+<p>
+<label for="location">Location:</label>
+<input type="text" name="location" id="location" />
+</p>
+
+[% f = form.field('category') %]
+<p>
+<label for="[% f.name %]">Category:</label>
+<select name="[% f.name %]">
+  [% FOR option IN f.options %]
+    <option value="[% option.value %]" [% IF option.value == f.value
+%]selected="selected"[% END %]>[% option.label | html %]</option>
+  [% END %] 
+</select>
+</p>
+
+[% f = form.field('calendar') %]
+<p>
+<label for="[% f.name %]">Calendar:</label>
+<select name="[% f.name %]">
+  [% FOR option IN f.options %]
+    <option value="[% option.value %]" [% IF option.value == f.value
+%]selected="selected"[% END %]>[% option.label | html %]</option>
+  [% END %] 
+</select>
+</p>
+
+<p>
+   <label>Start Date: (dd/mm/yyyy) </label>
+   <input class="date-pick" name="dtstart_mdy" type="text" id="dtstart_mdy" size="10" />
+</p>
+
+<p>
+   <label>All Day Event:</label>
+   <input id="dtstart_allday" name="dtstart_allday" type="checkbox" value="1">
+</p>
+
+<p><i>*** Fill out the following fields if not an all day event</i></p>
+<div class="boxx">
+<p>  
+   <label>Start Time: (hh::mm pm)</label>
+   <input name="dtstart_time" type="text" id="dtstart_time" size="10" />
+</p>
+
+<p>
+<label>Duration: </label>
+<input name="duration.hours" type="text" size=2 />(hours)
+<input name="duration.minutes" type="text" size=2 />(minutes)
+</p>
+</div>
+
+[% SET f = form.field('freq') %]
+<p>
+<label for="[% f.name %]">Frequency:</label>
+<select name="[% f.name %]">
+  [% FOR option IN f.options %]
+    <option value="[% option.value %]" [% IF option.value == f.value
+%]selected="selected"[% END %]>[% option.label | html %]</option>
+  [% END %]
+</select>
+</p>
+
+<p><i>*** Fill out one of the following if this is a repeating event</i></p>
+<div class='boxx'>
+[% f = form.field('count') %]
+<p>
+<label>Either ... Count (number of repetitions):</label>
+<input name="count" type="text" size="2" />
+</p>
+[% f = form.field('until_mdy') %] 
+<p>
+   <label>Or ... Until Date: (mm/dd/yyyy) </label>
+   <input class='date-pick' name="until_mdy" type="text" id="until_mdy" size="10" />
+</p>
+</div>
+
+
+
+<input type="Submit" name="Save" value="Save" />
+</form>
+

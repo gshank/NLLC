@@ -1,0 +1,47 @@
+<h1>Enrollment in Activities</h1>
+<p>The rankings are in the form: first_number/second_number. 
+The second number is the total  number of activities the child is enrolled in. 
+The first number is the interest ranking. 
+Interest may be larger than total activities, if that was the way it was entered.</p>
+<p><a href="[% c.uri_for('') %]">Back to Enrollment</a>&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="[% c.uri_for('family_enroll_list') %]">To Family Enrollment list</a></p>
+<table cellpadding="3" cellspacing="1" border="1">
+[% WHILE (activity = activities.next) -%]
+        <tr><td bgcolor="#d4c6dc" colspan=5"><strong>[% activity.name %]</strong></td></tr>
+        <tr><td bgcolor="#f5e5ff" colspan=5">min: [% activity.min %]&nbsp;&nbsp;  max: [% activity.max %]&nbsp;&nbsp;  count: [%  activity.activity_children.size %]</td></tr>
+        <tr><td bgcolor="#f5e5ff" colspan=5">[% activity.leadname %]&nbsp;&nbsp;&nbsp;
+               [% activity.leadphone %]&nbsp;&nbsp;&nbsp;
+                <a href="mailto:[% activity.leademail %]">[% activity.leademail %]</a></td>
+        </tr>
+        <tr>
+          <td bgcolor="#f5e5ff" colspan="5">&nbsp;&nbsp;&nbsp;Add section? [% activity.addsection %]</td>
+        </tr>
+         
+     
+        [% IF activity.activity_children %]
+        [% FOREACH child_activity IN activity.activity_children %]
+
+        <tr class="chact" id="[% child_activity.activity_id _ '_' _ child_activity.child_id %]">
+           [% child_id = child_activity.child_id %]
+           <td>[% children.$child_id.name _ "  (" _ children.$child_id.birthday _ ')' %]</td>
+           <td>[% child_activity.interest %]&nbsp;/&nbsp;[% children.$child_id.num_activities %]</td>
+           [% IF child_activity.enrolled == 2 %]
+           <td class="red enrolled">Waitlist</td>
+           <td class="enract"><a href="[% c.uri_for('enroll', activity.activity_id, child_id) %]">Enroll</a></td>
+           [% ELSE %]
+           <td class="enrolled">Enrolled</td>
+           <td class="enract"><a href="[% c.uri_for('waitlist', activity.activity_id, child_id) %]">Waitlist</a></td>
+           [% END %]
+           <td><a href="[% c.uri_for('remove', activity.activity_id, child_id) %]">Remove</a></td> 
+        </tr>
+       
+        [% END %]
+        [% ELSE %]
+        <tr>
+           <td colspan="5">No children enrolled</td>
+        </tr>
+        [% END %]
+
+  </tr>
+[% END -%]
+</table>  

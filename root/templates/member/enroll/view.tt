@@ -1,0 +1,4 @@
+[% PROCESS member/enroll/enroll_links.tt %]
+<h1>Enrollment Information</h1>
+<hr />
+[% PROCESS member/child_activity.tt %]

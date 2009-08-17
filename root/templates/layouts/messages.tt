@@ -1,0 +1,14 @@
+<!-- Display status and error messages -->
+[% IF message %]
+  <p><span class="message">[% message | html %]</span></p>
+[% END %]
+[% IF errors %]
+   <p><div class="errors">
+   [% FOREACH errorelem IN errors %]
+      <p><span class="error">[% errorelem %]</span></p>
+   [% END %]
+   </div></p>
+[% END %]
+[% IF error %]
+  <p><span class="error">[% error | html %]</span></p>
+[% END %]

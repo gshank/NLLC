@@ -1,0 +1,6 @@
+<h1>Manage Activity Enrollment</h1>
+
+<p><a href="[% c.uri_for('list') %]">Enrollment List by Activity</a></p>
+
+<p><a href="[% c.uri_for('family_enroll_list') %]">Family Enrollment List</a></p>
+

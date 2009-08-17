@@ -1,0 +1,3 @@
+<h1>View Activity</h1>
+[% PROCESS layouts/view_activity.tt %]
+<br />

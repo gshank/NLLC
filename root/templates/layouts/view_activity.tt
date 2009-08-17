@@ -1,0 +1,43 @@
+<div class="proposalcell">
+   <p><h3>[% activity.name %]</h3></p>
+    [% events = activity.events %]
+    [% IF events %]
+      [% FOREACH event IN events %]
+      <p><strong>Schedule:</strong><br />[% event.as_string %]</p>
+      <p><strong>Location:</strong><br />[% event.location %]</p>
+      [% END %]
+    [% ELSE %]
+   <p><strong>Days and Times:</strong> <br />[% activity.daystimes %]</p>
+   <p><strong>Start Date:</strong>[% activity.startdate %]</p>
+   <p><strong>End Date:</strong>[% activity.enddate %]</p>
+   <p><strong>Program Time:</strong> [% activity.progtime %]</p>
+   <p><strong>Sessions:</strong> [% activity.sessions %]</p>
+   <p><strong>Location Requirements:</strong> <br />[% activity.locreq %]</p>
+   [% END %]
+   <p><strong>Description:</strong> <br />[% activity.description %]</p>
+   <p><strong>Leader and Co-Leaders:</strong> <br />[% activity.leadname %]</p>
+   [% IF activity.leadbio %]
+   <p><strong>Leader Bio:</strong> <br />[% activity.leadbio %]</p>
+   [% END %]
+   <p><strong>Leader Telephone:</strong> <br />[% activity.leadphone %]</p>
+   <p><strong>Leader Email:</strong> <br />[% activity.leademail %]</p>
+   [% IF activity.childreq %]
+   <p><strong>Children Requirements:</strong> <br />[% activity.childreq %]</p>
+   [% END %] 
+   [% IF activity.onesession %]
+   <p><strong>One Session?:</strong> [% activity.onesession %]</p> 
+   [% END %]
+   [% IF activity.matsfee %]
+   <p><strong>Materials Fee:</strong> [% activity.matsfee %]</p>
+   [% END %]
+   [% IF activity.material %]
+   <p><strong>Materials Needed:</strong> <br /> [% activity.material %]</p>
+   [% END %]
+   [% IF activity.suggprep %]
+   <p><strong>Suggested Preparation:</strong> <br /> [% activity.suggprep %]</p>
+   [% END %]
+   [% IF activity.support %]
+   <p><strong>Support Needs:</strong> <br /> [% activity.support %]</p>
+   [% END %]
+   <p><strong>Min Students:</strong> [% activity.min %]<strong>&nbsp;&nbsp;Max Students:</strong> [% activity.max %]</p>
+</div>

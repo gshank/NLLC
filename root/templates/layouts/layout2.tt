@@ -1,0 +1,19 @@
+[% PROCESS 'layouts/header.tt' %]
+<body>
+<div id="site2">
+  <div id="banner2"></div>
+  <div id="body2">
+  [% PROCESS 'layouts/menu.tt' %]
+	<P>&nbsp;</P>
+ 	<div id="content2">
+      [% PROCESS 'layouts/messages.tt' %]
+      [% content %]
+	</div>
+  </div>
+  <div id="footer2">
+    <p class="copyright">Copyright &#xA9; 2006 Northern Light Learning Center. All Rights Reserved.</p>
+  </div>
+</div>
+<P>&nbsp;</P>
+</body>
+</html>

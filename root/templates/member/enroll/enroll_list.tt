@@ -1,0 +1,46 @@
+[% PROCESS member/enroll/enroll_links.tt %]
+<h1>Enrollment in Activities</h1>
+<br />
+[% WHILE (activity = activities.next) -%]
+<div class="proposalcell">
+        <p><strong>[% activity.name %]</strong>&nbsp;&nbsp;
+           <a href="[% c.uri_for('/member', 'view_activity', activity.id) %]">View</a></p>
+        <p>[% activity.leadname %]&nbsp;&nbsp;&nbsp;
+           <a href="mailto:[% activity.leademail %]">[% activity.leademail %]</a>
+        </p>
+   [% IF activity.activity_children %]
+      <ul>
+      [% enrolled = activity.search_related('activity_children', {enrolled => 1} ) %]
+      [% FOREACH child_activity IN enrolled %]
+         [% child_id = child_activity.child_id %]
+         <li>&nbsp;&nbsp;&nbsp;&nbsp;[% children.$child_id.name %]
+         &nbsp;&nbsp;&nbsp;([% children.$child_id.parent %]&nbsp;&nbsp;
+         <a href="mailto:[% children.$child_id.email %]">[% children.$child_id.email %]</a>&nbsp;)
+         [% IF child_activity.enrolled == 2 %]
+         &nbsp;&nbsp;&nbsp;&nbsp;on waitlist
+         [% END %]
+         </li>
+      [% END %]
+      </ul> 
+      [% waitlist = activity.search_related('activity_children', {enrolled => 2}) %]
+      [% IF waitlist %]
+      
+      <p>Waitlist</p>
+      <ul>
+      [% FOREACH child_activity IN waitlist %]
+         [% child_id = child_activity.child_id %]
+         <li>&nbsp;&nbsp;&nbsp;&nbsp;[% children.$child_id.name %]
+         &nbsp;&nbsp;&nbsp;([% children.$child_id.parent %]&nbsp;&nbsp;
+         <a href="mailto:[% children.$child_id.email %]">[% children.$child_id.email %]</a>&nbsp;)
+         </li>
+      [% END %]
+      </ul>
+      [% END %] 
+
+      </ul>
+   [% ELSE %]
+      <p>&nbsp;&nbsp;&nbsp;No children enrolled</p>
+   [% END %]
+</div>
+<br />
+[% END -%]

@@ -1,0 +1,42 @@
+[% PROCESS member/enroll/enroll_links.tt %]
+<h1>Enroll in Activities</h1>
+
+<p>Please rank the programs using only one interest number 1, 2, 3, etc. for each child, where 1 is the highest interest. Each of these ranks should be used only once. There are two exceptions:</p>
+<p><strong>To enroll your child in a class that you are leading,</strong> enter a "0" as the ranking number.</p>
+<p><strong>To indicate your child wishes to enroll in a class but that  may be considered for waitlisting before other children,</strong> enter a "99" as the ranking number.</p>
+<p>Children will not be enrolled in classes for which no ranking number is entered.</p> 
+<form name="cart" method="POST" action="[% c.uri_for('do_cart') %]">
+<input class="submit" name="submit" value="Save" type="submit">
+
+<table name="cart_table" class="tbcss">
+
+  <tr><td class="tbhead" colspan="7">Enrollment</td></tr>
+  <tr>
+    <td class="tbhead">Activity</td>
+    [% FOREACH child IN children %]  
+    <td class="tbhead" width="20">[% child %]</td>
+    [% END %]
+  </tr>
+  
+[% FOREACH activity IN cart %]
+
+  <tr>
+  <td class="tbbod">
+<strong>[% activity.name %]</strong>
+  </td>
+  
+
+  [% FOREACH child IN activity.children %]
+  <td class="tbbod">
+   <input id="[% activity.id _ '.' _ child.id %]" 
+        name="[% activity.id _ '.' _ child.id %]" size="2" type="text" />
+  </td>
+  [% END %]
+  </tr>
+[% END %]
+
+
+</table>
+
+<input class="submit" name="submit" value="Save" type="submit">
+</form>

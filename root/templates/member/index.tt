@@ -1,0 +1,67 @@
+<h1>Member Page for [% c.user.first_name1 _ " " _ c.user.last_name1 %][% IF c.user.first_name2; " and " _ c.user.first_name2 _ " " _ c.user.last_name2; END %]</h2>
+<hr />
+<h2><a href="[% c.uri_for('view') %]">[ Edit Member information ]</a></h2>
+<h2><a href="[% c.uri_for('list') %]">Member list</a>
+<h2><a href="[% c.uri_for('/icalendar') %]">The calendar</a></h2>
+<h2><a href="[% c.uri_for('/program_list') %]">Current programs</a></h2>
+[% IF session != new_session %]
+<h2><a href="[% c.uri_for('/program_list', new_session ) %]">New programs</a></h2>
+[% END %]
+<h2><a href="[% c.uri_for('contacts') %]">Contact List</a></h2>
+[% IF enrollment == 'open' %]
+<h2><a href="[% c.uri_for('enroll') %]">Enroll in activities</a></h2>
+[% ELSE %]
+<br />
+<h1>Enrollment Information</h1>
+<hr />
+<h2><a href="[% c.uri_for('enroll', 'enroll_list') %]">View enrollment for all activities</a></h2>
+<h2><a href="[% c.uri_for('enroll', 'family_enroll_list') %]">View enrollment for all families</a></h2> 
+<h2><a href="[% c.uri_for('/member', 'my_calendar') %]">View your family calendar</a></h2>
+[% children = family.search_related_rs('children') %] 
+[% PROCESS member/child_activity.tt %] 
+[% END %]
+
+<br />
+<h2>Contributions</h2>
+<hr />
+[% IF proposals == 'open' %]
+<h2><a href="[% c.uri_for('proposal') %]">Create an activity proposal</a></h2>
+[% ELSE %]
+<h3>Not accepting activity proposals at this time</h3>
+[% END %]
+[% WHILE (activity = current_activities.next) %]
+<p>Proposal: [% activity.name %]&nbsp;[
+     <a href="[% c.uri_for('view_activity', activity.id) %]">View</a>]&nbsp;[
+[% IF proposals == 'open' %]
+     <a href="[% c.uri_for('proposal', activity.id) %]">Edit</a>]&nbsp;[
+[% END %]
+     <a href="[% c.uri_for('delete_proposal', activity.id) %]">Delete</a>]</p>
+    </p>
+[% END %]
+<h2><a href="[% c.uri_for('contribution') %]">Enter an alternate contribution</a></h2>
+[% WHILE (contribution = current_contributions.next) %]
+<p>Contribution: [% contribution.description %]&nbsp;[
+     <a href="[% c.uri_for('contribution', contribution.id) %]">Edit</a>]&nbsp;[
+     <a href="[% c.uri_for('delete_contribution', contribution.id) %]">Delete</a>]</p>
+[% END %]
+<br />
+<h2>Information</h2>
+<hr />
+<ul>
+<li><strong><a href="[% c.uri_for('old_activities') %]">Activities from Previous Sessions</a></strong></li>
+<br />
+<li><strong><a href="[% c.uri_for('/policies') %]">NLLC Policies</a></strong></li>
+<br />
+<li><strong><a href="[% c.uri_for('planning') %]">Program Planning for Leaders</a></strong></li>
+<br />
+<li><strong><a href="[% c.uri_for('timeline') %]">Timeline</a></strong></li>
+<br />
+<li><strong><a href="[% c.uri_for('paid_instructor') %]">Non-Member Paid Instructor Policy</a></strong></li>
+<br />
+<li><strong><a href="[% c.uri_for('leaders') %]">Leader Information</a></strong></li>
+<br />
+<li><strong><a href="[% c.uri_for('/documents/US-WAV-36M.doc') %]">Liability Waiver Form</a></strong></li>
+<br />
+<li><strong><a href="[% c.uri_for('/documents/permissionsliphall12andup.doc') %]">Permision Slip for 12 and Up</a></strong></li>
+<br />
+</ul>

@@ -1,0 +1,21 @@
+ <div class="menu" id="menu1">
+   <ul>
+     <li><a href="[% c.uri_for('/') %]">home</a></li>
+     <li><a href="[% c.uri_for('/membership') %]">membership</a></li>
+     <li><a href="[% c.uri_for('/about') %]">about us</a></li>
+     <li><a href="[% c.uri_for('/events') %]">events</a></li>
+     <li><a href="[% c.uri_for('/contact') %]">contact</a></li>
+   </ul>
+ </div>
+ <div class="menu" id="menu2">
+    <ul>
+     [% IF c.user_exists %]
+     <li><a href="[% c.uri_for('/member') %]">members</a></li>
+     [% IF c.check_user_roles('admin') %]
+     <li><a href="[% c.uri_for('/admin') %]">admin</a></li>
+     [% END %]
+     <li><a href="[% c.uri_for('/auth/logout') %]">logout</a></li>
+     [% ELSE %]
+     <li><a href="[% c.uri_for('/auth/login') %]">login</a></li>
+     [% END %]
+  </div>

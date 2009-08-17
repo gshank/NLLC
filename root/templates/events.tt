@@ -1,0 +1,7 @@
+		<h1>Programs at the Learning Center</h1>
+<p>Click <a href="[% c.uri_for('/icalendar') %]">here</a> to browse a calendar of events!</p>
+<p>Click <a href="[% c.uri_for('/program_list') %]">here</a> to view the current program listing.</p>
+</p>
+<br />
+<p>Customarily we have three sessions a year, in fall, winter, and spring. Membership requires participation by providing an activity or some other support function. Activity proposals are due approximately a month before the session begins, so please don't wait until the last minute if you are thinking about enrolling.</p>
+<p>See the <a href="[% c.uri_for('/membership') %]">membership page</a> for more information.</p>

@@ -1,0 +1,84 @@
+<h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a  href="[% c.uri_for('') %]">Back to Member Page</a></h2>
+<br />
+<h1>View Family</h1>
+<form name="family_edit" method="POST" action="[% c.uri_for('edit') %]">
+
+<a href="[% c.uri_for('edit', family.family_id) %]">Edit</a>
+
+<table name="family">
+
+  <tr>
+    <td class="tlabel">First name 1:</td>
+    <td>[% family.first_name1 %]</td>
+  </tr>
+
+  <tr>
+    <td class="tlabel">Last name 1:</td>
+    <td>[% family.last_name1 %]</td>
+  </tr>
+
+  <tr>
+    <td class="tlabel">First name 2:</td>
+    <td>[% family.first_name2 %]</td>
+  </tr>
+
+  <tr>
+    <td class="tlabel">Last name 2:</td>
+    <td>[% family.last_name2 %]</td>
+  </tr>
+
+  <tr>
+    <td class="tlabel">Username:</td>
+    <td>[% family.username %]</td>
+  </tr>
+
+  <tr>
+    <td class="tlabel">Password:</td>
+    <td>[% family.password %]</td>
+  </tr>
+
+
+  <tr>
+    <td class="tlabel">Street address:</td>
+    <td>[% family.street_address %]</td>
+  </tr>
+
+  <tr>
+    <td class="tlabel">City, State Zip:</td>
+    <td>[% family.city_state_zip %]</td>
+  </tr>
+
+  <tr>
+    <td class="tlabel">Phone 1:</td>
+    <td>[% family.phone1 %] </td>
+  </tr>
+
+  <tr>
+    <td class="tlabel">Phone 2:</td>
+    <td>[% family.phone2 %] </td>
+  </tr>
+
+
+  <tr>
+    <td class="tlabel">Email:</td>
+    <td>[% family.email %] </td>
+  </tr>
+
+
+  <tr>
+    <td class="tlabel">Active:</td>
+    <td>[% family.active %] </td>
+  </tr>
+
+</table>
+
+
+<h1>Children</h1>
+
+[% children = family.children %]
+[% FOREACH child IN children %] 
+<p><strong>[% child.firstname %] [% child.lastname %]</strong>
+    &nbsp;&nbsp;&nbsp;[% child.birthday %]&nbsp;&nbsp;[% child.gender %]
+    &nbsp;&nbsp;&nbsp;<a href="[% c.uri_for('edit_child', child.child_id) %]">Edit</a></p>
+[% END %]
+<p><strong><a href="[% c.uri_for('add_child', family.family_id ) %]">Add Child</a></strong></p>

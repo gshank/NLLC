@@ -1,0 +1,115 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><!-- InstanceBegin template="/Templates/nllcTemplate.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<meta name="description" content="A homeschool resource cooperative serving the tompkins county area.">
+<meta name="keywords" content="northern light learning center homeschool cooperative">
+<meta name="robots" content="index, follow">
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Northern Light Learning Center, Ithaca - New York - Welcome!</title>
+<!-- InstanceEndEditable -->
+<!-- InstanceBeginEditable name="head" -->
+<!-- InstanceEndEditable -->
+<link href="../include/styles.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<div id="site">
+	<div id="banner"></div>
+	<div id="body">
+		<div id="menu">
+		  <ul><li><a href="../">home</a></li>
+                      <li><a href="../?page_id=3">members</a></li>
+                      <li><a href="../?page_id=4">about us</a></li>
+                      <li><a href="../?page_id=5.html">events</a></li>
+                      <li><a href="../?page_id=6.html">contact</a></li>
+                  </ul>
+		</div>
+		<P>&nbsp;</P>
+		<div id="content">
+		 <!-- InstanceBeginEditable name="Content" -->
+		 <form action="childSelect.php" method="post">
+		 Choose the family that you wish to enter data for:
+		 <select name="familyID" size="1">
+		 	<option value="0" selected="selected">-- Select a Family --</option>
+		   		   <option value="59">Agarwal, Madhurima / Gildensleeve, Bert</option>
+		   		   <option value="83">Albonesi, MaryAnn / Albonesi, Dave</option>
+		   		   <option value="66">Bard, Lorraine / Uhlen, Jerry</option>
+		   		   <option value="4">Barreno, Ananda</option>
+		   		   <option value="84">Barry, Paula / Gaydos, David</option>
+		   		   <option value="120">Berger, Sharon / Sugarman, Franz</option>
+		   		   <option value="81">Birnbaum, Jennifer Lawrence / Lawrence, Mark</option>
+		   		   <option value="60">Brophy, Michelle</option>
+		   		   <option value="145">Brown, Sara / Wecker, Neal</option>
+		   		   <option value="78">Bruce-Robertson, Jane / Bruce-Robertson, Lawrence</option>
+		   		   <option value="107">Buechel, Jacquelyn / Buechel, Aaron</option>
+		   		   <option value="8">Burrill, Judy / Bonney, Rick</option>
+		   		   <option value="154">Bush, Melanie / Smith, Roger</option>
+		   		   <option value="144">Carberry, Claudia / Carberry, John</option>
+		   		   <option value="10">Carpenter, Annie / Mike, Carpenter</option>
+		   		   <option value="13">Cohen, Liz / Pat Flery</option>
+		   		   <option value="96">Colt-Demaree, Jennifer / Demaree, Robert</option>
+		   		   <option value="14">Daniel, Monica / Cuevas, Jorge</option>
+		   		   <option value="72">Faehndrich, Lorraine</option>
+		   		   <option value="16">Feavearyear, Jody / Feavearyear, David</option>
+		   		   <option value="17">Fitzke, Aileen / Fitzke, Karl</option>
+		   		   <option value="98">Foree, Melissa / Wasmer, Julie</option>
+		   		   <option value="18">Fox, Claire / Zifchock, Mark</option>
+		   		   <option value="123">Gaygen, Judy / Gaygen, Dan</option>
+		   		   <option value="20">George, ej / Dennis, Aaron</option>
+		   		   <option value="152">Gibson-Reyer, Priscilla</option>
+		   		   <option value="22">Glaser, Linda / Glaser, Phil</option>
+		   		   <option value="151">Grace-Martin, Karen / Grace-Martin, Mike</option>
+		   		   <option value="139">Grady, Ellen / DeMott, Peter</option>
+		   		   <option value="156">Grimm, Pamela / Grimm, David</option>
+		   		   <option value="90">Groves-Haley, Bec / Haley, Jeff</option>
+		   		   <option value="89">Haskins, Stephanie</option>
+		   		   <option value="93">Havell, Tanya / McCulloch, Jeanette</option>
+		   		   <option value="23">Herden, Della / Herden, Tom</option>
+		   		   <option value="148">Holmes Stairs, Kimberly / Stairs, Scott</option>
+		   		   <option value="24">Holzbaur, Donna / Westwater, Royal</option>
+		   		   <option value="142">Houseknecht, Ilana / Bryant, Michael</option>
+		   		   <option value="124">Humphrey, Julie</option>
+		   		   <option value="150">Jackier, Lynne / Simon, John</option>
+		   		   <option value="125">Jenkins, Brooke / Jenkins, Ben</option>
+		   		   <option value="114">Johnson, Inge</option>
+		   		   <option value="122">Karns, Liz / Brennan, Tad</option>
+		   		   <option value="110">Kingsley, Tanya / Kingsley, David</option>
+		   		   <option value="153">Kuntz, Suzanne / Kuntz, Bruce</option>
+		   		   <option value="30">Makarchuk, Jane / Makarchuk, Scott</option>
+		   		   <option value="141">Marks, Gigi / Tily, Blair</option>
+		   		   <option value="32">McCarty, Heather / Feirman, Jeffrey</option>
+		   		   <option value="74">Moran, Jennifer / Moran, Todd</option>
+		   		   <option value="70">Morgan, Julia / Lambert, Rod</option>
+		   		   <option value="155">Moss, Pamela / Hall, Brian</option>
+		   		   <option value="36">Panzer, Nina / Bushlow, Lisa</option>
+		   		   <option value="121">Rider, Maria</option>
+		   		   <option value="39">Roberts, Hank / Roberts, Jane</option>
+		   		   <option value="126">Ruffing, Jennifer / Ruffing, Jonathon</option>
+		   		   <option value="119">Salmon, Mary Ellen / Sherrill, Joe</option>
+		   		   <option value="42">Shank, Gerda / Shank, Oliver</option>
+		   		   <option value="43">Shopis, Crista / Carpenter, Kendal</option>
+		   		   <option value="95">Singer, Poppy / Franke-Singer, Matthew</option>
+		   		   <option value="79">Soriano, Carolyn / Verhagen, Jim</option>
+		   		   <option value="102">Spaulding-Lydon, Sarah / Lydon, Jeff</option>
+		   		   <option value="57">Stearns, Carrie / Joyce, Tom</option>
+		   		   <option value="92">Stiles, Michael / Stiles, Kelly</option>
+		   		   <option value="113">Sumner, Wendy / Sumner, Jeremy</option>
+		   		   <option value="88">Thompson, Amy / Lynch, John</option>
+		   		   <option value="47">Tuttle, Robin / Gelber,  Steve</option>
+		   		   <option value="77">Willet, Pamela / Willet, Alan</option>
+		   		   <option value="149">Wyly, Brendan / Grace, Kristen</option>
+		   		   <option value="48">Zygarowicz, Annette / Zygarowicz, T.J.</option>
+		   		 </select>
+		 <input name="submit" type="submit" value="submit &gt;" />
+		 </form>
+		 <!-- InstanceEndEditable -->	
+		</div>
+		<div id="footer">
+			<p class="copyright">Copyright &#xA9; 2005 Northern Light Learning Center. All Rights Reserved.</p>
+		</div>
+	</div>
+</div>
+<P>&nbsp;</P>
+</body>
+<!-- InstanceEnd --></html>

@@ -1,0 +1,16 @@
+ <script> //<![CDATA[    
+   // When the page is ready
+   $(document).ready(function(){
+     $(".activity .thebody").hide();
+     $("#container .activity ul")
+       .prepend("<li class='readbody'><a href='' title='Read the activity'>Read More</a></li>");
+     
+     $(".actions li.readbody a").click(function(event){
+       $(this).parents("ul").next(".thebody").toggle();
+       
+       // Stop the link click from doing its normal thing
+       return false;
+     });
+   });
+ //]]></script>
+

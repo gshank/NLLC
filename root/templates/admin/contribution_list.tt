@@ -1,0 +1,59 @@
+<h1>Contributions for [% this_session.label %]</h1>
+
+<table class="tbcss">
+  <tr><td class="tbhead" colspan="5">Families without a Contribution</td></tr>
+  <tr>
+    <td class="tbhead">Name1</td>
+    <td class="tbhead">Name2</td>
+    <td class="tbhead">Email</td>
+    <td class="tbhead"></td>
+  </tr>
+[% FOREACH family IN families_wo -%]
+  <tr>
+    <td class="tbbod">[% family.first_name1 _ " " _ family.last_name1 %]&nbsp;</td>
+    <td class="tbbod">[% family.first_name2 _ " " _ family.last_name2 %]&nbsp;</td>
+    <td class="tbbod"><a href="mailto:[% family.email %]">[% family.email %]</a>&nbsp;</td>
+    <td class="tbbod"><a href="[% c.uri_for('contribution', family.family_id ) %]">AC</a>&nbsp;</td>
+  </tr>
+[% END -%]
+</table>  
+<br />
+
+<table class="tbcss">
+  <tr><td class="tbhead" colspan="5">Families Providing an Alternate Contribution</td></tr>
+  <tr>
+    <td class="tbhead">Name1</td>
+    <td class="tbhead">Name2</td>
+    <td class="tbhead">Email</td>
+    <td class="tbhead">Activity</td>
+    <td class="tbhead"></td>
+  </tr>
+[% FOREACH family IN families_wc -%]
+  <tr>
+    <td class="tbbod">[% family.first_name1 _ " " _ family.last_name1 %]&nbsp;</td>
+    <td class="tbbod">[% family.first_name2 _ " " _ family.last_name2 %]&nbsp;</td>
+    <td class="tbbod"><a href="mailto:[% family.email %]">[% family.email %]</a>&nbsp;</td>
+    <td class="tbbod">[% family.search_related_rs('contributions', {session_id => this_session.id}).first.description %]&nbsp;</td>
+  </tr>
+[% END -%]
+</table>  
+<br />
+
+<table class="tbcss">
+  <tr><td class="tbhead" colspan="5">Families Providing an Activity</td></tr>
+  <tr>
+    <td class="tbhead">Name1</td>
+    <td class="tbhead">Name2</td>
+    <td class="tbhead">Email</td>
+    <td class="tbhead">Activity</td>
+    <td class="tbhead"></td>
+  </tr>
+[% FOREACH family IN families_wa -%]
+  <tr>
+    <td class="tbbod">[% family.first_name1 _ " " _ family.last_name1 %]&nbsp;</td>
+    <td class="tbbod">[% family.first_name2 _ " " _ family.last_name2 %]&nbsp;</td>
+    <td class="tbbod"><a href="mailto:[% family.email %]">[% family.email %]</a>&nbsp;</td>
+    <td class="tbbod">[% family.search_related_rs('activities', {session_id => this_session.id}).first.name %]&nbsp;</td>
+  </tr>
+[% END -%]
+</table>  

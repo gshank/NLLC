@@ -1,0 +1,46 @@
+<h1>Activity Enrollment</h1>
+
+<p>First, read the enrollment information on this page. Then select activities to enroll in. Next, enroll in activities. You don't need to worry about getting it right the first time--you can go back and change enrollment until it closes.</p>
+<ul>
+
+<li><a href="[% c.uri_for('select') %]">Select activities to enroll in</a></li>
+<li><a href="[% c.uri_for('cart') %]">Enroll in activities</a></li>
+<li><a href="[% c.uri_for('view') %]">View your family enrollment</a></li>
+<li><a href="[% c.uri_for('/member', 'my_calendar') %]">View your family calendar</a>&nbsp;&nbsp;After clicking on the link, click on calendar name and "go" in right column</li>
+<li><a href="[% c.uri_for('enroll_list') %]">View enrollment for all activities</a></li>
+<li><a href="[% c.uri_for('family_enroll_list') %]">View enrollment for all families</a></li> 
+</ul>
+
+<p><strong>Please read!</strong></p>
+<p>If your child does not get into all the programs that they initially enrolled in and you wish to enroll your child in additional programs at that point, you may contact the leader of those programs to ask them to enroll your child in those programs.</p>
+
+<p><strong>Please consider the following points when enrolling:</strong>
+<ul>
+<li>Are the programs you are enrolling in suitable for your child? Read the description carefully, especially the &#8220;Children Requirements&#8221;.<strong> Contact the leader if you have any questions.</strong></li>
+<li>Be realistic about the number of programs your family can comfortably attend. Leaders plan their classes based on the number of children enrolled. When families enroll and then decide not to attend without notification, it is discouraging and inconvenient for the leader.</li>
+<li>Many programs utilize outside professionals and organizations. It is important to maintain a good reputation as an organization so that we can continue to utilize these and other opportunities. This includes paying for programs on time, committing to attendance, and enrolling students that are a good match for the program.</li>
+<li>If you need to drop out of a program, please contact the leader of the program as soon as you can. No explanation is necessary. Many classes have a waiting list, telling the leader you are dropping a class may give someone else a chance to participate.</li>
+</ul>
+<h2>Some Frequently Asked Questions</h2>
+
+<P><b>What is the program enrollment process?</b><br>
+If a program receives more requests than the maximum number of participants, children with the highest interest ranking will get in first, and those with the lowest interest will be waitlisted. Leader’s and Parent Assistant’s children are always accepted if they sign up for their parent’s class.</p>
+
+
+<p><b>Are children ‘automatically’ signed up for programs that their parents are leading?</b><br>
+
+No - if your child wants to attend a class that you are leading, you should sign them up. Use zeros to enroll your child(ren) in your own programs.</p>
+<p><b>Do I need to put a ranking number next to all the classes we sign up for?</b><br>
+
+Yes. However, for classes that have no size limit, you can type a ‘99′ (ninety-nine) next to any programs that your kids are signing up for on the enrollment form, where waitlisting is not a concern.</p>
+
+<p><b>What if I have more than one child who wishes to enroll in a class?</b><br>
+It's best if both children can give the class the same ranking, if it is very important to your family that multiple childen do (or don't) get into the same class.  The enrollment coordinators build the waitlists based on ranking, so if one child ranks the class very high, but the other ranks it very low, the lower ranking sibling may be waitlisted.</p>
+
+<p><b>Does the number of classes we enroll in affect our enrollment status?</b><br>
+No and yes.  In most cases, the enrollment coordinators only look at the rankings and not how many classes a child is enrolled in.  However, when making hard decisions between children who have given a class the <b>same</b> ranking, they make take the number of classes a child is enrolling in into consideration.</p>
+<p><b>Are families who have previously enrolled in a class given priority?</b><br>
+Generally no. Leaders who plan to give priority to previously enrolled children need to note this in their proposals.  These cases are EXCEPTIONS and are generally discouraged unless there are specific reasons for prioritizing previously enrolled children.</p>
+
+
+<p>Thank you!</p>

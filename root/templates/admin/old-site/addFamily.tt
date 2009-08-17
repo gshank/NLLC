@@ -1,0 +1,105 @@
+<!-- AddFamily.php -->
+<!--               -->
+<!-- 08/10/07 - GShank - Create -->
+<!--                            -->
+<!-- Check Login first -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<meta name="description" content="A homeschool resource cooperative serving the tompkins county area.">
+<meta name="keywords" content="northern light learning center homeschool cooperative">
+<meta name="robots" content="index, follow">
+
+<title>Northern Light Learning Center, Ithaca - New York - Welcome!</title>
+    <script type="text/javascript"src="zxml.js"></script>
+    <script type="text/javascript"src="FormRequest.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="form.css"/>
+    <link href="../include/styles.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<div id="site">
+	<div id="banner"></div>
+	<div id="body">
+		<div id="menu">
+		  <ul><li><a href="../">home</a></li>
+                      <li><a href="../?page_id=3">members</a></li>
+                      <li><a href="../?page_id=4">about us</a></li>
+                      <li><a href="../?page_id=5">events</a></li>
+                      <li><a href="../?page_id=6">contact</a></li>
+                      <li><a href="../admin/adminindex.php">admin</a></li>
+                  </ul>
+		</div>
+		<P>&nbsp;</P>
+		<div id="content">
+		 <!-- Content begins... -->
+ 
+
+   <!-- Form to add family. Uses sendRequest function from FormRequest.js -->
+    <form id='familyForm' name='familyForm' method='post' action='saveFamily.php' onsubmit="sendRequest(document.getElementById('familyForm')); return false">
+    <fieldset>
+    <legend>Enter Family Information</legend>
+    <div class="notes">
+        <h4>Enter Family Info</h4>
+        <p class="last">Enter the family information first. After submitting, the family ID will be returned and you can enter the children.</p>
+    </div>
+    <div class="required">
+        <label for="txtParent1">Parent1:</label>
+        <input id="txtParent1" type="text" name="txtParent1" value="" />
+    </div>
+    <div class="optional">
+        <label for="txtParent2">Parent2:</label>
+        <input id="txtParent2" type="text" name="txtParent2" value="" />
+    </div>
+    <div class="required">
+        <label for="txtAddress">Address:</label>
+        <input id="txtAddress" type="text" name="txtAddress" value="" size=64 />
+    </div>
+    <div class="optional">
+        <label for="txtPhone1">Phone1:</label>
+        <input id="txtPhone1" type="text" name="txtPhone1" value="" />
+    </div>
+    <div class="optional">
+        <label for="txtPhone2">Phone2:</label>
+        <input id="txtPhone2" type="text" name="txtPhone2" value="" />
+    </div>
+    <div class="optional">
+        <label for="txtEmail">Email:</label>
+        <input id="txtEmail" type="text" name="txtEmail" value="" size=32 />
+    </div>
+    <div>
+        <input class="inputSubmit" type="submit" value="Save Family Info" />
+    </div>
+    </fieldset>
+    </form>
+
+    <!-- Form to add children to family in database -->
+    <form id='childForm' name='childForm' method='post' action='saveChild.php' onsubmit="sendRequest(document.getElementById('childForm')); return false">
+    <fieldset>
+    <legend>Enter Child Information</legend>
+    <div class="required">
+        <label for="txtFamilyId">Family ID:</label>
+        <input id="txtFamilyId" type="text" name="txtFamilyId" value="" />
+    </div>
+    <div class="required">
+        <label for="txtChildFirstName">First Name:</label>
+        <input id="txtChildFirstName" type="text" name="txtChildFirstName" value="" />
+    </div>
+    <div class="required">
+        <label for="txtChildLastName">Last Name:</label>
+        <input id="txtChildLastName" type="text" name="txtChildLastName" value="" /></p>
+    </div>
+    <div>
+        <input class="inputSubmit" type="submit" value="Save Child Info" />
+    </div>
+    </fieldset>
+    </form>
+
+    <!-- Status area for issuing status messages -->
+    <div id="divStatus" class="status"></div>
+
+</body>
+</html>

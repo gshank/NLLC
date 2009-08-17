@@ -1,0 +1,30 @@
+<h2>List of Families Enrolled in NLLC</h2>
+<p>Number of Families: [% num_families %]</p>   
+<p>Number of Children: [% num_children %]</p>
+
+</p>
+<br />
+<a href="[% c.uri_for('add') %]">Add family</a>
+<br />
+<br />
+<table class="tbcss">
+  <tr><td class="tbhead" colspan="7">Families</td></tr>
+  <tr>
+    <td class="tbhead">Parent 1</td>
+    <td class="tbhead">Parent 2</td>
+    <td class="tbhead">Phone 1</td>
+    <td class="tbhead">Email</td>
+    <td class="tbhead">Active</td>
+    <td class="tbhead"></td>
+  </tr>
+[% WHILE (family = families.next) -%]
+  <tr>
+    <td class="tbbod">[% family.first_name1 _ " " _ family.last_name1 %]&nbsp;</td>
+    <td class="tbbod">[% family.first_name2 _ " " _ family.last_name2 %]&nbsp;</td>
+    <td class="tbbod">[% family.phone1 %]&nbsp;</td>
+    <td class="tbbod"><a href="mailto:[% family.email %]">[% family.email %]</a>&nbsp;</td>
+    <td class="tbbod">[% family.active %]&nbsp;</td>
+    <td class="tbbod"><a href="[% c.uri_for('view', family.id) %]">View</a>&nbsp;
+  </tr>
+[% END -%]
+</table>  

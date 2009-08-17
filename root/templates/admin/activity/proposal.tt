@@ -1,0 +1,118 @@
+<h1>Northern Light Learning Center Program Proposal Form</h1>
+
+<p>[% proposal_header %]</p> 
+
+<form id="form1" name="proposal" method="POST" action="[% c.uri_for('edit', form.item_id) %]">
+		 
+<input type="hidden" name="family_id" value="[% c.user.id %]">
+<input type="hidden" name="session_id" value="[% session %]">
+<input type="hidden" name="current" value="1">
+<input type="submit" value="Save" />
+
+[% SET f = form.field('name') %]
+<div class="inputcell">
+<p>Program Name<strong>: <input type="text" name="[% f.name %]" id ="[% f.name %]" size="35" />
+  	</strong></p>
+</div>
+
+<div class="inputcell">
+[% SET f = form.field('daystimes') %]
+   <p>Days and Times:
+   <textarea name="[% f.name %]" id="[% f.name %]" cols="27" rows="2"></textarea>
+   <span class="style1"> </p></span>
+</div>
+
+<div class="inputcell">
+  [% SET f = form.field('description') %]
+  <p>Description:
+  <textarea name="[% f.name %]" id="[% f.name %]" cols="27" rows="8"></textarea>
+  </p>
+</div>
+
+<div class="inputcell">
+[% SET f = form.field('leadname') %]
+   <p>Name of leader and (optional) co-leaders:
+   <textarea name="[% f.name %]" cols="27" rows="2"></textarea></p>
+</div>
+
+<div class="inputcell">
+   <p>Leader's biographical information (optional):
+   <textarea name="leadbio" cols="27" rows="3"></textarea></p>
+</div>		 		 		 		 
+
+<div class="inputcell">
+	<p>Phone of Leader:<input type="text" name="leadphone" size="35" /></p>
+</div>
+
+<div class="inputcell">
+	<p>Email of Leader:<input type="text" name="leademail" size="35" /></p>
+</div>
+
+<div class="inputcell">
+	<p>Location/Space Requirements:</p>
+	<p> <textarea name="locreq" cols="27" rows="2"></textarea>
+   </p>
+</div>
+
+ <div class="inputcell">
+	<p>Requirements for children: (age/skills)			
+   <textarea name="childreq" cols="27" rows="3"></textarea>
+    </p>
+</div>
+
+<div class="inputcell">
+	<p>Minimum/Maximum Number of Participants:
+
+<br />Min <input type="text" name="min" size="10" style="width: 50px;" />  Max <input type="text" name="max" size="10" style="width: 50px;" /></p>
+</div>
+
+<div class="inputcell">
+	<p>Number of weeks your program will meet:<br />
+		<input type="text" name="sessions" />
+	</div></p>
+</div>
+		 
+<div class="inputcell">
+	 <p>Length of program meeting time (hours/minutes):<input type="text" name="progtime" size="35" /></p>
+</div>
+		 
+<div class="inputcell">
+   <p>Start and end dates for your program <em>(please enter the 
+      exact calendar dates in form 03/15/2008)</em>: <br />
+      Start date:<input type="text" name="startdate" size="10" style="width: 90px;" /> End date: <input type="text" name="enddate" size="10" style="width: 90px;" /></p>
+ </div>
+
+<div class="inputcell">
+	<p>Commitment Requirements</p>
+   <textarea name="onesession" cols="27" rows="3" /></textarea>
+   </p>
+</div>
+
+<div class="inputcell">
+	<p>Materials Fee (if any): <input type="text" name="matsfee" size="35" />	</p>
+</div>
+
+<div class="inputcell">
+	<p>Materials to bring:<textarea name="material" cols="27" rows="2"></textarea>	</p>
+</div>
+
+<div class="inputcell">
+  <p>Suggested Reading or other preparation (if any):
+  <textarea name="suggprep" cols="27" rows="3"></textarea></p>
+</div>		 		 		 		 		 		 		 		 		 		 
+
+<div class="inputcell">
+  <p>Required support:
+  <textarea name="support" cols="27" rows="2"></textarea>
+  </p>
+</div>	
+		 
+<div class="inputcell">
+   <p>Willing to lead additional section?
+	  <textarea name="addsection" cols="27" rows="2"></textarea>
+   </p>
+</div>	
+		 
+<input type="submit" value="Save" />
+
+ </form>

@@ -1,0 +1,20 @@
+<h1>Edit Payment</h1>
+
+<p>Payment for [% family.name1 %]</p>
+
+<form name="payment" method="POST" action="[% c.uri_for('edit', family_id, this_session_id, form.item_id) %]">
+
+   
+  <input type="hidden" name="family_id" value="[% family_id %]">
+
+  <label for="date">Date:</label>
+  <input name="date" id="date" type="text" />
+
+  <label for="amount">Amount:</label>
+  <input name="amount" id="date" type="text" />
+<br />
+  <label for="comment">Comment:</label>
+  <textarea cols="60" rows="2" id="comment" name="comment"></textarea>
+
+  <input class="submit" name="submit" value="Save" type="submit">
+</form>

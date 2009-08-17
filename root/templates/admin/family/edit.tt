@@ -1,0 +1,133 @@
+<h1>Edit Family &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a  href="[% c.uri_for('list') %]">Go to List</a></h1>
+<form name="family_edit" method="POST" action="[% c.uri_for('edit', form.item_id) %]">
+
+<table name="family">
+
+  <tr>
+    [% SET f = form.field('first_name1') %]
+    <th>
+    <label for="[% f.name %]">First name 1:</label>
+    </th>
+    <td>
+    <input id="[% f.name %]" name="[% f.name %]" size="24" type="text" />
+    </td>
+  </tr>
+
+  <tr>
+    [% SET f = form.field('last_name1') %]
+    <th>
+    <label for="[% f.name %]">Last name 1:</label>
+    </th>
+    <td>
+    <input id="[% f.name %]" name="[% f.name %]" size="24" type="text" />
+    </td>
+  </tr>
+
+  <tr>
+    [% SET f = form.field('first_name2') %]
+    <th>
+    <label for="[% f.name %]">First name 2:</label>
+    </th>
+    <td>
+    <input id="[% f.name %]" name="[% f.name %]" size="24" type="text" />
+    </td>
+  </tr>
+
+  <tr>
+    [% SET f = form.field('last_name2') %]
+    <th>
+    <label for="[% f.name %]">Last name 2:</label>
+    </th>
+    <td>
+    <input id="[% f.name %]" name="[% f.name %]" size="24" type="text" />
+    </td>
+  </tr>
+
+  <tr>
+    [% SET f = form.field('username') %]
+    <th>
+    <label for="[% f.name %]">Username:</label>
+    </th>
+    <td>
+    <input id="[% f.name %]" name="[% f.name %]" size="24" type="text" />
+    </td>
+  </tr>
+
+  <tr>
+    [% SET f = form.field('password') %]
+    <th>
+    <label for="[% f.name %]">Password:</label>
+    </th>
+    <td>
+    <input id="[% f.name %]" name="[% f.name %]" size="32" type="text" />
+    </td>
+  </tr>
+
+
+  <tr>
+    [% SET f = form.field('street_address') %]
+    <th>
+    <label for="[% f.name %]">Street address:</label>
+    </th>
+    <td>
+    <input id="[% f.name %]" name="[% f.name %]" size="30" type="text" />
+    </td>
+  </tr>
+
+  <tr>
+    [% SET f = form.field('city_state_zip') %]
+    <th>
+    <label for="[% f.name %]">City, State Zip:</label>
+    </th>
+    <td>
+    <input id="[% f.name %]" name="[% f.name %]" size="30" type="text" />
+    </td>
+  </tr>
+
+  <tr>
+    [% SET f = form.field('phone1') %]
+    <th>
+    <label for="[% f.name %]">Phone 1:</label>
+    </th>
+    <td>
+    <input id="[% f.name %]" name="[% f.name %]" size="20" type="text" />
+    </td>
+  </tr>
+
+  <tr>
+    [% SET f = form.field('phone2') %]
+    <th>
+    <label for="[% f.name %]">Phone 2:</label>
+    </th>
+    <td>
+    <input id="[% f.name %]" name="[% f.name %]" size="20" type="text" />
+    </td>
+  </tr>
+
+
+  <tr>
+    [% SET f = form.field('email') %]
+    <th>
+    <label for="[% f.name %]">Email:</label>
+    </th>
+    <td>
+    <input id="[% f.name %]" name="[% f.name %]" size="32" type="text" />
+    </td>
+  </tr>
+
+
+  <tr>
+    [% SET f = form.field('active') %]
+    <th>
+    <label for="[% f.name %]">Active:</label>
+    </th>
+    <td>
+    <input id="[% f.name %]" name="[% f.name %]" type="checkbox" value="1" />
+    </td>
+  </tr>
+
+</table>
+
+  <input class="submit" name="submit" value="Save" type="submit">
+</form>
+

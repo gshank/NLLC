@@ -1,0 +1,4 @@
+<h1>NLLC Session payments</h1>
+
+<p><strong><a href="[% c.uri_for('list', new_session) %]">Payments for next session</a></strong></p>
+<p><strong><a href="[% c.uri_for('list', new_session - 1) %]">Payments for previous session</a></strong></p>

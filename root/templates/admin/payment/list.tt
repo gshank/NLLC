@@ -1,0 +1,55 @@
+<h1>Payments for Current Session</h1>
+
+<p><a href="[% c.uri_for('') %]">Go to payments</a></p>
+<table class="tbcss">
+  <tr><td class="tbhead" colspan="5">Families without a Payment</td></tr>
+  <tr>
+    <td class="tbhead">Name1</td>
+    <td class="tbhead">Name2</td>
+    <td class="tbhead">Email</td>
+    <td class="tbhead"></td>
+  </tr>
+[% FOREACH family IN families_wo -%]
+  <tr>
+    <td class="tbbod">[% family.first_name1 _ " " _ family.last_name1 %]&nbsp;</td>
+    <td class="tbbod">[% family.first_name2 _ " " _ family.last_name2 %]&nbsp;</td>
+    <td class="tbbod"><a href="mailto:[% family.email %]">[% family.email %]</a>&nbsp;</td>
+    <td class="tbbod"><a href="[% c.uri_for('edit', family.family_id, this_session_id ) %]">Payment</a>&nbsp;</td>
+  </tr>
+[% END -%]
+</table>  
+<br />
+
+<table class="tbcss">
+  <tr><td class="tbhead" colspan="5">Families with Payments</td></tr>
+  <tr>
+    <td class="tbhead">Name1</td>
+    <td class="tbhead">Name2</td>
+    <td class="tbhead">Email</td>
+    <td class="tbhead" colspan="2"></td>
+  </tr>
+[% FOREACH family IN families_wp -%]
+  <tr>
+    <td class="tbbod">[% family.first_name1 _ " " _ family.last_name1 %]&nbsp;</td>
+    <td class="tbbod">[% family.first_name2 _ " " _ family.last_name2 %]&nbsp;</td>
+    <td class="tbbod"><a href="mailto:[% family.email %]">[% family.email %]</a>&nbsp;</td>
+    <td class="tbbod"></td>
+    <td class="tbbod"><a href="[% c.uri_for('edit', family.family_id, this_session_id) %]">New</a></td>
+  </tr>
+  [% payments = family.search_related_rs('payments', {session_id => this_session_id}) %]
+  [% WHILE (payment = payments.next) %] 
+  <tr>
+    <td class="tbbod"></td>
+    <td class="tbbod">[% payment.date %]&nbsp;</td>
+    <td class="tbbod">[% payment.amount %]&nbsp;</td>
+    <td class="tbbod">[% payment.comment %]&nbsp;</td>
+    <td class="tbbod">
+      <a href="[% c.uri_for('edit', family.family_id, this_session_id, payment.payment_id) %]">Edit</a>&nbsp;|
+      <a href="[% c.uri_for('delete', this_session_id, payment.payment_id) %]">Delete</a>
+    </td>
+  </tr>
+  [% END %]
+[% END -%]
+</table>  
+<br />
+

@@ -1,0 +1,52 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><!-- InstanceBegin template="/Templates/nllcTemplate.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<meta name="description" content="A homeschool resource cooperative serving the tompkins county area.">
+<meta name="keywords" content="northern light learning center homeschool cooperative">
+<meta name="robots" content="index, follow">
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Northern Light Learning Center, Ithaca - New York - Welcome!</title>
+<!-- InstanceEndEditable -->
+<!-- InstanceBeginEditable name="head" -->
+<!-- InstanceEndEditable -->
+<link href="../include/styles.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<div id="site">
+	<div id="banner"></div>
+	<div id="body">
+		<div id="menu">
+		  <ul><li><a href="../">home</a></li>
+                      <li><a href="../?page_id=3">members</a></li>
+                      <li><a href="../?page_id=4">about us</a></li>
+                      <li><a href="../?page_id=5.html">events</a></li>
+                      <li><a href="../?page_id=6.html">contact</a></li>
+                  </ul>
+		</div>
+		<P>&nbsp;</P>
+		<div id="content">
+		 <!-- InstanceBeginEditable name="Content" -->
+		 <h1>NLLC program proposal report</h1>
+		   			<div class="proposalcell">
+		   <p><strong>451. Name Of Program:</strong> TBA] 12 and up at the Science Center</p>		   </div>
+		   			<div class="proposalcell">
+		   <p><strong>456. Name Of Program:</strong> Exploration Presentation</p>		   </div>
+		   			<div class="proposalcell">
+		   <p><strong>469. Name Of Program:</strong> TUE 6]Writing for Girls 10 and up</p>		   </div>
+		   			<div class="proposalcell">
+		   <p><strong>470. Name Of Program:</strong> TU 5] Creative Crafting and  for Girls 10 and up</p>		   </div>
+		   			<div class="proposalcell">
+		   <p><strong>471. Name Of Program:</strong> TU 9] Social Time for Girls 10 and up</p>		   </div>
+		   		 <!-- InstanceEndEditable -->	
+		</div>
+		<div id="footer">
+			<p class="copyright">Copyright &#xA9; 2005 Northern Light Learning Center. All Rights Reserved.</p>
+		</div>
+	</div>
+</div>
+<P>&nbsp;</P>
+</body>
+<!-- InstanceEnd --></html>

@@ -1,0 +1,5 @@
+[% FOR field IN form.error_fields %]
+  [% FOR error IN field.errors %]
+    <p><span class='error' id=error>[% field.name _ ': ' _ error %] </span></p>
+  [% END %]
+[% END %]

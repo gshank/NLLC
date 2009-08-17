@@ -1,0 +1,1 @@
+<p><a href="[% c.uri_for('') %]">To Enrollment</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="[% c.uri_for('/member') %]">To Member Page</a></p>

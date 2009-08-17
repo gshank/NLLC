@@ -1,0 +1,44 @@
+<h1>Control Panel -- Change settings that determine how the website works</h1>
+<hr />
+<h2>Session process</h2>
+<p>During a session, this is the process flow for moving to the next session:</p>
+<ol>
+  <li>Change "Next Session" to the session for which proposals will be submitted. This MUST be done before opening proposals.</li>
+  <li>Open proposal submission (after advancing Next Session!)</li>
+  <li>Close proposals</li>
+  <li>At end of current session, change "Current Session" to match "Next Session". This must be done before opening enrollment.</l>
+  <li>Open enrollment (after advancing Current Session!)</li>
+  <li>Close enrollment</li>
+</ol>
+<hr />
+<h1>Change Next Session: currently [% next_session.label %]</h1>
+<p>Before opening proposals, this should be changed to the next session for 
+which proposals will be created, otherwise submitted proposals will be entered for the current session. 
+You may need to change twice between spring and fall sessions, to skip the summer session.</p>
+<p>During the proposal period, "next session" and "current session" may be different (though it is not required). After the end of a session, "next session" and "current session" should be the same.</p>
+<b>Yes, I really want to move to the next session:</b>
+<a href="[% c.uri_for('update_next_session') %]">do it!</a>
+</p>
+<hr/>
+<h1>Proposal submission: currently [% proposals %]</h1>
+<p>Allow members to submit new activity proposals:&nbsp;
+<a href="[% c.uri_for('open_proposals') %]">Open</a></p>
+<p>Prevent members from submitting new activity proposals: &nbsp;
+<a href="[% c.uri_for('close_proposals') %]">Close</a></p>
+<hr/>
+<h1>Change Current Session to the next session: currently [% current_session.label %]</h1>
+<p>This will update the NLLC database to switch from 
+one session to the next.
+It will change which activities are marked as "current", 
+so after performing this step the content on member pages will be different.</p>
+<p>The software includes the concept of a summer session. Switching from a Spring Session directly to a Fall Session will require two moves.</p>
+<b>Yes, I really want to change the current session to the next session:</b>
+<a href="[% c.uri_for('update_session') %]">do it!</a>
+</p>
+<hr />
+<h1>Enrollment for activities: currently [% enrollment %]</h1>
+<p>Open enrollment for this session's activities: &nbsp;
+<a href="[% c.uri_for('open_enrollment') %]">Open</a></p>
+<p>Close enrollment for this session's activities:&nbsp;
+<a href="[% c.uri_for('close_enrollment') %]">Close</a></p>
+

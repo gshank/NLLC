@@ -1,0 +1,16 @@
+[% PROCESS member/enroll/enroll_links.tt %]
+<h1>Enrollment by Family</h1>
+
+[% WHILE (family = families.next) %]
+<div class="proposalcell">
+   <p><strong>
+   [% family.first_name1 _ " " _ family.last_name1 %]
+   [% IF family.first_name2; " and " _ family.first_name2 _ " " _ family.last_name2; END %]
+   </strong></p>
+   <hr />
+        
+   [% children = family.search_related_rs('children') %] 
+   [% PROCESS member/child_activity.tt %] 
+</div>
+<br />
+[% END %]
