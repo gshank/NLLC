@@ -235,7 +235,7 @@ sub my_calendar : Local
    }
 
    my $calendar_string = $ical->as_string;
-   my $cal_dir = "/home/nllc/public_html/icalendar/calendars/$username";
+   my $cal_dir = "/home/gshank/nllchs.org/icalendar/calendars/$username";
    unless ( -e $cal_dir ) 
    {
       mkdir($cal_dir);

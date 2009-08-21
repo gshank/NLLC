@@ -113,7 +113,7 @@ sub update_calendars : Local
       }
 
       my $calendar_string = $ical->as_string;
-      my $filename = "/home/nllc/public_html/icalendar/calendars/NLLC_Admin.ics";
+      my $filename = "/home/gshank/nllchs.org/icalendar/calendars/NLLC_Admin.ics";
       open my $fh, '>', $filename or die "Unable to open $filename: $!";
       print {$fh} $calendar_string;
       close $fh;
@@ -130,7 +130,7 @@ sub update_calendars : Local
       }
 
       my $calendar_string = $ical->as_string;
-      my $filename = "/home/nllc/public_html/icalendar/calendars/NLLC_Schedule.ics";
+      my $filename = "/home/gshank/nllchs.org/icalendar/calendars/NLLC_Schedule.ics";
       open my $fh, '>', $filename or die "Unable to open $filename: $!";
       print {$fh} $calendar_string;
       close $fh;
@@ -161,7 +161,7 @@ sub create_activity_calendar
    }
 
    my $calendar_string = $ical->as_string;
-   my $filename = "/home/nllc/public_html/icalendar/calendars/$ical_name.ics";
+   my $filename = "/home/gshank/nllchs.org/icalendar/calendars/$ical_name.ics";
    open my $fh, '>', $filename or die "Unable to open $filename: $!";
    print {$fh} $calendar_string;
    close $fh;
