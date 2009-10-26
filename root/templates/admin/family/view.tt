@@ -1,5 +1,5 @@
 <h1>View Family &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a  href="[% c.uri_for('list') %]">Go to List</a></h1>
-<form name="family_edit" method="POST" action="[% c.uri_for('edit/' _ form.item_id) %]">
+<form name="family_edit" method="POST" action="[% c.uri_for('edit', form.item_id) %]">
 
 <a href="[% c.uri_for('edit', family.family_id) %]">Edit</a>
 

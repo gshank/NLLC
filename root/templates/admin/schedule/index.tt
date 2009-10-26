@@ -1,7 +1,8 @@
 <h1>NLLC Course & Event Scheduling</h1>
 
 <p><strong><a href="[% c.uri_for('activity_list') %]">Schedule Activities</a></strong></p>
-<p><strong><a href="[% c.uri_for('activity_list', new_session - 1) %]">Schedule Old Activities</a></strong></p>
+[% next_session = new_session - 1 %]
+<p><strong><a href="[% c.uri_for('activity_list', next_session ) %]">Schedule Old Activities</a></strong></p>
 <p><strong><a href="[% c.uri_for('event_list') %]">Event list</a></strong>&nbsp;&nbsp;(not activities)</p>
 <p><strong><a href="[% c.uri_for('event') %]">Create event</a></strong></p>
 <p><strong><a href="[% c.uri_for('update_calendars') %]">Update calendars</a></strong></p>
