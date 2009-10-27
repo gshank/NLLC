@@ -3,23 +3,20 @@ package NLLC;
 use strict;
 use warnings;
 use Data::Dumper;
-
 use Catalyst::Runtime;
+use Config::Any::Perl;
 
 use Catalyst (
-   '-LOG=warn',                 
+#   '-LOG=warn',                 
+   '-Debug',
    'ConfigLoader',
-   'FillInForm',
-   'Form::Processor',        
-#   'FillInForm',
    'Authentication',         
    'Authorization::Roles',
    'Session',                
    'Session::Store::FastMmap',
    'Session::State::Cookie', 
    'Static::Simple',
-   'Log::Dispatch',
-#   'Params::Nested',
+#  'Log::Dispatch',
 );
 
 our $VERSION = '0.01';
@@ -55,11 +52,13 @@ NLLC->config->{form} = {
    form_name_space => 'NLLC::Form',
 };
 
+=pod
+
 NLLC->config->{'Log::Dispatch'} = [
    {
       class       => 'File',
       name        => 'file',
-      min_level   => 'warning',
+      min_level   => 'debug',
       filename    => NLLC->path_to('logs/nllc.log')->stringify,
       mode        => 'append',
       format      => '%d{%m%d.%R} %m %n',
@@ -75,6 +74,8 @@ NLLC->config->{'Log::Dispatch'} = [
       permissions => 0666,
    }
 ];
+
+=cut
 
 NLLC->config->{'View::JSON'} = {
 #   allow_callback => 1,

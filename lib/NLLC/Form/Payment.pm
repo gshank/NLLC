@@ -1,24 +1,12 @@
 package NLLC::Form::Payment;
-use strict;
-use warnings;
-use base 'Form::Processor::Model::DBIC';
+use HTML::FormHandler::Moose;
+extends 'HTML::FormHandler::Model::DBIC';
 
-sub object_class {'DB::Payment'};
+has '+item_class' => ( default => 'Payment' );
 
-sub profile
-{
-    return {
-        required => {
-            family_id => 'Integer',
-        },
-        optional => {
-            date => 'Text',
-            amount => 'Text',
-            comment => 'Text',
-        }
-    };
-
-}
-
+has_field 'family_id' => ( required => 1 );
+has_field 'date';
+has_field 'amount';
+has_field 'comment';
 
 1;

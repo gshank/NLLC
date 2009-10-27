@@ -1,8 +1,13 @@
 package NLLC::Controller::Member;
 
-use strict;
-use warnings;
-use base 'NLLC::Controller::Member::Base';
+BEGIN {
+   use Moose;
+   extends 'NLLC::Controller::Member::Base';
+}
+use NLLC::Form::Activity;
+use NLLC::Form::Family;
+use NLLC::Form::Child;
+use NLLC::Form::Contribution;
 
 =head1 NAME
 
@@ -20,6 +25,13 @@ Catalyst Controller.
 =head2 index 
 
 =cut
+
+has 'activity_form' => ( is => 'ro', isa => 'NLLC::Form::Activity', lazy => 1,
+   default => sub { NLLC::Form::Activity->new } );
+has 'family_form' => ( is => 'ro', isa => 'NLLC::Form::Family', lazy => 1,
+   default => sub { NLLC::Form::Family->new } );
+has 'child_form' => ( is => 'ro', isa => 'NLLC::Form::Child', lazy => 1,
+   default => sub { NLLC::Form::Child->new } );
 
 
 sub index : Path("") Args(0) {
@@ -46,7 +58,7 @@ sub view_activity : Local
 sub proposal : Local
 {
     my ( $self, $c, $id) = @_;
- 
+
    if ($id)
    {
       my $proposal = $c->model('DB::Activity')->find( $id);
@@ -57,9 +69,11 @@ sub proposal : Local
           $c->detach;
       }
    }
-    $c->stash->{template} = 'member/proposal.tt';
-    my $validated = $c->update_from_form($id, 'Activity');
-    return if !$validated;
+    $self->activity_form->process(schema => $c->model('DB')->schema, item => $proposal, 
+        params => $c->req->params );
+    $c->stash( template => 'member/proposal.tt', form => $self->activity_form,
+       fillinform => $self->activity_form->fif );
+    return unless $self->activity_form->validated;
 
     # form validated. Display...
     $c->flash->{message} = 'Proposal saved';
@@ -99,10 +113,10 @@ sub edit : Local
     my ( $self, $c ) = @_;
     
     my $family = $c->model('DB::Family')->find($c->user->id);
-    $c->stash->{family} = $family;
-    $c->stash->{template} = 'member/edit.tt';
-    my $validated = $c->update_from_form($family, 'Family');
-    return if !$validated;
+    $self->family_form->process(item => $family, params => $c->req->params);
+    $c->stash( family => $family, template => 'member/edit.tt', 
+       form => $self->family_form, fillinform => $self->family_form->fif );
+    return unless $self->family_form->validated;
 
     # form validated. Display...
     $c->flash->{message} = 'Member information saved';
@@ -121,9 +135,10 @@ sub edit_child : Local
       $c->res->redirect('');
       $c->detach;
    }
-   $c->stash->{template} = 'member/edit_child.tt';
-   my $validated = $c->update_from_form($child, 'Child');
-   return if !$validated;
+   $self->child_form->process(item => $child, params => $c->req->params);
+   $c->stash( template => 'member/edit_child.tt', form => $self->child_form,
+      fillinform => $self->child_form->fif );
+   return unless $self->child_form->validated;
 
    # form validated
    $c->flash->{message} = "Child saved";
@@ -139,11 +154,12 @@ sub add_child : Local
     my $family = $c->model('DB::Family')->find($family_id);
     
     $c->stash->{family_id} = $family_id;
-    $c->stash->{template} = 'member/add_child.tt';
-    my $validated = $c->update_from_form(undef, 'Child');
-    return if !$validated;
+    $self->child_form->process(schema => $c->model('DB')->schema, params => $c->req->params );
+    $c->stash( template => 'member/add_child.tt', form => $self->child_form,
+       fillinform => $self->child_form->fif );
+    return unless $self->child_form->validated;
 
-    my $child = $c->stash->{form}->{item};
+    my $child = $self->child_form->item;
     $child->update({family_id => $family_id});
     # form validated
     $c->flash->{message} = "Child added";
@@ -154,8 +170,12 @@ sub add_child : Local
 sub list : Local
 {
    my ( $self, $c ) = @_;
-   my $families = $c->model('DB::Family')->search({active => 1},
-       {'order_by' => 'last_name1'});
+   my $session_year = $c->stash->{session} - 8; 
+   my $families = $c->model('DB::ChildActivity')->search( 
+       { session_id => { '>', $session_year } })->search_related('child', {})->
+       search_related('family', {}, { distinct => 1, order_by => 'last_name1' } ); 
+#   my $families = $c->model('DB::Family')->search({active => 1},
+#       {'order_by' => 'last_name1'});
    $c->stash->{families} = $families;
 
 }
@@ -163,7 +183,7 @@ sub list : Local
 sub contribution : Local
 {
    my ( $self, $c, $contribution_id ) = @_;
-
+$DB::single=1;
    my $contribution;
    if ($contribution_id)
    {
@@ -175,10 +195,14 @@ sub contribution : Local
           $c->detach;
       }
    }
-   $c->stash( template => 'member/contribution.tt' );
-   $c->stash( family_id => $c->user->id );
-   my $validated = $c->update_from_form($contribution, 'Contribution'); 
-   return if !$validated;
+   else {
+       $contribution = $c->model('DB::Contribution')->new_result({});
+   }
+   my $cont_form = NLLC::Form::Contribution->new;
+   $cont_form->process( item => $contribution, params => $c->req->parameters); 
+   $c->stash( template => 'member/contribution.tt', form => $cont_form, 
+      family_id => $c->user->id, fillinform => $cont_form->fif );
+   return unless $cont_form->validated;
    # form validated
    $c->flash->{message} = "Contribution saved";
    $c->res->redirect($c->uri_for('')); 
@@ -284,6 +308,7 @@ sub contacts : Local
    $c->stash( template => 'member/contacts.tt' );
 
 }
+
 
 =head1 AUTHOR
 

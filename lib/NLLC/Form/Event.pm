@@ -1,52 +1,48 @@
 package NLLC::Form::Event;
-use strict;
-use warnings;
-use base 'Form::Processor::Model::DBIC';
+use HTML::FormHandler::Moose;
+extends 'HTML::FormHandler::Model::DBIC';
 
 use ICal::RRule;
 use ICal::Event;
 use DateTime::Duration;
 use DateTime::Format::Strptime;
 
-sub object_class {'DB::Event'}
-sub init_field_name_space { 'NLLC::Form::Field' }
+has '+item_class' => ( default => 'Event' );
+has '+field_name_space' => ( default => 'NLLC::Form::Field' );
 
-sub profile
-{
-    return {
-        fields => {
-            summary => 'Text',
-            location => 'Text',
-            category => 'Select',
-            calendar => 'Select',
-            dtstart_mdy => {
+has_field 'summary';
+has_field 'location';
+has_field 'category' => ( type  => 'Select' );
+has_field 'calendar' => ( type  => 'Select' );
+has_field 'dtstart_mdy' => (
                type => '+DateMDY',
                noupdate => 1,
                required => 1,
-            },
-            dtstart_time => {
+            );
+has_field 'dtstart_time' => (
                type => '+Time',
                noupdate => 1,
-            },
-            dtstart_allday => {
+               );
+has_field 'dtstart_allday' => (
                type => 'Checkbox',
                noupdate => 1,
-            },
-            dtstart => '+DateTime',
-            duration => '+Duration',
-            until_mdy => {
+               );
+has_field 'dtstart' => ( type =>  '+DateTime' );
+has_field 'duration' => ( type  => '+Duration' );
+#has_field 'duration' => ( type => 'Duration' );
+#has_field 'duration.hours' => ( type => 'Integer', range_start => 0, range_end => 8 );
+#has_field 'duration.minutes' => ( type => 'Integer', range_start => 0, range_end => 69 ); 
+has_field 'until_mdy' => (
                type => '+DateMDY', 
                noupdate => 1,
-            },
-            freq => 'Select',
-            count => 'Integer',
-            description => 'Text', } 
-    }; 
-}
+               );
+has_field 'freq' => ( type  => 'Select' );
+has_field 'count' => ( type => 'Integer' );
+has_field 'description';
 
 sub options_category
 {
-    return (
+    return [
         "Academic" => "Academic",
         "Play" => "Play",
         "Field trip" => "Field trip",
@@ -54,31 +50,31 @@ sub options_category
         "Meeting" => "Meeting",
         "Board meeting" => "Board meeting",
         "Committee" => "Committee",
-    );
+    ];
 }
 
 sub options_calendar
 {
-    return (
+    return [
         "Activities" => "Activities",
         "Schedule" => "Schedule",
         "Admin" => "Admin",
-    );
+    ];
 }
 
 sub options_freq
 {
-    return (
+    return [
         "" => "Does not repeat",
         "daily" => "Daily",
         "weekly" => "Weekly",
         "biweekly" => "Bi-weekly",
 #        "monthly" => "Monthly",
 #        "yearly" => "Yearly",
-    ); 
+    ]; 
 } 
 
-sub cross_validate
+sub validate
 {
    my $self = shift;
    if ($self->field('count')->value && $self->field('until_mdy')->value)
@@ -110,7 +106,6 @@ sub update_model
    my ( $self ) = @_;
    $self->SUPER::update_model(@_);
 
-   my $c = $self->user_data->{context};
    my $event = $self->{item};
 
    # create dtstart DateTime out of dtstart_mdy and dtstart_time

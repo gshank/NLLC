@@ -1,8 +1,7 @@
 package NLLC::Controller::Admin;
 
-use strict;
-use warnings;
-use base 'NLLC::Controller::Admin::Base';
+use Moose;
+BEGIN { extends 'NLLC::Controller::Admin::Base'; }
 
 =head1 NAME
 
@@ -20,6 +19,10 @@ Catalyst Controller.
 =head2 index 
 
 =cut
+
+use NLLC::Form::Contribution;
+has 'form' => ( is => 'ro', isa => 'NLLC::Form::Contribution', lazy => 1,
+    default => sub { NLLC::Form::Contribution->new } );
 
 sub index : Path('') Args(0) 
 {
@@ -164,10 +167,10 @@ sub contribution : Local
       $contribution = $c->model('DB::Contribution')->find({id => $contribution_id});
    }
    $c->stash->{family} = $c->model('DB::Family')->find($family_id);
-   $c->stash( template => 'admin/contribution.tt' );
-   $c->stash( family_id => $family_id );
-   my $validated = $c->update_from_form($contribution, 'Contribution'); 
-   return if !$validated;
+   $self->form->process( item => $contribution );
+   $c->stash( template => 'admin/contribution.tt', family_id => $family_id,
+              form => $self->form, fillinform => $self->form->fif );
+   return unless $self->form->validated;
    # form validated
    $c->flash->{message} = "Contribution saved";
    $c->res->redirect($c->uri_for('contributions')); 

@@ -1,11 +1,13 @@
 package NLLC::Controller::Admin::Schedule;
-use strict;
-use warnings;
-use base 'NLLC::Controller::Admin::Base';
-
+use Moose;
+BEGIN { extends 'NLLC::Controller::Admin::Base'; }
+use NLLC::Form::Event;
 use Data::ICal;
 use ICal::Event;
 use ICal::Calendar;
+
+has 'form' => ( is => 'ro', isa => 'NLLC::Form::Event', lazy => 1,
+   default => sub { NLLC::Form::Event->new } );
 
 use Text::vFile::asData;
 
@@ -44,20 +46,20 @@ sub activity_list : Local
 sub event : Local 
 {
    my ( $self, $c, $event_id, $activity_id ) = @_;
-$DB::single=1;
+
    $event_id = undef if ($event_id && $event_id eq 'new');
-   my $event; # separate because wasn't getting cleared for some reason
-   $event = $c->model('DB::Event')->find($event_id) if $event_id;
    my $activity = $c->model('DB::Activity')->find($activity_id) if $activity_id;
+   $self->form->process(item_id => $event_id, schema => $c->model('DB')->schema,
+        params => $c->req->params);
    $c->stash( activity => $activity, 
               javascripts => ['event.js', 'jquery-ui.js'],
               css => 'jquery-ui.css',
-              template => 'admin/schedule/event.tt' );
-   my $validated = $c->update_from_form($event, 'Event');
-   return unless $validated;
+              template => 'admin/schedule/event.tt',
+              form => $self->form, fillinform => $self->form->fif );
+   return unless $self->form->validated;
 
    # form validated
-   $event = $c->stash->{form}{item};
+   my $event = $self->form->item;
    my $session_id = $c->stash->{new_session};
    if ($activity)
    {

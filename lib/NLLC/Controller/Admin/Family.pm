@@ -1,8 +1,11 @@
 package NLLC::Controller::Admin::Family;
 
-use strict;
-use warnings;
-use base 'NLLC::Controller::Admin::Base';
+BEGIN {
+   use Moose;
+   extends 'NLLC::Controller::Admin::Base';
+}
+use NLLC::Form::Family;
+use NLLC::Form::Child;
 
 =head1 NAME
 
@@ -21,6 +24,10 @@ Catalyst Controller.
 
 =cut
 
+has 'family_form' => ( is => 'ro', isa => 'NLLC::Form::Family', lazy => 1,
+  default => sub { NLLC::Form::Family->new } );
+has 'child_form' => ( is => 'ro', isa => 'NLLC::Form::Child', lazy => 1,
+  default => sub { NLLC::Form::Child->new } );
 
 sub index : Private {
     my ( $self, $c ) = @_;
@@ -56,9 +63,11 @@ sub edit : Local
 {
     my ( $self, $c, $family_id ) = @_;
 
-    $c->stash->{template} = 'admin/family/edit.tt';
-    my $validated = $c->update_from_form($family_id, 'Family');
-    return if !$validated;
+    $self->family_form->process(item_id => $family_id, schema => $c->model('DB')->schema,
+       params => $c->req->params ); 
+    $c->stash( template => 'admin/family/edit.tt', form => $self->family_form,
+      fillinform => $self->family_form->fif  );
+    return unless $self->family_form->validated;
 
     # form validated. Display...
     $c->flash->{message} = 'Family saved';
@@ -69,24 +78,28 @@ sub add : Local
 {
     my ( $self, $c ) = @_;
 
-    $c->stash->{template} = 'admin/family/add.tt';
-    my $validated = $c->update_from_form(undef, 'Family');
-    return if !$validated;
+    $self->family_form->process( schema => $c->model('DB')->schema,
+       params => $c->req->params ); 
+    $c->stash( template => 'admin/family/add.tt', form => $self->family_form,
+       fillinform => $self->family_form->fif );
+    return unless $self->family_form->validated;
 
     # form validated. Display...
-    my $family_id = $c->stash->{form}{item}->family_id;
+    my $family_id = $self->family_form->item_id;
     $c->flash->{message} = 'Family saved';
     $c->res->redirect( $c->uri_for('view', $family_id));
 }
 sub edit_child : Local
 {
     my ( $self, $c, $child_id ) = @_;
+$DB::single=1;
+    $self->child_form->process( item_id => $child_id, schema => $c->model('DB')->schema,
+       params => $c->req->params ); 
+    $c->stash( template => 'admin/family/edit_child.tt', form => $self->child_form,
+       fillinform => $self->child_form->fif );
+    return unless $self->child_form->validated;
 
-    $c->stash->{template} = 'admin/family/edit_child.tt';
-    my $validated = $c->update_from_form($child_id, 'Child');
-    return if !$validated;
-
-    my $child = $c->stash->{form}->{item};
+    my $child = $self->child_form->item;
     # form validated
     $c->flash->{message} = "Child saved";
     $c->res->redirect($c->uri_for('view', $child->family_id)); 
@@ -98,19 +111,20 @@ sub add_child : Local
     my ( $self, $c, $family_id ) = @_;
     
     my $family = $c->model('DB::Family')->find($family_id);
-    
-    $c->stash->{family_id} = $family_id;
-    $c->stash->{template} = 'admin/family/add_child.tt';
-    my $validated = $c->update_from_form(undef, 'Child');
-    return if !$validated;
+    $self->child_form->process( schema => $c->model('DB')->schema,
+       params => $c->req->params ); 
+    $c->stash( template => 'admin/family/add_child.tt', form => $self->child_form,
+      family_id => $family_id, fillinform => $self->child_form->fif );
+    return unless $self->child_form->validated;
 
-    my $child = $c->stash->{form}->{item};
+    my $child = $self->child_form->item;
     $child->update({family_id => $family_id});
     # form validated
     $c->flash->{message} = "Child added";
     $c->res->redirect($c->uri_for('view', $family_id)); 
     $c->detach;
 }
+
 
 =head1 AUTHOR
 

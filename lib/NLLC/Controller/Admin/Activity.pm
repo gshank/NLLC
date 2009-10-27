@@ -1,8 +1,8 @@
 package NLLC::Controller::Admin::Activity;
 
-use strict;
-use warnings;
-use base 'NLLC::Controller::Admin::Base';
+use Moose;
+BEGIN { extends 'NLLC::Controller::Admin::Base'; }
+use NLLC::Form::Activity;
 
 =head1 NAME
 
@@ -31,9 +31,11 @@ sub edit : Local
 {
     my ( $self, $c, $id) = @_;
 
-    $c->stash->{template} = 'admin/activity/proposal.tt';
-    my $validated = $c->update_from_form($id, 'Activity');
-    return if !$validated;
+    my $form = NLLC::Form::Activity->new;
+    $form->process(item_id => $id, schema => $c->model('DB')->schema, params => $c->req->params);
+    $c->stash( template => 'admin/activity/proposal.tt', form => $form,
+       fillinform => $form->fif );
+    return unless $form->validated;
 
     # form validated. Display...
     $c->flash->{message} = 'Activity saved';
@@ -69,6 +71,7 @@ sub view : Local
                javascript => 'layouts/enroll_js.tt',
                template => 'admin/activity/view.tt' );
 }
+
 
 =head1 AUTHOR
 

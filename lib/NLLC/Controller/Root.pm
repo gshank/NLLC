@@ -34,29 +34,18 @@ sub auto : Private
    return 1;
 }
 
-sub default : Path
+sub default : Path Args
 {
    my ( $self, $c ) = @_;
    $c->res->status(404);
    $c->stash->{template} = '404.tt';
 }
 
-sub index : Local {
+sub index : Path('/') Args(0) {
     my ( $self, $c ) = @_;
 
 	$c->stash->{template} = 'index.tt';
 }
-
-=po
-
-sub icalendar : Local
-{
-   my ( $self, $c ) = @_;
-   $c->res->redirect($c->uri_for('/icalendar/index.php'));
-   $c->detach;
-}
-
-=cut
 
 sub events : Local {
     my ( $self, $c ) = @_;

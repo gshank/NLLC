@@ -1,19 +1,21 @@
-
+<p>Inactive families are marked with ** and their children are not listed</p>
 [% WHILE (family = families.next) -%]
-    <p>[% family.first_name1 _ " " _ family.last_name1 %]<br/>
+    <p>[% IF !family.active %]** [% END %][% family.first_name1 _ " " _ family.last_name1 %]<br/>
     [% IF family.first_name2 %]
     [% family.first_name2 _ " " _ family.last_name2 %]<br/>
     [% END %]
-    [% family.street_address %]<br />
-    [% family.city_state_zip %]<br />
-    [% family.phone1 %]<br />
+    [% family.street_address || 'n/a' %]<br />
+    [% family.city_state_zip || 'n/a' %]<br />
+    [% family.phone1  || 'n/a'%]<br />
     [% IF family.phone2 %]
     [% family.phone2 %]<br />
     [% END %]
-    [% family.email %]<br />
-    [% children = family.children %]
-    [% FOREACH child IN children %] 
-    [% child.firstname _ " " _ child.birthday %]<br />
+    <a href="mailto:[% family.email || 'n/a/' %]">[% family.email || 'n/a' %]</a><br />
+    [% IF family.active %]
+       [% children = family.children %]
+       [% FOREACH child IN children %] 
+       [% child.firstname _ " " _ child.birthday %]<br />
     [% END %]
-    <br />
+    [% END %]
+    </p>
 [% END -%]
