@@ -9,13 +9,13 @@ sub validate
 
    return unless $field->SUPER::validate;
 
-   my ($time, $am_pm) = split / /, $field->input;
+   my ($time, $am_pm) = split / /, $field->value;
    my ($hour, $minutes) = split /:/, $time;
    unless ($am_pm)
    {
       $am_pm = 'am' if ($hour > 8);
       $am_pm = 'pm' if ($hour <= 8);
-      $field->input($field->input . " " . $am_pm);
+      $field->_set_value($field->value . " " . $am_pm);
    } 
    if ($minutes > 59)
    {
