@@ -8,6 +8,8 @@ our $VERSION = '0.01';
 
 has '+widget' => ( default => 'Compound' );
 
+=pod
+
 around '_result_from_object' => sub {
     my $orig = shift;
     my ( $self, $self_result, $duration_string ) = @_;
@@ -18,9 +20,11 @@ around '_result_from_object' => sub {
     return $self->$orig($self_result, \%duration_hash);
 };
 
+=cut
+
 sub validate {
     my ( $self ) = @_;
-$DB::single=1;
+
     my $input = $self->input;
 
     # get field name
@@ -51,25 +55,15 @@ $DB::single=1;
     $self->value( $dt_duration );
 }
 
-=pod
-
 sub deflate {
-    my $self = shift;
+    my ( $self, $dt_duration ) = @_;
 
-    my $name = $self->name;
-    my %hash;
-    my $dt_duration = $self->value || return ();
+    return unless $dt_duration;
+    return $dt_duration if ref $dt_duration eq 'HASH';
     $dt_duration =~ s/\:/\,/g;
-    my %value_hash = split(',', $dt_duration);
-    for my $sub ( 'years', 'months', 'weeks', 'days', 'hours', 'minutes' ) 
-    {
-        $hash{ $name . '.' . $sub } = $value_hash{$sub}; 
-    }
+    my %hash = split(',', $dt_duration);
     return \%hash;
 }
-
-=cut
-
 
 
 =head1 NAME

@@ -23,7 +23,7 @@ Catalyst Controller.
 
 sub create : Local {
     my ( $self, $c ) = @_;
-$DB::single=1;  
+
     my $page = $c->model('DB')->resultset('CmsPage')->new_result({});
     return $self->form($c, $page );
 }

@@ -6,12 +6,16 @@ use base 'DBIx::Class';
 
 has 'dtstart_mdy' => (isa => 'Str', is => 'ro', lazy => 1,
       builder => '_build_dtstart_mdy');
-sub _build_dtstart_mdy { return shift->dtstart->mdy('/') }
+sub _build_dtstart_mdy { 
+    my $self = shift;
+    return $self->dtstart ? $self->dtstart->mdy('/') : '';
+}
 has 'dtstart_time' => (isa => 'Str|Undef', is => 'ro', lazy => 1,
       builder => '_build_dtstart_time');
 sub _build_dtstart_time 
 { 
    my $self = shift;
+   return '' unless $self->dtstart;
    return if $self->dtstart->hour == 0;
    return $self->dtstart->strftime("%I:%M %p");
 }
