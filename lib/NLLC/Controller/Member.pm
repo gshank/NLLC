@@ -59,18 +59,23 @@ sub proposal : Local
 {
     my ( $self, $c, $id) = @_;
 
+    my $proposal;
    if ($id)
    {
-      my $proposal = $c->model('DB::Activity')->find( $id);
+      $proposal = $c->model('DB::Activity')->find( $id);
       unless( $proposal && $proposal->family_id eq $c->user->id )
       {
           $c->flash->{message} = "Not a valid proposal";
           $c->res->redirect($c->uri_for(''));  
           $c->detach;
       }
-   }
-    $self->activity_form->process(schema => $c->model('DB')->schema, item => $proposal, 
-        params => $c->req->params );
+    }
+    else {
+       $proposal = $c->model('DB::Activity')->new_result( {
+           family_id => $c->user->id, session_id => $c->stash->{new_session}
+       });    
+    }
+    $self->activity_form->process( item => $proposal, params => $c->req->params );
     $c->stash( template => 'member/proposal.tt', form => $self->activity_form,
        fillinform => $self->activity_form->fif );
     return unless $self->activity_form->validated;
@@ -183,7 +188,7 @@ sub list : Local
 sub contribution : Local
 {
    my ( $self, $c, $contribution_id ) = @_;
-$DB::single=1;
+
    my $contribution;
    if ($contribution_id)
    {
@@ -196,12 +201,12 @@ $DB::single=1;
       }
    }
    else {
-       $contribution = $c->model('DB::Contribution')->new_result({});
+       $contribution = $c->model('DB::Contribution')->new_result({
+           family_id => $c->user->id, session_id => $c->stash->{new_session}});
    }
    my $cont_form = NLLC::Form::Contribution->new;
    $cont_form->process( item => $contribution, params => $c->req->parameters); 
-   $c->stash( template => 'member/contribution.tt', form => $cont_form, 
-      family_id => $c->user->id, fillinform => $cont_form->fif );
+   $c->stash( template => 'member/contribution.tt', form => $cont_form );
    return unless $cont_form->validated;
    # form validated
    $c->flash->{message} = "Contribution saved";

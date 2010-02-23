@@ -6,9 +6,6 @@ use Data::ICal;
 use ICal::Event;
 use ICal::Calendar;
 
-has 'form' => ( is => 'ro', isa => 'NLLC::Form::Event', lazy => 1,
-   default => sub { NLLC::Form::Event->new } );
-
 use Text::vFile::asData;
 
 sub index : Path Args(0)
@@ -47,27 +44,31 @@ sub event : Local
 {
    my ( $self, $c, $event_id, $activity_id ) = @_;
 
-   $event_id = undef if ($event_id && $event_id eq 'new');
+   my $event;
+   if( $event_id eq 'new' ) {
+       $event = $c->model('DB')->resultset('Event')->new_result({});
+   }
+   else {
+       $event = $c->model('DB')->resultset('Event')->find($event_id);
+   }
    my $activity = $c->model('DB::Activity')->find($activity_id) if $activity_id;
-   $self->form->process(item_id => $event_id, schema => $c->model('DB')->schema,
-        params => $c->req->params);
+   my $form_args = { item => $event, 
+                     params => $c->req->params,
+                     activity => $activity,
+                     session_id => $c->stash->{new_session},
+   };
+   $form_args->{init_object} = { summary => $activity->name,
+       description => $c->uri_for('/member', 'view_activity', $activity->activity_id ) }
+       if( !$event_id && $activity );
+   my $form = NLLC::Form::Event->new;
+   $form->process( %$form_args );
    $c->stash( activity => $activity, 
               javascripts => ['event.js', 'jquery-ui.js'],
               css => 'jquery-ui.css',
               template => 'admin/schedule/event.tt',
-              form => $self->form, fillinform => $self->form->fif );
-   return unless $self->form->validated;
+              form => $form );
+   return unless $form->validated;
 
-   # form validated
-   my $event = $self->form->item;
-   my $session_id = $c->stash->{new_session};
-   if ($activity)
-   {
-      $event->update({activity_id => $activity->activity_id});
-      $session_id = $activity->session_id; 
-   }
-   $event->update({session_id => $session_id }) 
-          unless $event->session_id;
    if ( $activity ) 
    { 
       $c->res->redirect($c->uri_for('activity_list', $activity->session_id));

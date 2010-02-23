@@ -9,6 +9,8 @@ use DateTime::Format::Strptime;
 
 has '+item_class' => ( default => 'Event' );
 has '+field_name_space' => ( default => 'NLLC::Form::Field' );
+has 'activity' => ( is => 'rw' );
+has 'session_id' => ( is => 'rw' );
 
 has_field 'summary';
 has_field 'location';
@@ -24,14 +26,14 @@ has_field 'dtstart_time' => (
                noupdate => 1,
                );
 has_field 'dtstart_allday' => (
+               label => 'All Day Event',
                type => 'Checkbox',
                noupdate => 1,
                );
 has_field 'dtstart' => ( type =>  '+DateTime' );
 has_field 'duration' => ( type  => '+Duration' );
-#has_field 'duration' => ( type => 'Duration' );
-#has_field 'duration.hours' => ( type => 'Integer', range_start => 0, range_end => 8 );
-#has_field 'duration.minutes' => ( type => 'Integer', range_start => 0, range_end => 69 ); 
+has_field 'duration.hours' => ( type => 'Integer', range_start => 0, range_end => 8 );
+has_field 'duration.minutes' => ( type => 'Integer', range_start => 0, range_end => 69 ); 
 has_field 'until_mdy' => (
                type => '+DateMDY', 
                noupdate => 1,
@@ -104,6 +106,9 @@ sub validate
 sub update_model
 {
    my ( $self ) = @_;
+
+   my $is_new = $self->item_id ? 0 : 1;
+
    $self->SUPER::update_model(@_);
 
    my $event = $self->{item};
@@ -127,11 +132,11 @@ sub update_model
    }
 
    $event->dtstart( $dt );
-   $event->update({weekday => $dt->day_of_week,
-                      month   => $dt->month,
-                      day     => $dt->day,
-                      year    => $dt->year,
-                      hour    => $dt->strftime("%H%M")});
+   $event->weekday( $dt->day_of_week );
+   $event->month( $dt->month );
+   $event->day( $dt->day );
+   $event->year( $dt->year );
+   $event->hour( $dt->strftime("%H%M") );
   
    # create duration from duration string for event
    my $dt_duration = $event->duration;
@@ -162,9 +167,8 @@ sub update_model
       $event->until($until);
    }
    # create repeat rule (rrule) for event
-   my $freq = $event->freq;
    my $rrule;
-   if ($freq)
+   if ( my $freq = $event->freq)
    {
       my $interval = 1;
       if ( $freq eq 'biweekly' )
@@ -190,7 +194,20 @@ sub update_model
    );
    
    # put event & english strings into db
-   $event->update({ical => $ical_event->as_string, as_string => $ical_event->as_english});
+   $event->ical( $ical_event->as_string );
+   $event->as_string( $ical_event->as_english );
+
+   # update activity and session_id for new events
+   if( $is_new ) {
+       my $session_id = $self->session_id;
+       if ($self->activity)
+       {
+          $event->activity_id( $self->activity->activity_id );
+          $session_id = $self->activity->session_id; 
+       }
+       $event->session_id( $session_id );
+   }
+   $event->update;
 
 }
 

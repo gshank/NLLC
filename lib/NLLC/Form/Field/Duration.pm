@@ -1,16 +1,26 @@
 package NLLC::Form::Field::Duration;
 
 use Moose;
-extends 'HTML::FormHandler::Field';
+extends 'HTML::FormHandler::Field::Compound';
 use DateTime;
 
 our $VERSION = '0.01';
 
 has '+widget' => ( default => 'Compound' );
 
+around '_result_from_object' => sub {
+    my $orig = shift;
+    my ( $self, $self_result, $duration_string ) = @_;
+
+    my %hash;
+    $duration_string =~ s/\:/\,/g;
+    my %duration_hash = split(',', $duration_string);
+    return $self->$orig($self_result, \%duration_hash);
+};
+
 sub validate {
     my ( $self ) = @_;
-
+$DB::single=1;
     my $input = $self->input;
 
     # get field name
@@ -41,6 +51,8 @@ sub validate {
     $self->value( $dt_duration );
 }
 
+=pod
+
 sub deflate {
     my $self = shift;
 
@@ -55,6 +67,8 @@ sub deflate {
     }
     return \%hash;
 }
+
+=cut
 
 
 

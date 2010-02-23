@@ -92,7 +92,7 @@ sub add : Local
 sub edit_child : Local
 {
     my ( $self, $c, $child_id ) = @_;
-$DB::single=1;
+
     $self->child_form->process( item_id => $child_id, schema => $c->model('DB')->schema,
        params => $c->req->params ); 
     $c->stash( template => 'admin/family/edit_child.tt', form => $self->child_form,
@@ -111,14 +111,13 @@ sub add_child : Local
     my ( $self, $c, $family_id ) = @_;
     
     my $family = $c->model('DB::Family')->find($family_id);
-    $self->child_form->process( schema => $c->model('DB')->schema,
+    my $child = $c->model('DB::Child')->new_result( { family_id => $family->id } );
+    $self->child_form->process( item => $child, 
        params => $c->req->params ); 
     $c->stash( template => 'admin/family/add_child.tt', form => $self->child_form,
       family_id => $family_id, fillinform => $self->child_form->fif );
     return unless $self->child_form->validated;
 
-    my $child = $self->child_form->item;
-    $child->update({family_id => $family_id});
     # form validated
     $c->flash->{message} = "Child added";
     $c->res->redirect($c->uri_for('view', $family_id)); 
