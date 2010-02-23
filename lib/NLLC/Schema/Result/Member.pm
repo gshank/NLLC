@@ -1,4 +1,4 @@
-package NLLC::Schema::DB::Member;
+package NLLC::Schema::Result::Member;
 
 use strict;
 use warnings;

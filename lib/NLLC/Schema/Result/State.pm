@@ -1,4 +1,4 @@
-package NLLC::Schema::DB::State;
+package NLLC::Schema::Result::State;
 
 use strict;
 use warnings;

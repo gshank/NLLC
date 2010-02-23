@@ -1,4 +1,4 @@
-package NLLC::Schema::DB::UserRoles;
+package NLLC::Schema::Result::UserRoles;
 
 use strict;
 use warnings;
@@ -15,7 +15,7 @@ __PACKAGE__->add_columns(
 );
 __PACKAGE__->set_primary_key("family_id", "role_id");
 
-NLLC::Schema::DB::UserRoles->belongs_to(user => 'NLLC::Schema::DB::Family', 'family_id');
-NLLC::Schema::DB::UserRoles->belongs_to(role => 'NLLC::Schema::DB::Roles', 'role_id');
+NLLC::Schema::Result::UserRoles->belongs_to(user => 'NLLC::Schema::Result::Family', 'family_id');
+NLLC::Schema::Result::UserRoles->belongs_to(role => 'NLLC::Schema::Result::Roles', 'role_id');
 
 1;

@@ -4,9 +4,9 @@ use warnings;
 
 use FindBin;
 use lib "$FindBin::Bin/../lib";
-use NLLC::Schema::DB;
+use NLLC::Schema;
 
-my $schema = NLLC::Schema::DB->connect('DBI:mysql:nllc', 'nllc_admin', 'nllcpw');
+my $schema = NLLC::Schema->connect('DBI:mysql:nllc', 'nllc_admin', 'nllcpw');
 
 my $family = $schema->resultset('Family')->find(42);
 

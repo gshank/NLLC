@@ -1,4 +1,4 @@
-package NLLC::Schema::DB::Event;
+package NLLC::Schema::Result::Event;
 
 use Moose;
 
@@ -162,8 +162,8 @@ __PACKAGE__->add_columns(
   },
   
 );
-NLLC::Schema::DB::Event->set_primary_key("event_id");
+NLLC::Schema::Result::Event->set_primary_key("event_id");
 
-NLLC::Schema::DB::Event->belongs_to("activity", "NLLC::Schema::DB::Activity", {'foreign.activity_id' => 'self.activity_id'});
+NLLC::Schema::Result::Event->belongs_to("activity", "NLLC::Schema::Result::Activity", {'foreign.activity_id' => 'self.activity_id'});
 
 1;

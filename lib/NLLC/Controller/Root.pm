@@ -61,7 +61,8 @@ sub about : Local
 sub contact : Local
 {
     my ( $self, $c ) = @_;
-    $c->stash->{template} = 'contact.tt';
+    my $page = $c->model('DB')->resultset('CmsPage')->find(3)->body;
+    $c->stash->{template} = \$page;
 }
 
 sub membership : Local

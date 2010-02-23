@@ -292,7 +292,8 @@ sub planning : Local
 sub timeline : Local
 {
     my ( $self, $c ) = @_;
-    $c->stash->{template} = 'member/timeline.tt';
+    my $page = $c->model('DB')->resultset('CmsPage')->find(1)->body;
+    $c->stash->{template} = \$page; 
 }
 
 sub paid_instructor : Local
@@ -310,7 +311,9 @@ sub leaders : Local
 sub contacts : Local
 {
    my ( $self, $c ) = @_;
-   $c->stash( template => 'member/contacts.tt' );
+
+   my $page = $c->model('DB')->resultset('CmsPage')->find(2)->body;
+   $c->stash( template => \$page );
 
 }
 

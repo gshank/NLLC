@@ -18,6 +18,8 @@
         &nbsp;&nbsp;&nbsp;Schedule activities</p>
 <p><strong><a href="[% c.uri_for('control') %]">Control Panel</a></strong>
         &nbsp;&nbsp;&nbsp;Update session, open/close proposals & registration</p>
+<p><strong><a href="[% c.uri_for('cmspage', 'list') %]">Edit Pages</a></strong>
+        &nbsp;&nbsp;&nbsp;Edit pages that have to be updated periodically</p>
 [% IF c.check_user_roles('payment') %]
 <p><strong><a href="[% c.uri_for('payment') %]">Member Payments</a></strong>
         &nbsp;&nbsp;&nbsp;View and record member payements</p>

@@ -1,13 +1,13 @@
-package NLLC::Schema::DB::Activity;
+package NLLC::Schema::Result::Activity;
 
 use strict;
 use warnings;
 
 use base 'DBIx::Class';
 
-NLLC::Schema::DB::Activity->load_components("Core");
-NLLC::Schema::DB::Activity->table("activity");
-NLLC::Schema::DB::Activity->add_columns(
+NLLC::Schema::Result::Activity->load_components("Core");
+NLLC::Schema::Result::Activity->table("activity");
+NLLC::Schema::Result::Activity->add_columns(
   "activity_id",
   { data_type => "INT", default_value => undef, is_nullable => 0, size => 11 },
   "name",
@@ -179,11 +179,11 @@ NLLC::Schema::DB::Activity->add_columns(
     size => 4,
   },
 );
-NLLC::Schema::DB::Activity->set_primary_key("activity_id");
+NLLC::Schema::Result::Activity->set_primary_key("activity_id");
 
-NLLC::Schema::DB::Activity->belongs_to("family", "NLLC::Schema::DB::Family", {'foreign.family_id' => 'self.family_id'});
-NLLC::Schema::DB::Activity->has_many("activity_children", "NLLC::Schema::DB::ChildActivity", {'foreign.activity_id' => 'self.activity_id'}); 
-NLLC::Schema::DB::Activity->many_to_many("children", "activity_children", "child_id");
-NLLC::Schema::DB::Activity->has_many('events', "NLLC::Schema::DB::Event", {'foreign.activity_id' => 'self.activity_id'});
+NLLC::Schema::Result::Activity->belongs_to("family", "NLLC::Schema::Result::Family", {'foreign.family_id' => 'self.family_id'});
+NLLC::Schema::Result::Activity->has_many("activity_children", "NLLC::Schema::Result::ChildActivity", {'foreign.activity_id' => 'self.activity_id'}); 
+NLLC::Schema::Result::Activity->many_to_many("children", "activity_children", "child_id");
+NLLC::Schema::Result::Activity->has_many('events', "NLLC::Schema::Result::Event", {'foreign.activity_id' => 'self.activity_id'});
 
 1;

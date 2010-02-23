@@ -12,7 +12,7 @@ See L<NLLC>
 
 =head1 DESCRIPTION
 
-L<Catalyst::Model::DBIC::Schema> Model using schema L<NLLC::Schema::DB>
+L<Catalyst::Model::DBIC::Schema> Model using schema L<NLLC::Schema>
 
 =head1 AUTHOR
 
