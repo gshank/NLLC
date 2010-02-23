@@ -45,21 +45,19 @@ sub event : Local
    my ( $self, $c, $event_id, $activity_id ) = @_;
 
    my $event;
-   if( $event_id eq 'new' ) {
-       $event = $c->model('DB')->resultset('Event')->new_result({});
-   }
-   else {
+   if( $event_id ne 'new' ) {
        $event = $c->model('DB')->resultset('Event')->find($event_id);
    }
    my $activity = $c->model('DB::Activity')->find($activity_id) if $activity_id;
    my $form_args = { item => $event, 
+                     schema => $c->model('DB')->schema,
                      params => $c->req->params,
                      activity => $activity,
                      session_id => $c->stash->{new_session},
    };
    $form_args->{init_object} = { summary => $activity->name,
        description => $c->uri_for('/member', 'view_activity', $activity->activity_id ) }
-       if( !$event_id && $activity );
+       if( !$event && $activity );
    my $form = NLLC::Form::Event->new;
    $form->process( %$form_args );
    $c->stash( activity => $activity, 
