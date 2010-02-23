@@ -7,8 +7,8 @@ use Catalyst::Runtime;
 use Config::Any::Perl;
 
 use Catalyst (
-#   '-LOG=warn',                 
-   '-Debug',
+   '-LOG=warn',                 
+#  '-Debug',
    'ConfigLoader',
    'Authentication',         
    'Authorization::Roles',
@@ -47,12 +47,6 @@ NLLC->config->{authentication} = {
       },
    }
 };
-NLLC->config->{form} = {
-   pre_load_forms  => 1,
-   form_name_space => 'NLLC::Form',
-};
-
-=pod
 
 NLLC->config->{'Log::Dispatch'} = [
    {
@@ -75,7 +69,6 @@ NLLC->config->{'Log::Dispatch'} = [
    }
 ];
 
-=cut
 
 NLLC->config->{'View::JSON'} = {
 #   allow_callback => 1,
