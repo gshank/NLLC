@@ -1,0 +1,4 @@
+<h2>View page</h1>&nbsp;&nbsp;<a href="/admin/cmspage/list">Page List</a>&nbsp;
+<a href="/admin/cmspage/edit/[% page.page_id %]">Edit Page</a>
+<p>========================================</p>
+[% page.body %]

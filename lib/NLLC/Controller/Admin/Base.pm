@@ -6,7 +6,7 @@ use base 'Catalyst::Controller';
 sub auto : Private
 {
    my ( $self, $c ) = @_;
-$DB::single=1;
+
    unless ( $c->user_exists )
    {
       NLLC::Controller::Auth->get_login($c);

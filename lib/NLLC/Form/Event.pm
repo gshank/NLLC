@@ -1,52 +1,50 @@
 package NLLC::Form::Event;
-use strict;
-use warnings;
-use base 'Form::Processor::Model::DBIC';
+use HTML::FormHandler::Moose;
+extends 'HTML::FormHandler::Model::DBIC';
 
 use ICal::RRule;
 use ICal::Event;
 use DateTime::Duration;
 use DateTime::Format::Strptime;
 
-sub object_class {'DB::Event'}
-sub init_field_name_space { 'NLLC::Form::Field' }
+has '+item_class' => ( default => 'Event' );
+has '+field_name_space' => ( default => 'NLLC::Form::Field' );
+has 'activity' => ( is => 'rw' );
+has 'session_id' => ( is => 'rw' );
 
-sub profile
-{
-    return {
-        fields => {
-            summary => 'Text',
-            location => 'Text',
-            category => 'Select',
-            calendar => 'Select',
-            dtstart_mdy => {
+has_field 'summary';
+has_field 'location';
+has_field 'category' => ( type  => 'Select' );
+has_field 'calendar' => ( type  => 'Select' );
+has_field 'dtstart_mdy' => (
                type => '+DateMDY',
                noupdate => 1,
                required => 1,
-            },
-            dtstart_time => {
+            );
+has_field 'dtstart_time' => (
                type => '+Time',
                noupdate => 1,
-            },
-            dtstart_allday => {
+               );
+has_field 'dtstart_allday' => (
+               label => 'All Day Event',
                type => 'Checkbox',
                noupdate => 1,
-            },
-            dtstart => '+DateTime',
-            duration => '+Duration',
-            until_mdy => {
+               );
+has_field 'dtstart' => ( type =>  '+DateTime' );
+has_field 'duration' => ( type  => '+Duration' );
+has_field 'duration.hours' => ( type => 'Integer', range_start => 0, range_end => 8 );
+has_field 'duration.minutes' => ( type => 'Integer', range_start => 0, range_end => 69 ); 
+has_field 'until_mdy' => (
                type => '+DateMDY', 
                noupdate => 1,
-            },
-            freq => 'Select',
-            count => 'Integer',
-            description => 'Text', } 
-    }; 
-}
+               );
+has_field 'freq' => ( type  => 'Select' );
+has_field 'count' => ( type => 'Integer' );
+has_field 'description';
 
 sub options_category
 {
-    return (
+    return [
         "Academic" => "Academic",
         "Play" => "Play",
         "Field trip" => "Field trip",
@@ -54,31 +52,31 @@ sub options_category
         "Meeting" => "Meeting",
         "Board meeting" => "Board meeting",
         "Committee" => "Committee",
-    );
+    ];
 }
 
 sub options_calendar
 {
-    return (
+    return [
         "Activities" => "Activities",
         "Schedule" => "Schedule",
         "Admin" => "Admin",
-    );
+    ];
 }
 
 sub options_freq
 {
-    return (
+    return [
         "" => "Does not repeat",
         "daily" => "Daily",
         "weekly" => "Weekly",
         "biweekly" => "Bi-weekly",
 #        "monthly" => "Monthly",
 #        "yearly" => "Yearly",
-    ); 
+    ]; 
 } 
 
-sub cross_validate
+sub validate
 {
    my $self = shift;
    if ($self->field('count')->value && $self->field('until_mdy')->value)
@@ -108,9 +106,11 @@ sub cross_validate
 sub update_model
 {
    my ( $self ) = @_;
+
+   my $is_new = $self->item_id ? 0 : 1;
+
    $self->SUPER::update_model(@_);
 
-   my $c = $self->user_data->{context};
    my $event = $self->{item};
 
    # create dtstart DateTime out of dtstart_mdy and dtstart_time
@@ -132,11 +132,11 @@ sub update_model
    }
 
    $event->dtstart( $dt );
-   $event->update({weekday => $dt->day_of_week,
-                      month   => $dt->month,
-                      day     => $dt->day,
-                      year    => $dt->year,
-                      hour    => $dt->strftime("%H%M")});
+   $event->weekday( $dt->day_of_week );
+   $event->month( $dt->month );
+   $event->day( $dt->day );
+   $event->year( $dt->year );
+   $event->hour( $dt->strftime("%H%M") );
   
    # create duration from duration string for event
    my $dt_duration = $event->duration;
@@ -167,9 +167,8 @@ sub update_model
       $event->until($until);
    }
    # create repeat rule (rrule) for event
-   my $freq = $event->freq;
    my $rrule;
-   if ($freq)
+   if ( my $freq = $event->freq)
    {
       my $interval = 1;
       if ( $freq eq 'biweekly' )
@@ -195,7 +194,20 @@ sub update_model
    );
    
    # put event & english strings into db
-   $event->update({ical => $ical_event->as_string, as_string => $ical_event->as_english});
+   $event->ical( $ical_event->as_string );
+   $event->as_string( $ical_event->as_english );
+
+   # update activity and session_id for new events
+   if( $is_new ) {
+       my $session_id = $self->session_id;
+       if ($self->activity)
+       {
+          $event->activity_id( $self->activity->activity_id );
+          $session_id = $self->activity->session_id; 
+       }
+       $event->session_id( $session_id );
+   }
+   $event->update;
 
 }
 

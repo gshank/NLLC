@@ -3,16 +3,6 @@ package NLLC::Model::DB;
 use strict;
 use base 'Catalyst::Model::DBIC::Schema';
 
-__PACKAGE__->config(
-    schema_class => 'NLLC::Schema::DB',
-    connect_info => [
-        'dbi:mysql:dbname=nllc;host=mysql.odshank.com',
-        'nllc_admin',
-        'nllc2hs',
-        
-    ],
-);
-
 =head1 NAME
 
 NLLC::Model::DB - Catalyst DBIC Schema Model
@@ -22,7 +12,7 @@ See L<NLLC>
 
 =head1 DESCRIPTION
 
-L<Catalyst::Model::DBIC::Schema> Model using schema L<NLLC::Schema::DB>
+L<Catalyst::Model::DBIC::Schema> Model using schema L<NLLC::Schema>
 
 =head1 AUTHOR
 

@@ -1,4 +1,4 @@
-package NLLC::Schema::DB::Cart;
+package NLLC::Schema::Result::Cart;
 
 use strict;
 use warnings;
@@ -32,8 +32,8 @@ __PACKAGE__->add_columns(
   },
 );
 
-NLLC::Schema::DB::Cart->set_primary_key("id");
-NLLC::Schema::DB::Cart->add_unique_constraint( 'act_fam' => ['activity_id',  'family_id']);
-NLLC::Schema::DB::Cart->belongs_to("activity", "NLLC::Schema::DB::Activity", {'foreign.activity_id' => 'self.activity_id'});
+NLLC::Schema::Result::Cart->set_primary_key("id");
+NLLC::Schema::Result::Cart->add_unique_constraint( 'act_fam' => ['activity_id',  'family_id']);
+NLLC::Schema::Result::Cart->belongs_to("activity", "NLLC::Schema::Result::Activity", {'foreign.activity_id' => 'self.activity_id'});
 
 1;

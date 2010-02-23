@@ -1,19 +1,27 @@
 package NLLC::Form::Field::Duration;
-use base 'Form::Processor::Field';
+
+use Moose;
+extends 'HTML::FormHandler::Field::Compound';
 use DateTime;
 
 our $VERSION = '0.01';
 
-sub init_widget { 'Compound' }
+has '+widget' => ( default => 'Compound' );
 
+around '_result_from_object' => sub {
+    my $orig = shift;
+    my ( $self, $self_result, $duration_string ) = @_;
 
+    my %hash;
+    $duration_string =~ s/\:/\,/g;
+    my %duration_hash = split(',', $duration_string);
+    return $self->$orig($self_result, \%duration_hash);
+};
 
-# override validate
-
-sub validate_field {
+sub validate {
     my ( $self ) = @_;
-
-    my $params = $self->form->params;
+$DB::single=1;
+    my $input = $self->input;
 
     # get field name
     my $name = $self->name;
@@ -26,12 +34,9 @@ sub validate_field {
 
     for my $sub ( 'years', 'months', 'weeks', 'days', 'hours', 'minutes' ) 
     {
-        $fieldname = "$name.$sub";
+        next unless exists $input->{$sub};
         # fields get filled in with '' if no value is entered
-        delete $params->{$fieldname} 
-           if (exists $params->{$fieldname} && 
-                      $params->{$fieldname} eq '');
-        my $value = $params->{$fieldname};
+        my $value = $input->{$sub};
         next unless defined $value;
         $found++;
 
@@ -43,68 +48,35 @@ sub validate_field {
         $dt_duration .= "$sub:$value\,"
     }
 
-    # If any found, make sure all are entered
-    if ( $self->required ) {
-        unless ( $found ) {
-            $self->add_error( "Duration is required" );
-            return;
-        }
-    }
-
     $self->value( $dt_duration );
-
 }
 
-sub format_value {
+=pod
+
+sub deflate {
     my $self = shift;
 
     my $name = $self->name;
-
     my %hash;
-
     my $dt_duration = $self->value || return ();
-
     $dt_duration =~ s/\:/\,/g;
     my %value_hash = split(',', $dt_duration);
-
-   
     for my $sub ( 'years', 'months', 'weeks', 'days', 'hours', 'minutes' ) 
     {
         $hash{ $name . '.' . $sub } = $value_hash{$sub}; 
     }
-
-    return %hash;
+    return \%hash;
 }
+
+=cut
 
 
 
 =head1 NAME
 
-Form::Processor::Field::Duration - Produces DateTime::Duration from HTML form values 
-
-=head1 SYNOPSIS
-
-See L<Form::Processor>
-
-=head1 DESCRIPTION
-
-This is a compound field that uses modified field names for the 
-sub fields instead of using a separate sub-form.
-
-=head2 Widget
-
-Fields can be given a widget type that is used as a hint for
-the code that renders the field.
-
-This field's widget type is: "Compound".
-
-=head2 Subclass
-
-Fields may inherit from other fields.  This field
-inherits from: "Field".
+HTML::FormHandler::Field::Duration - Produces DateTime::Duration from HTML form values 
 
 =cut
-
 
 1;
 

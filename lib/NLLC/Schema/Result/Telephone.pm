@@ -1,4 +1,4 @@
-package NLLC::Schema::DB::Telephone;
+package NLLC::Schema::Result::Telephone;
 
 use strict;
 use warnings;

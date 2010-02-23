@@ -5,8 +5,14 @@ all_from 'lib/NLLC.pm';
 
 requires 'Catalyst::Runtime' => '5.7012';
 requires 'Catalyst::Plugin::ConfigLoader';
+requires 'Config::Any::Perl';
 requires 'Catalyst::Plugin::Static::Simple';
 requires 'Catalyst::Plugin::Log::Dispatch';
+requires 'Catalyst::Plugin::Authorization::Roles';
+requires 'Catalyst::View::TT';
+requires 'Catalyst::View::FillInForm';
+requires 'HTML::FormHandler';
+requires 'HTML::FormHandler::Model::DBIC';
 requires 'DateTime::Format::ICal';
 requires 'Data::ICal';
 requires 'Log::Dispatch::Config';

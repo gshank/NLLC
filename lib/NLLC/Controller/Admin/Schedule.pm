@@ -1,8 +1,7 @@
 package NLLC::Controller::Admin::Schedule;
-use strict;
-use warnings;
-use base 'NLLC::Controller::Admin::Base';
-
+use Moose;
+BEGIN { extends 'NLLC::Controller::Admin::Base'; }
+use NLLC::Form::Event;
 use Data::ICal;
 use ICal::Event;
 use ICal::Calendar;
@@ -44,28 +43,32 @@ sub activity_list : Local
 sub event : Local 
 {
    my ( $self, $c, $event_id, $activity_id ) = @_;
-$DB::single=1;
-   $event_id = undef if ($event_id && $event_id eq 'new');
-   my $event; # separate because wasn't getting cleared for some reason
-   $event = $c->model('DB::Event')->find($event_id) if $event_id;
+
+   my $event;
+   if( $event_id eq 'new' ) {
+       $event = $c->model('DB')->resultset('Event')->new_result({});
+   }
+   else {
+       $event = $c->model('DB')->resultset('Event')->find($event_id);
+   }
    my $activity = $c->model('DB::Activity')->find($activity_id) if $activity_id;
+   my $form_args = { item => $event, 
+                     params => $c->req->params,
+                     activity => $activity,
+                     session_id => $c->stash->{new_session},
+   };
+   $form_args->{init_object} = { summary => $activity->name,
+       description => $c->uri_for('/member', 'view_activity', $activity->activity_id ) }
+       if( !$event_id && $activity );
+   my $form = NLLC::Form::Event->new;
+   $form->process( %$form_args );
    $c->stash( activity => $activity, 
               javascripts => ['event.js', 'jquery-ui.js'],
               css => 'jquery-ui.css',
-              template => 'admin/schedule/event.tt' );
-   my $validated = $c->update_from_form($event, 'Event');
-   return unless $validated;
+              template => 'admin/schedule/event.tt',
+              form => $form );
+   return unless $form->validated;
 
-   # form validated
-   $event = $c->stash->{form}{item};
-   my $session_id = $c->stash->{new_session};
-   if ($activity)
-   {
-      $event->update({activity_id => $activity->activity_id});
-      $session_id = $activity->session_id; 
-   }
-   $event->update({session_id => $session_id }) 
-          unless $event->session_id;
    if ( $activity ) 
    { 
       $c->res->redirect($c->uri_for('activity_list', $activity->session_id));

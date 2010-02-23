@@ -1,25 +1,14 @@
 package NLLC::Form::Child;
-use strict;
-use warnings;
-use base 'Form::Processor::Model::DBIC';
+use HTML::FormHandler::Moose;
+extends 'HTML::FormHandler::Model::DBIC';
 
-sub object_class {'DB::Child'};
+has '+item_class' => ( default => 'Child' );
 
-sub profile
-{
-    return {
-        required => {
-            firstname => 'Text',
-            lastname => 'Text',
-        },
-        optional => {
-            birthday => 'Text',
-            gender => 'Text',
-            active => 'Checkbox',
-        }
-    };
-
-}
+has_field 'firstname' => ( required => 1 );
+has_field 'lastname' => ( required => 1 );
+has_field 'birthday';
+has_field 'gender';
+has_field 'active' => ( type => 'Checkbox' );
 
 
 1;

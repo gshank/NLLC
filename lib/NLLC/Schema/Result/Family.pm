@@ -1,13 +1,13 @@
-package NLLC::Schema::DB::Family;
+package NLLC::Schema::Result::Family;
 
 use strict;
 use warnings;
 
 use base 'DBIx::Class';
 
-NLLC::Schema::DB::Family->load_components("Core");
-NLLC::Schema::DB::Family->table("family");
-NLLC::Schema::DB::Family->add_columns(
+NLLC::Schema::Result::Family->load_components("Core");
+NLLC::Schema::Result::Family->table("family");
+NLLC::Schema::Result::Family->add_columns(
   "family_id",
   { 
     data_type => "INT", 
@@ -94,13 +94,13 @@ NLLC::Schema::DB::Family->add_columns(
   "active",
   { data_type => "TINYINT", default_value => 1, is_nullable => 0, size => 3 },
 );
-NLLC::Schema::DB::Family->set_primary_key("family_id");
-NLLC::Schema::DB::Family->has_many("children", "NLLC::Schema::DB::Child", {'foreign.family_id' => 'self.family_id'});
-NLLC::Schema::DB::Family->has_many(user_roles => 'NLLC::Schema::DB::UserRoles', 'family_id');
-NLLC::Schema::DB::Family->many_to_many(roles => 'user_roles', 'role');
-NLLC::Schema::DB::Family->has_many("activities", "NLLC::Schema::DB::Activity", {'foreign.family_id' => 'self.family_id'});
-NLLC::Schema::DB::Family->has_many("contributions", "NLLC::Schema::DB::Contribution", {'foreign.family_id' => 'self.family_id'});
-NLLC::Schema::DB::Family->has_many("payments", "NLLC::Schema::DB::Payment", {'foreign.family_id' => 'self.family_id'}, {order_by => 'payment_id'});
+NLLC::Schema::Result::Family->set_primary_key("family_id");
+NLLC::Schema::Result::Family->has_many("children", "NLLC::Schema::Result::Child", {'foreign.family_id' => 'self.family_id'});
+NLLC::Schema::Result::Family->has_many(user_roles => 'NLLC::Schema::Result::UserRoles', 'family_id');
+NLLC::Schema::Result::Family->many_to_many(roles => 'user_roles', 'role');
+NLLC::Schema::Result::Family->has_many("activities", "NLLC::Schema::Result::Activity", {'foreign.family_id' => 'self.family_id'});
+NLLC::Schema::Result::Family->has_many("contributions", "NLLC::Schema::Result::Contribution", {'foreign.family_id' => 'self.family_id'});
+NLLC::Schema::Result::Family->has_many("payments", "NLLC::Schema::Result::Payment", {'foreign.family_id' => 'self.family_id'}, {order_by => 'payment_id'});
 
 sub name1
 {

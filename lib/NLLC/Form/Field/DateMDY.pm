@@ -1,8 +1,7 @@
 package NLLC::Form::Field::DateMDY;
 
-use strict;
-use warnings;
-use base 'Form::Processor::Field';
+use Moose;
+extends 'HTML::FormHandler::Field';
 
 sub validate
 {
@@ -30,7 +29,7 @@ sub validate
    {
       $field->add_error( 'Year is not vaid' );
    }
-   return if $field->has_error;
+   return if $field->has_errors;
    return 1;
 }
 

@@ -1,8 +1,7 @@
 package NLLC::Form::Field::Time;
 
-use strict;
-use warnings;
-use base 'Form::Processor::Field';
+use Moose;
+extends 'HTML::FormHandler::Field';
 
 sub validate
 {

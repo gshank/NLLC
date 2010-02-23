@@ -1,4 +1,4 @@
-package NLLC::Schema::DB::Contribution;
+package NLLC::Schema::Result::Contribution;
 
 use strict;
 use warnings;
@@ -28,8 +28,8 @@ __PACKAGE__->add_columns(
     size => 65535,
   },
 );
-NLLC::Schema::DB::Contribution->set_primary_key("id");
-NLLC::Schema::DB::Contribution->belongs_to("family", "NLLC::Schema::DB::Family", {'foreign.family_id' => 'self.family_id'});
+NLLC::Schema::Result::Contribution->set_primary_key("id");
+NLLC::Schema::Result::Contribution->belongs_to("family", "NLLC::Schema::Result::Family", {'foreign.family_id' => 'self.family_id'});
 
 
 1;

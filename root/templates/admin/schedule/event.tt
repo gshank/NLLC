@@ -15,21 +15,21 @@ every occurrence could be entered individually.</p>
 
 [% f = form.field('summary') %]
 <p><label for="summary">Name of event:</label>
-<input type="text" name="summary" id="summary" [% IF activity %]value="[% activity.name %]"[% END %] />
+<input type="text" name="summary" id="summary" value="[% f.fif %]" />
 </p>
 
 [% f = form.field('description') %]
 <p>
 <label for="description">Description:</label>
 <input type="text" name="description" id="description" size="40"
-   [% IF activity %]value="[% c.uri_for('/member', 'view_activity', activity.activity_id ) %]"[% END %]/>
+   value="[% f.fif %]/>
 (URL for activity)
 </p>
 
 [% f = form.field('location') %]
 <p>
-<label for="location">Location:</label>
-<input type="text" name="location" id="location" />
+<label for="location">&nbsp;&nbsp;Location:</label>
+<input type="text" name="location" id="location" value="[% f.fif %]" />
 </p>
 
 [% f = form.field('category') %]
@@ -55,26 +55,30 @@ every occurrence could be entered individually.</p>
 </p>
 
 <p>
+[% f = form.field('dtstart_mdy') %]
    <label>Start Date: (dd/mm/yyyy) </label>
-   <input class="date-pick" name="dtstart_mdy" type="text" id="dtstart_mdy" size="10" />
+   <input class="date-pick" name="dtstart_mdy" type="text" id="dtstart_mdy" size="10" value="[% f.fif %]" />
 </p>
 
 <p>
-   <label>All Day Event:</label>
-   <input id="dtstart_allday" name="dtstart_allday" type="checkbox" value="1">
+[% f = form.field('dtstart_allday') %]
+   [% f.render %]
 </p>
 
 <p><i>*** Fill out the following fields if not an all day event</i></p>
 <div class="boxx">
 <p>  
+   [% f = form.field('dtstart_time') %]
    <label>Start Time: (hh::mm pm)</label>
-   <input name="dtstart_time" type="text" id="dtstart_time" size="10" />
+   <input name="dtstart_time" type="text" id="dtstart_time" size="10" value="[% f.fif %]" />
 </p>
 
 <p>
 <label>Duration: </label>
-<input name="duration.hours" type="text" size=2 />(hours)
-<input name="duration.minutes" type="text" size=2 />(minutes)
+[% f = form.field('duration.hours') %]
+<input name="duration.hours" type="text" size=2 value="[% f.fif %]" />(hours)
+[% f = form.field('duration.minutes') %]
+<input name="duration.minutes" type="text" size=2 value="[% f.fif %]"/>(minutes)
 </p>
 </div>
 
@@ -94,12 +98,12 @@ every occurrence could be entered individually.</p>
 [% f = form.field('count') %]
 <p>
 <label>Either ... Count (number of repetitions):</label>
-<input name="count" type="text" size="2" />
+<input name="count" type="text" size="2" value="[% f.fif %]" />
 </p>
 [% f = form.field('until_mdy') %] 
 <p>
    <label>Or ... Until Date: (mm/dd/yyyy) </label>
-   <input class='date-pick' name="until_mdy" type="text" id="until_mdy" size="10" />
+   <input class='date-pick' name="until_mdy" type="text" id="until_mdy" size="10" value="[% f.fif %]" />
 </p>
 </div>
 

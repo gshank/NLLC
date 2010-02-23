@@ -3,11 +3,8 @@
 <form name="contribution" method="POST" action="[% c.uri_for('contribution', form.item_id) %]">
 
    
-  <input type="hidden" name="family_id" value="[% family_id %]">
-  <input type="hidden" name="session_id" value="[% new_session %]">
-
   <b>Description of your Family's Alternate Contribution:</b>
-  <textarea cols="60" rows="2" id="description" name="description"></textarea>
+  <textarea cols="60" rows="2" id="description" name="description">[% form.field('description').fif %]</textarea>
 
   <input class="submit" name="submit" value="Save" type="submit">
 </form>

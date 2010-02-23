@@ -1,20 +1,10 @@
 package NLLC::Form::Contribution;
 
-use strict;
-use warnings;
-use base 'Form::Processor::Model::DBIC';
+use HTML::FormHandler::Moose;
+extends 'HTML::FormHandler::Model::DBIC';
 
-sub object_class {'DB::Contribution'};
+has '+item_class' => ( default => 'Contribution' );
 
-sub profile
-{
-   return {
-      fields => {
-         description => 'Text',
-         family_id   => 'Integer',
-         session_id  => 'Integer',
-      },
-   };
-}
+has_field 'description';
 
 1;

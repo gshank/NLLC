@@ -1,0 +1,9 @@
+<h2>List of pages that can be edited</h2>
+<p>===========================</p>
+[% WHILE ( page = pages.next ) %]
+<b>[% page.name %]</b>&nbsp;&nbsp;<a href="/admin/cmspage/edit/[% page.page_id %]">Edit</a>&nbsp;
+       <a href="/admin/cmspage/view/[% page.page_id %]">View</a><br />
+[% END %]
+
+<p>===========================</p>
+<a href="/admin/cmspage/create">Create Page</a>

@@ -1,13 +1,13 @@
-package NLLC::Schema::DB::Child;
+package NLLC::Schema::Result::Child;
 
 use strict;
 use warnings;
 
 use base 'DBIx::Class';
 
-NLLC::Schema::DB::Child->load_components("Core");
-NLLC::Schema::DB::Child->table("child");
-NLLC::Schema::DB::Child->add_columns(
+NLLC::Schema::Result::Child->load_components("Core");
+NLLC::Schema::Result::Child->table("child");
+NLLC::Schema::Result::Child->add_columns(
   "child_id",
   { data_type => "INT", default_value => undef, is_nullable => 0, size => 11 },
   "family_id",
@@ -31,11 +31,11 @@ NLLC::Schema::DB::Child->add_columns(
   "active",
   { data_type => "TINYINT", default_value => 1, is_nullable => 0, size => 3 },
 );
-NLLC::Schema::DB::Child->set_primary_key("child_id");
-NLLC::Schema::DB::Child->belongs_to("family", "NLLC::Schema::DB::Family", {'foreign.family_id' => 'self.family_id'});
-NLLC::Schema::DB::Child->has_many("child_activities", "NLLC::Schema::DB::ChildActivity", 'child_id');
-NLLC::Schema::DB::Child->many_to_many("activities", "child_activities", "activity");
-#NLLC::Schema::DB::Child->many_to_many("current_activities", "child_activities", "current_activity");
+NLLC::Schema::Result::Child->set_primary_key("child_id");
+NLLC::Schema::Result::Child->belongs_to("family", "NLLC::Schema::Result::Family", {'foreign.family_id' => 'self.family_id'});
+NLLC::Schema::Result::Child->has_many("child_activities", "NLLC::Schema::Result::ChildActivity", 'child_id');
+NLLC::Schema::Result::Child->many_to_many("activities", "child_activities", "activity");
+#NLLC::Schema::Result::Child->many_to_many("current_activities", "child_activities", "current_activity");
 
 sub current_activities
 {

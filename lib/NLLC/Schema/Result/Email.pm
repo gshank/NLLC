@@ -1,4 +1,4 @@
-package NLLC::Schema::DB::Email;
+package NLLC::Schema::Result::Email;
 
 use strict;
 use warnings;

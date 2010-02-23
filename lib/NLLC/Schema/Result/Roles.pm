@@ -1,4 +1,4 @@
-package NLLC::Schema::DB::Roles;
+package NLLC::Schema::Result::Roles;
 
 use strict;
 use warnings;
@@ -20,6 +20,6 @@ __PACKAGE__->add_columns(
 );
 __PACKAGE__->set_primary_key("role_id");
 
-NLLC::Schema::DB::Roles->has_many(user_roles => 'NLLC::Schema::DB::UserRoles', 'role_id');
+NLLC::Schema::Result::Roles->has_many(user_roles => 'NLLC::Schema::Result::UserRoles', 'role_id');
 
 1;

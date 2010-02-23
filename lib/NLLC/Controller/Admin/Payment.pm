@@ -1,10 +1,10 @@
 package NLLC::Controller::Admin::Payment;
 
-use strict;
-use warnings;
-
-use base 'NLLC::Controller::Admin::Base';
-
+BEGIN {
+   use Moose;
+   extends 'NLLC::Controller::Admin::Base';
+}
+use NLLC::Form::Payment;
 
 =head1 NAME
 
@@ -22,6 +22,9 @@ Catalyst Controller.
 =head2 index 
 
 =cut
+
+has 'form' => ( is => 'ro', isa => 'NLLC::Form::Payment', lazy => 1,
+   default => sub { NLLC::Form::Payment->new } );
 
 sub auto : Private
 {
@@ -90,11 +93,12 @@ sub edit : Local
    my $payment;
    $payment = $c->model('DB::Payment')->find($payment_id) if $payment_id;
    
-   $c->stash(template => 'admin/payment/form.tt');
-   my $validated = $c->update_from_form($payment, 'Payment'); 
-   return if !$validated;
+   $self->form->process( item => $payment, params => $c->req->params); 
+   $c->stash(template => 'admin/payment/form.tt', form => $self->form,
+      fillinform => $self->form );
+   return unless $self->form->validated;
    # set session if not already set
-   $payment = $c->stash->{form}->item;
+   $payment = $self->form->item;
    $payment->update( { session_id => $session_id} ) 
          unless $payment->session_id;
 

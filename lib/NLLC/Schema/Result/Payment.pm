@@ -1,4 +1,4 @@
-package NLLC::Schema::DB::Payment;
+package NLLC::Schema::Result::Payment;
 
 use strict;
 use warnings;
@@ -52,7 +52,7 @@ __PACKAGE__->add_columns(
     size => 255,
   },
 );
-NLLC::Schema::DB::Payment->set_primary_key("payment_id");
-NLLC::Schema::DB::Payment->belongs_to("family", "NLLC::Schema::DB::Family", {'foreign.family_id' => 'self.family_id'});
+NLLC::Schema::Result::Payment->set_primary_key("payment_id");
+NLLC::Schema::Result::Payment->belongs_to("family", "NLLC::Schema::Result::Family", {'foreign.family_id' => 'self.family_id'});
 
 1;
