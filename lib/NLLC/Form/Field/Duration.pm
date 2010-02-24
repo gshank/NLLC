@@ -8,20 +8,6 @@ our $VERSION = '0.01';
 
 has '+widget' => ( default => 'Compound' );
 
-=pod
-
-around '_result_from_object' => sub {
-    my $orig = shift;
-    my ( $self, $self_result, $duration_string ) = @_;
-
-    my %hash;
-    $duration_string =~ s/\:/\,/g;
-    my %duration_hash = split(',', $duration_string);
-    return $self->$orig($self_result, \%duration_hash);
-};
-
-=cut
-
 sub validate {
     my ( $self ) = @_;
 
