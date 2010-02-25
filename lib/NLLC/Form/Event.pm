@@ -33,7 +33,7 @@ has_field 'dtstart_allday' => (
 has_field 'dtstart' => ( type =>  '+DateTime' );
 has_field 'duration' => ( type  => '+Duration' );
 has_field 'duration.hours' => ( type => 'Integer', range_start => 0, range_end => 8 );
-has_field 'duration.minutes' => ( type => 'Integer', range_start => 0, range_end => 69 ); 
+has_field 'duration.minutes' => ( type => 'Integer', range_start => 0, range_end => 69, default => '00' ); 
 has_field 'until_mdy' => (
                type => '+DateMDY', 
                noupdate => 1,
@@ -130,7 +130,6 @@ sub update_model
       my $strp = DateTime::Format::Strptime->new( pattern => "%m/%d/%Y %I:%M %p");
       $dt =  $strp->parse_datetime( $dt_string ); 
    }
-
    $event->dtstart( $dt );
    $event->weekday( $dt->day_of_week );
    $event->month( $dt->month );
