@@ -33,7 +33,7 @@ has_field 'dtstart_allday' => (
 has_field 'dtstart' => ( type =>  '+DateTime' );
 has_field 'duration' => ( type  => '+Duration' );
 has_field 'duration.hours' => ( type => 'Integer', range_start => 0, range_end => 8 );
-has_field 'duration.minutes' => ( type => 'Integer', range_start => 0, range_end => 69, default => '00' ); 
+has_field 'duration.minutes' => ( type => 'Integer', range_start => 0, range_end => 69 ); 
 has_field 'until_mdy' => (
                type => '+DateMDY', 
                noupdate => 1,
