@@ -22,7 +22,7 @@ every occurrence could be entered individually.</p>
 <p>
 <label for="description">Description:</label>
 <input type="text" name="description" id="description" size="40"
-   value="[% f.fif %]/>
+   value="[% f.fif %]"/>
 (URL for activity)
 </p>
 
