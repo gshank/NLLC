@@ -13,7 +13,7 @@ has_field 'city_state_zip';
 has_field 'phone1';
 has_field 'phone2';
 has_field 'email';
-has_field 'active';
+has_field 'active' => ( type => 'Checkbox' );
 has_field 'username';
 has_field 'password';
 
