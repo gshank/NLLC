@@ -21,8 +21,9 @@ Catalyst Controller.
 =cut
 
 use NLLC::Form::Contribution;
-has 'form' => ( is => 'ro', isa => 'NLLC::Form::Contribution', lazy => 1,
+has 'cont_form' => ( is => 'ro', isa => 'NLLC::Form::Contribution', lazy => 1,
     default => sub { NLLC::Form::Contribution->new } );
+use NLLC::Form::AdminRoles;
 
 sub index : Path('') Args(0) 
 {
@@ -167,15 +168,27 @@ sub contribution : Local
       $contribution = $c->model('DB::Contribution')->find({id => $contribution_id});
    }
    $c->stash->{family} = $c->model('DB::Family')->find($family_id);
-   $self->form->process( item => $contribution );
+   $self->cont_form->process( item => $contribution, params => $c->req->params );
    $c->stash( template => 'admin/contribution.tt', family_id => $family_id,
-              form => $self->form, fillinform => $self->form->fif );
-   return unless $self->form->validated;
+              form => $self->cont_form, fillinform => $self->cont_form->fif );
+   return unless $self->cont_form->validated;
    # form validated
    $c->flash->{message} = "Contribution saved";
    $c->res->redirect($c->uri_for('contributions')); 
    $c->detach;
 
+}
+
+sub admin_roles : Local {
+    my ( $self, $c ) = @_;
+
+    my $schema = $c->model('DB')->schema;
+    my $form = NLLC::Form::AdminRoles->new( schema => $schema );
+    $form->process( params => $c->req->params );
+    # re-process if form validated to reload from db and re-sort
+    $form->process( params => {}) if( $form->validated );
+    $c->stash( form => $form, template => 'admin/admin_roles.tt' );
+    return;
 }
 
 =head1 AUTHOR

@@ -3,6 +3,8 @@
         &nbsp;&nbsp;&nbsp;Edit family and child information</p>
 <p><strong><a href="[% c.uri_for('family/list/all') %]">All Family List</a></strong>
         &nbsp;&nbsp;&nbsp;Includes inactive families</p>
+<p><strong><a href="[% c.uri_for('admin_roles') %]">Update Admin Status</a></strong>
+        &nbsp;&nbsp;&nbsp;Change family admin status</p>
 <p><strong><a href="[% c.uri_for('activity/view') %]">View Activities</a></strong>
         &nbsp;&nbsp;&nbsp;Browse current activities</p>
 <p><strong><a href="[% c.uri_for('activity/list') %]">Activity List</a></strong>

@@ -112,6 +112,7 @@ sub name2
 {
    my $self = shift;
    return $self->first_name2 . " " . $self->last_name2 if $self->first_name2;
+   return '';
 }
 
 1;

@@ -1,0 +1,17 @@
+<h1>Update admin status for members</h1>
+
+<form name="adminroles" method="POST" action="[% c.uri_for('admin_roles') %]">
+  <input class="submit" name="submit" value="Save" type="submit">
+
+<table border="1">
+  <th>Family</th><th>Admin</th>
+  [% FOREACH f IN form.field('admin_roles').sorted_fields %]
+     <tr>
+     <td><b>[% f.field('family').value %]</b>[% f.field('family').render %][% f.field('family_id').render %]</td><td> [% f.field('admin_flag').render %]</td>
+     </tr>
+  [% END %]
+ 
+</table> 
+
+  <input class="submit" name="submit" value="Save" type="submit">
+</form
