@@ -7,7 +7,7 @@
   <th>Family</th><th>Admin</th>
   [% FOREACH f IN form.field('admin_roles').sorted_fields %]
      <tr>
-     <td><b>[% f.field('family').value %]</b>[% f.field('family').render %][% f.field('family_id').render %]</td><td> [% f.field('admin_flag').render %]</td>
+     <td><b>[% f.field('family').fif %]</b>[% f.field('family').render %][% f.field('family_id').render %]</td><td> [% f.field('admin_flag').render %]</td>
      </tr>
   [% END %]
  
