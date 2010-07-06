@@ -74,6 +74,7 @@ __PACKAGE__->add_columns(
   { data_type => "INT", default_value => undef, is_nullable => 1, size => 11 },
 );
 __PACKAGE__->set_primary_key("page_id");
+__PACKAGE__->add_unique_constraint(name => ['name']);
 
 
 1;

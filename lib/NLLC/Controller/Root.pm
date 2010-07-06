@@ -68,7 +68,8 @@ sub contact : Local
 sub membership : Local
 {
     my ( $self, $c ) = @_;
-    $c->stash->{template} = 'membership.tt';
+    my $page = $c->model('DB')->resultset('CmsPage')->find('membership', { key => 'name' })->body;
+    $c->stash->{template} = \$page;
 }
 
 sub policies : Local
