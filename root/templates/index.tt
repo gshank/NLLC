@@ -1,6 +1,6 @@
 <p><img class="topimage" src="images/dance2.jpg" /></p>
 <h1>Welcome to the Northern Light Learning Center website!</h1>
-<p>Northern Light is a Cooperative Homesechool Learning Center located in Ithaca, NY. To find out more about our program, please visit <a href="[% c.uri_for('about') %]">about us</a>.</p>
+<p>Northern Light is a Cooperative Homeschool Learning Center located in Ithaca, NY. To find out more about our program, please visit <a href="[% c.uri_for('about') %]">about us</a>.</p>
 <p>NLLC is enjoying a great year, with a full <a href="[% c.uri_for('events') %]">schedule</a> of classes of events!</p>
 <p>NLLC is a place to learn new things, hang out with friends, share your talents and interests with others, and make use of shared learning resources. Our community-based learning center is a place to connect with mentors, learn about the many resources our wider community has to offer, and to give and get support from other families who are also growing and learning together.
 </p>
