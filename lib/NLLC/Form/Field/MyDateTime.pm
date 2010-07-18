@@ -1,4 +1,4 @@
-package NLLC::Form::Field::DateTime;
+package NLLC::Form::Field::MyDateTime;
 use Moose;
 extends 'HTML::FormHandler::Field';
 use DateTime;

@@ -6,7 +6,8 @@ use_ok( 'NLLC::Form::AdminRoles' );
 
 use IO::All;
 use NLLC::Schema;
-my $schema = NLLC::Schema->connect('dbi:mysql:dbname=nllc', 'nllc_admin', 'nllc_pw'); 
+#    [ 'dbi:mysql:dbname=nllc;host=mysql.odshank.com;user=nllc_admin;password=nllc2hs' ],
+my $schema = NLLC::Schema->connect('dbi:mysql:dbname=nllc;host=mysql.odshank.com', 'nllc_admin', 'nllc2hs'); 
 my $form = NLLC::Form::AdminRoles->new( schema => $schema );
 
 ok( $form, 'form builds' );

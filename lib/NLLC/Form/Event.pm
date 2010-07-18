@@ -30,7 +30,7 @@ has_field 'dtstart_allday' => (
                type => 'Checkbox',
                noupdate => 1,
                );
-has_field 'dtstart' => ( type =>  '+DateTime' );
+has_field 'dtstart' => ( type =>  '+MyDateTime' );
 has_field 'duration' => ( type  => '+Duration' );
 has_field 'duration.hours' => ( type => 'Integer', range_start => 0, range_end => 8 );
 has_field 'duration.minutes' => ( type => 'Integer', range_start => 0, range_end => 69 ); 

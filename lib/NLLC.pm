@@ -16,7 +16,7 @@ use Catalyst (
    'Session::Store::FastMmap',
    'Session::State::Cookie', 
    'Static::Simple',
-#  'Log::Dispatch',
+   'Log::Dispatch',
 );
 
 our $VERSION = '0.01';
