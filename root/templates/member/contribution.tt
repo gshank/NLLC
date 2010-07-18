@@ -1,7 +1,15 @@
 <h1>Contribution</h1>
 
-<form name="contribution" method="POST" action="[% c.uri_for('contribution', form.item_id) %]">
+The only choices for an alternate contribution are:
+<ul>
+<li>Serving on the Board of Directors</li>
+<li>Serving in a coordinator position</li>
+<li>Co-leading a program- please enter the name of the program you will be co-leading. Co-leaders must take an equal role in leading a program in order to fulfill the contribution requirement.</li>
+<li>A contribution for which you have received prior board approval.</li>
+<li>New members are exempt from this contribution for their first session and should enter New Member in this form.</li>
+</ul>
 
+<form name="contribution" method="POST" action="[% c.uri_for('contribution', form.item_id) %]">
    
   <b>Description of your Family's Alternate Contribution:</b>
   <textarea cols="60" rows="2" id="description" name="description">[% form.field('description').fif %]</textarea>

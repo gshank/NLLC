@@ -1,6 +1,6 @@
 		 <h1>[% session_label %] Program Listings</h1>
 		 <ul>
-<li>Programs are listed in order by days of the week and time of the day. Programs that have not been scheduled yet are at the end of the listing.
+<li>Programs are listed in order by days of the week and time of the day. Programs that have not been scheduled yet are at the end of the listing.</li>
 <li>All programs will run weekly unless otherwise indicated.  Check dates
      carefully, as the length and starting dates of programs vary.</li>
 
@@ -15,8 +15,9 @@
      is indicated. Leaders are responsible for collecting money and
      determining refund policies.</li>
 
-    <li>Financial Assistance is available - contact Robin Tuttle at
-     257-2911 for more information on scholarship funding.</li>
+    <li>Financial Assistance is available - contact Chris Oxley at 
+     <a href="mailto:christinaoxley@hotmail.com">christinaoxley@hotmail.com</a> or
+     546-4483 for more information on scholarship funding.</li>
 </ul>
 		   			
 [% WHILE (activity = activities.next) %]

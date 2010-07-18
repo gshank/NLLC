@@ -4,24 +4,23 @@
 <p>[% proposal_header %]</p> 
 
 
-<p>Members are expected to offer a program each session or contribute in
-some other substantial way. This is essential to the survival of the
-center. Co-leading a program is a great way to meet this requirement.
-Some of the other ways to contribute are: serving on the Board of
-Directors, serving in a coordinator position, cleaning, performing other
-administrative duties, or providing childcare.</p>
-
-<p>To make an alternative contribution please complete the <a href="http://www.nllchs.org/member/contribution" target="_blank">alternate contribution form</a>. Contact Stephanie Haskins at <a href="mailto:shaskins@htva.net" target="_blank">shaskins@htva.net.<WBR>us</a> or 607-277-7279
-if you have questions or to arrange the details of a non-program membership contribution. You
-must commit to a specific contribution before participating in the
-learning center. If you do not know what your exact contribution will be, it is fine to enter &quot;I don&#39;t know&quot; into the form.  However, either the alternate contribution form or this form MUST be completed or your child(ren) will not be able to enroll.<br>
+<p>
+Members are required to offer a program each session or contribute in one of the following ways: 
+serving on the Board of Directors, serving in a coordinator position, co-leading a program, or a 
+fulfilling another contribution with prior board approval. New members are exempt from this 
+contribution for their first session, and must enter New Member in the alternate contribution 
+form. Co-leaders must take an equal role in leading a program in order to fulfill the contribution 
+requirement, and the co-leader must enter this contribution in the alternate contribution form 
+in order to enroll in programs.
 </p>
-<p>If you need an idea, a co-leader, or any kind of help in planning a
-program, please:
-</p><ul><li>Indicate in the appropriate space on the form below</li><li>Contact the Program Development Coordinator, Mike Carpenter,
-<a href="mailto:sevenfolks@aol.com" target="_blank">sevenfolks@aol.com</a></li></ul>
 
-<P><b>We are currently accepting proposals for the Fall 2009 session, which runs for 8 weeks, Sep 28- Nov 20.</b></p>
+<p>
+To make an alternative contribution please complete the alternate contribution form with 
+one of the above options. Contact Stephanie Haskins at <a href="mailto:shaskins@htva.net.us">shaskins@htva.net.us</a> or 607-277-7279 
+if you have questions or to arrange the details of a non-program membership contribution. 
+You must commit to a specific contribution before participating in the learning center. 
+Either the alternate contribution form or this form MUST be completed or your child(ren) will not be able to enroll.
+</p>
 
 <form id="form" name="proposal" method="POST" 
  action="[% c.uri_for('proposal', form.item_id) %]">
