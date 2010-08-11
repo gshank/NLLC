@@ -1,6 +1,5 @@
-<h1>Spring 2008 Enrollment Information</h1>
+<h1>Enrollment Information</h1>
 
-<p><strong>Enroll by March 26th.</strong></p>
 <p><a href="[% c.uri_for('/program_list') %]">Program List</a></p>
 <p><a href="[% c.uri_for('/calendar') %]">The Calendar</a></p>
 <strong>ON LINE SIGN-UP INSTRUCTIONS          </strong></p>
