@@ -6,6 +6,7 @@ BEGIN {
 }
 use NLLC::Form::Family;
 use NLLC::Form::Child;
+use Data::Dumper;
 
 =head1 NAME
 
@@ -82,7 +83,13 @@ sub add : Local
        params => $c->req->params ); 
     $c->stash( template => 'admin/family/add.tt', form => $self->family_form,
        fillinform => $self->family_form->fif );
-    return unless $self->family_form->validated;
+    if( $self->family_form->validated ) {
+       $c->log->warn('family_form validated. ' . Dumper($c->req->params) );
+    }
+    else {
+       $c->log->warn('family_form did not validate. ' . Dumper($c->req->params) );
+       return;
+    }
 
     # form validated. Display...
     my $family_id = $self->family_form->item_id;

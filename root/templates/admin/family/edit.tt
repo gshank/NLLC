@@ -1,4 +1,7 @@
 <h1>Edit Family &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a  href="[% c.uri_for('list') %]">Go to List</a></h1>
+
+[% PROCESS layouts/form_errors.tt %]
+
 <form name="family_edit" method="POST" action="[% c.uri_for('edit', form.item_id) %]">
 
 <table name="family">

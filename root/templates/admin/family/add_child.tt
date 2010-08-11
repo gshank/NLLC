@@ -1,5 +1,6 @@
 <h1>Edit Child</h1>
 
+[% PROCESS layouts/form_errors.tt %]
 
 <form name="child_edit" method="POST" action="[% c.uri_for('add_child', family_id) %]">
 
