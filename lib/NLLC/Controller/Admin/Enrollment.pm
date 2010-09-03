@@ -34,7 +34,7 @@ sub list : Local
         {"me.session_id" => $session,
          "me.activity_id" => { '!=', undef} },
         { order_by => ['weekday', 'hour'] })->
-        search_related('activity', {}, { distinct => 1, prefetch => 'activity_children'});
+        search_related('activity', {}, { distinct => 1, prefetch => 'activity_children' });
     $c->stash->{activities} = $activities;
     # make hash of children names and number of activities
     # to avoid lots of db queries
