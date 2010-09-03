@@ -182,7 +182,11 @@ NLLC::Schema::Result::Activity->add_columns(
 NLLC::Schema::Result::Activity->set_primary_key("activity_id");
 
 NLLC::Schema::Result::Activity->belongs_to("family", "NLLC::Schema::Result::Family", {'foreign.family_id' => 'self.family_id'});
-NLLC::Schema::Result::Activity->has_many("activity_children", "NLLC::Schema::Result::ChildActivity", {'foreign.activity_id' => 'self.activity_id'}); 
+NLLC::Schema::Result::Activity->has_many("activity_children", 
+    "NLLC::Schema::Result::ChildActivity", 
+    {'foreign.activity_id' => 'self.activity_id'},
+    {'order_by' => 'child_id' },
+); 
 NLLC::Schema::Result::Activity->many_to_many("children", "activity_children", "child_id");
 NLLC::Schema::Result::Activity->has_many('events', "NLLC::Schema::Result::Event", {'foreign.activity_id' => 'self.activity_id'});
 
