@@ -24,7 +24,7 @@ Interest may be larger than total activities, if that was the way it was entered
 
             <tr class="chact" id="[% child_activity.activity_id _ '_' _ child_activity.child_id %]">
                [% child_id = child_activity.child_id %]
-               <td>[% children.$child_id.name _ "  (" _ children.$child_id.birthday _ ')' %]</td>
+               <td>[% children.$child_id.label %]</td>
                <td>[% child_activity.interest %]&nbsp;/&nbsp;[% children.$child_id.num_activities %]</td>
                [% IF child_activity.enrolled == 2 %]
                <td class="red enrolled">Waitlist</td>

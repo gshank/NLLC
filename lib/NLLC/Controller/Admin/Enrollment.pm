@@ -36,19 +36,24 @@ sub list : Local
         { order_by => ['weekday', 'hour'] })->
         search_related('activity', {}, { distinct => 1, prefetch => 'activity_children' });
     $c->stash->{activities} = $activities;
-    # make hash of children names and number of activities
-    # to avoid lots of db queries
-    my $db_children = $c->model('DB::ChildActivity')->search(
-       { "session_id" => $session })->search_related( 'child',
-       {}, { distinct => 1 });
-    my %children;
+
+    # get children information 
+    my $children;
+    my $db_children = $c->model('DB::Child')->search(
+        { "child_activities.session_id" => $session },
+        { 
+           join => ['child_activities'],
+           select  => [ 'me.child_id', 'firstname', 'lastname', 'birthday', { count => 'child_activities.activity_id' } ],
+           as      => [ 'child_id', 'firstname', 'lastname', 'birthday', 'num_activities' ],
+           group_by => ['child_id'],
+       }
+    );
     while (my $child = $db_children->next)
     {
-       $children{$child->child_id}{name} = $child->firstname . " " . $child->lastname;
-       $children{$child->child_id}{birthday} = $child->birthday;
-       $children{$child->child_id}{num_activities} = $child->search_related('child_activities', {session_id => $session})->count;
+      $children->{$child->child_id} = $child->{_column_data};
+      $children->{$child->child_id}{label} = $child->firstname . " " . $child->lastname . " (" . $child->birthday . ")";;
     }
-    $c->stash->{children} = \%children;
+    $c->stash->{children} = $children;
 
 #    $c->stash->{javascript} = 'enroll_list.js';
     $c->stash->{template} = 'admin/enrollment/list.tt';
