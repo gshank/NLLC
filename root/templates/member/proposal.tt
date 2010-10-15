@@ -11,7 +11,7 @@ fulfilling another contribution with prior board approval. New members are exemp
 contribution for their first session, and must enter New Member in the alternate contribution 
 form. Co-leaders must take an equal role in leading a program in order to fulfill the contribution 
 requirement, and the co-leader must enter this contribution in the alternate contribution form 
-in order to enroll in programs.
+in order to enroll in programs. Equivalent combinations of contributions are acceptable.
 </p>
 
 <p>
@@ -44,9 +44,11 @@ Either the alternate contribution form or this form MUST be completed or your ch
 	<ul>
 	  <li>your teaching style</li>
 	  <li>possible noise and activity level</li>
-	  <li>whether children will be taking turns speaking or have more free flowing conversation or input</li>
-	  <li>will be working in groups, etc.</li>
+	  <li>whether children will be taking turns speaking or have more free flowing conversation or input, will 
+          be working in groups, etc.</li>
    </ul>
+   <p>If your program will be held offsite, please include information about the specific
+      location in the description.</p>
 <p>
 <textarea name="description" cols="27" rows="8"></textarea>
 </p>
@@ -120,7 +122,7 @@ how many students you are willing to take.
 </div>
 
 <div class="inputcell">
-	<p><strong>Materials Fee (if any):</strong></p>
+	<p><strong>Materials Fee or Non-member instructor fee (if any):</strong></p>
   <ul>
   <li>Please keep materials fees as low as you can, and if possible allow participants to provide their own materials.  Classes charging materials fees higher than $5 must provide participants with an itemized list of costs.  Costs may be estimated at the start of the session, but an accurate itemization should be provided before the session ends</li>
   </ul> <p><input type="text" name="matsfee" size="35" />	</p>
@@ -151,13 +153,9 @@ how many students you are willing to take.
 		      <li>Please indicate ALL of the days and times that you are available to lead this program. </li>
 		      <li>Note which times are preferred, or if you have a preference for how this program is grouped with other programs or types of programs. </li>
 		      <li>Please be very clear and think carefully when filling out this field. The web form may not have specific fields for all you need to include, please add the information in other appropriate locations on the form. </li>
-		      <li>If your program is less than 8 weeks in length, do you have a preference for when it starts? </li>
-
-		      <li>Leaders can contact Gina Varrichio to update their available days/times prior to scheduling.<br>
-          Gina Varrichio:<br>
-zealth_1@yahoo.com<br>
-</li>
-		      <li><b>If a program requires set up and or clean up time,</b> please add these
+		      <li>Leaders can contact <a href="mailto:zealth_1@yahoo.com">Gina Varrichio</a> to update their available days/times prior to scheduling.<br>
+              </li>
+		      <li><b>Set up and or clean up time:</b> please add these
 requirements with specifics amounts of time to the days/times field.
 Leaders holding programs in the conference room and gym will need to
 either  add clean up time at the end of their program, or include time
@@ -169,13 +167,13 @@ the same time as a program for younger children), please indicate this as well.<
 along with names of the programs it should be clustered with.</li>
 <li><b>If your program does not begin and end along with the scheduled NLLC session (Sept 28 - Nov 20, 2009), please carefully indicate your exact start and end dates.</li>
 	          </b></ul>
+<p>Please include ALL your available times and preferred times (for example: M=1-3, T=10-12:30, WRF=no)</p>
 <textarea name="daystimes" cols="27" rows="2"></textarea>
    <span class="style1"> </p>
 </span></div>
 
 <div class="inputcell">
 	<p>Number of weeks your program will meet:<br />
-  <span class="style1"> (Please schedule your program for 1,4,or 8 weeks, if possible. </span>
   <p><input type="text" name="sessions" size="10" />	</p>
 </div>
 		 
