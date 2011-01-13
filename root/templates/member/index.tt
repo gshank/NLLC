@@ -48,6 +48,8 @@
 <h2>Information</h2>
 <hr />
 <ul>
+<li><strong><a href="[% c.uri_for('faq') %]">Frequently Asked Questions</a></strong></li>
+<br />
 <li><strong><a href="[% c.uri_for('old_activities') %]">Activities from Previous Sessions</a></strong></li>
 <br />
 <li><strong><a href="[% c.uri_for('/policies') %]">NLLC Policies</a></strong></li>

@@ -6,10 +6,12 @@ use Data::Dumper;
 use Catalyst::Runtime;
 use Config::Any::Perl;
 
+use parent 'Catalyst';
+
 use Catalyst (
+   'ConfigLoader',
    '-LOG=warn',                 
 #  '-Debug',
-   'ConfigLoader',
    'Authentication',         
    'Authorization::Roles',
    'Session',                

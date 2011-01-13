@@ -317,6 +317,11 @@ sub contacts : Local
 
 }
 
+sub faq : Local
+{
+    my ( $self, $c ) = @_;
+}
+
 
 =head1 AUTHOR
 
