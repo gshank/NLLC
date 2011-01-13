@@ -79,15 +79,16 @@ sub add : Local
 {
     my ( $self, $c ) = @_;
 
-    $self->family_form->process( schema => $c->model('DB')->schema,
+    $self->family_form->process( schema => $c->model('DB')->schema, item_id => undef,
        params => $c->req->params ); 
+    
     $c->stash( template => 'admin/family/add.tt', form => $self->family_form,
        fillinform => $self->family_form->fif );
     if( $self->family_form->validated ) {
-       $c->log->warn('family_form validated. ' . Dumper($c->req->params) );
+       $c->log->warn('family_form validated. params = ' . Dumper($c->req->params) );
     }
     else {
-       $c->log->warn('family_form did not validate. ' . Dumper($c->req->params) );
+       $c->log->warn('family_form did not validate. params = ' . Dumper($c->req->params) );
        return;
     }
 

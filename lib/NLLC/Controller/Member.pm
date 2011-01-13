@@ -176,9 +176,11 @@ sub list : Local
 {
    my ( $self, $c ) = @_;
    my $session_year = $c->stash->{session} - 8; 
-   my $families = $c->model('DB::ChildActivity')->search( 
-       { session_id => { '>', $session_year } })->search_related('child', {})->
-       search_related('family', {}, { distinct => 1, order_by => 'last_name1' } ); 
+   my $families = $c->model('DB::Family')->search( { active => 1 },
+      { order_by => 'last_name1' } );
+#  my $families = $c->model('DB::ChildActivity')->search( 
+#      { session_id => { '>', $session_year } })->search_related('child', {})->
+#      search_related('family', {}, { distinct => 1, order_by => 'last_name1' } ); 
 #   my $families = $c->model('DB::Family')->search({active => 1},
 #       {'order_by' => 'last_name1'});
    $c->stash->{families} = $families;
