@@ -15,5 +15,5 @@
 
 <p><a href="[% c.uri_for('/program_list', 18) %]">Winter 2010</a></p>
 <p><a href="[% c.uri_for('/program_list', 19) %]">Spring 2010</a></p>
-<p><a href="[% c.uri_for('/program_list', 20) %]">Fall 2010</a></p>
+<p><a href="[% c.uri_for('/program_list', 21) %]">Fall 2010</a></p>
 
