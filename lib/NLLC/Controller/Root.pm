@@ -72,6 +72,12 @@ sub membership : Local
     $c->stash->{template} = \$page;
 }
 
+sub timeline : Local {
+   my ( $self, $c ) = @_;
+    my $page = $c->model('DB')->resultset('CmsPage')->find(1)->body;
+    $c->stash->{template} = \$page; 
+}
+
 sub policies : Local
 {
     my ( $self, $c ) = @_;

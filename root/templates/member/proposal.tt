@@ -6,7 +6,7 @@
 
 <p>
 Members are required to offer a program each session or contribute in one of the following ways: 
-serving on the Board of Directors, serving in a coordinator position, co-leading a program, or a 
+serving on the Board of Directors, serving in a coordinator position, co-leading a program, or 
 fulfilling another contribution with prior board approval. New members are exempt from this 
 contribution for their first session, and must enter New Member in the alternate contribution 
 form. Co-leaders must take an equal role in leading a program in order to fulfill the contribution 
@@ -21,6 +21,10 @@ if you have questions or to arrange the details of a non-program membership cont
 You must commit to a specific contribution before participating in the learning center. 
 Either the alternate contribution form or this form MUST be completed or your child(ren) will not be able to enroll.
 </p>
+
+<p>NOTE: Continuing classes should be entered for scheduling, but with a note saying: NOT OPEN TO NEW ENROLLMENT</p>
+
+<p>NOTE: Intersession classes should not be entered as a proposal. If you plan to lead an intersession program, send information directly to the Scheduling Coordinator at zealth_1@yahoo.com.</p>
 
 <form id="form" name="proposal" method="POST" 
  action="[% c.uri_for('proposal', form.item_id) %]">

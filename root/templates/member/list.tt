@@ -1,4 +1,3 @@
-<p>Inactive families are marked with ** and their children are not listed</p>
 [% WHILE (family = families.next) -%]
     <p>[% IF !family.active %]** [% END %][% family.first_name1 _ " " _ family.last_name1 %]<br/>
     [% IF family.first_name2 %]
