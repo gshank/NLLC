@@ -89,6 +89,10 @@ sub proposal : Local
 sub old_activities : Local
 {
    my ( $self, $c) = @_;
+   my $sessions = $c->model('DB::Session')->search( 
+      { season => { '!=' => 'summer' }, session_id => { '>=' => '6' }, session_id => { '<' => $c->stash->{new_session} } }, 
+      { order_by => 'session_id' } );
+   $c->stash( sessions => $sessions );
 } 
 
 sub delete_proposal : Local
