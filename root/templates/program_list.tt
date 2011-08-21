@@ -7,17 +7,10 @@
     <li>Participants should try to attend all sessions of a program unless
      otherwise indicated.</li>
 
-    <li>The Main Space, Classroom, Conference Room, Gym, and Playground
-     are all locations at the Henry St. John's building at Clinton and
-     Geneva in Ithaca.</li>
-
     <li>Programs are free for members unless a material or instructor fee
      is indicated. Leaders are responsible for collecting money and
      determining refund policies.</li>
 
-    <li>Financial Assistance is available - contact Chris Oxley at 
-     <a href="mailto:christinaoxley@hotmail.com">christinaoxley@hotmail.com</a> or
-     546-4483 for more information on scholarship funding.</li>
 </ul>
 		   			
 [% WHILE (activity = activities.next) %]
