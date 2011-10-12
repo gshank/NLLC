@@ -84,6 +84,30 @@ sub policies : Local
     $c->stash->{template} = 'policies.tt';
 }
 
+sub membershippolicies : Local
+{
+    my ( $self, $c ) = @_;
+    $c->stash->{template} = 'membershippolicies.tt';
+}
+
+sub supervisionpolicies : Local
+{
+    my ( $self, $c ) = @_;
+    $c->stash->{template} = 'supervisionpolicies.tt';
+}
+
+sub spacepolicies : Local
+{
+    my ( $self, $c ) = @_;
+    $c->stash->{template} = 'spacepolicies.tt';
+}
+
+sub programpolicies : Local
+{
+    my ( $self, $c ) = @_;
+    $c->stash->{template} = 'programpolicies.tt';
+}
+
 sub calendar : Local
 {
     my ( $self, $c ) = @_;
