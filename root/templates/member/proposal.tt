@@ -53,6 +53,7 @@ Either the alternate contribution form or this form MUST be completed or your ch
    </ul>
    <p>If your program will be held offsite, please include information about the specific
       location in the description.</p>
+   <p>If this is a year-long class, please indicate that in this field, designating it as either open enrollment or closed enrollment. Leaders of year long programs with closed enrollment must seek board permission.</p>
 <p>
 <textarea name="description" cols="27" rows="8"></textarea>
 </p>
@@ -98,6 +99,7 @@ Either the alternate contribution form or this form MUST be completed or your ch
   requires quiet concentration" or
 	"relaxed and playful, students can drift in and out of participation" etc)</p>
 	<p>Please include information on whether or not parent presence or involvement is desired.</p>
+    <p>Please be clear about whether or not you will allow children outside the intended age range to enroll.</p>
 	<p>			
    <textarea name="childreq" cols="27" rows="2"></textarea>
     </p>
@@ -109,7 +111,8 @@ etc. please)</p>
 
 <p>These numbers should  include the children of leaders and co-leaders who will be enrolling in the program.  Enrollment
 coordinators will no longer be asking leaders to take "extra" students, so please give an accurate number that really reflects
-how many students you are willing to take.
+how many students you are willing to take.</p>
+<p>Recommended minimum enrollment of at least 3, not including leader's children.</p>
  <br />Min <input type="text" name="min" size="10" style="width: 50px;" />  Max <input type="text" name="max" size="10" style="width: 50px;" /></p>
 </div>
 
@@ -169,6 +172,9 @@ the same time as a program for younger children), please indicate this as well.<
 <li><b>If a program is intended as part of a desired "cluster" of programs,</b> please also indicate this 
 along with names of the programs it should be clustered with.</li>
 <li><b>If your program does not begin and end along with the scheduled NLLC session (Sept 28 - Nov 20, 2009), please carefully indicate your exact start and end dates.</li>
+<li>Leader of offsite classes: It is better to offer choice of times and days for your program.  
+   If you pick one day and time that is convenient for you,  it might not work well with other programs, 
+   and therefore enrollment may be low.</li>
 	          </b></ul>
 <p>Please include ALL your available times and preferred times (for example: M=1-3, T=10-12:30, WRF=no)</p>
 <textarea name="daystimes" cols="27" rows="2"></textarea>
