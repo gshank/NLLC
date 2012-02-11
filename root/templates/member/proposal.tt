@@ -67,7 +67,7 @@ Either the alternate contribution form or this form MUST be completed or your ch
 <div class="inputcell">
 	<p><strong>Leader's biographical information (optional):</strong>
    <textarea name="leadbio" cols="27" rows="3"></textarea></p>
-</div>		 		 		 		 
+</div>
 
 <div class="inputcell">
 	<p><strong>Phone of Leader:</strong><input type="text" name="leadphone" size="35" /></p>
@@ -85,25 +85,24 @@ Either the alternate contribution form or this form MUST be completed or your ch
    </p>
 </div>
 
- <div class="inputcell">
-	<p><strong>Age Range and/or other requirements for participation:</strong></p>
-	<p>If possible, please provide a description of the skills necessary for your class, either in addition to
-	or instead of an age range.  Please also describe the format (lecture, discussion, hands-on, etc) and the expectations
-	that you as a leader have for your students. Clear expectations will allow students to decide more easily whether
-	a class is right for them.</p>
-  
-  <p>Some examples: "students must have experience with [skill or ability]" or 
-	"geared for children in [age range] younger siblings welcome/contact instructor for age exceptions" or 
-	"strictly [this age] and up" or "students must be able to focus and take direction" or 
-	"this is a casual program for anyone of any age that is interested" or "this is a structured class" or "this class
-  requires quiet concentration" or
-	"relaxed and playful, students can drift in and out of participation" etc)</p>
-	<p>Please include information on whether or not parent presence or involvement is desired.</p>
-    <p>Please be clear about whether or not you will allow children outside the intended age range to enroll.</p>
-	<p>			
-   <textarea name="childreq" cols="27" rows="2"></textarea>
-    </p>
-</div>
+<div class="inputcell">
+  <p><strong>Age Range and/or other requirements for participation</strong></p>:
+  <p>If possible, please provide a description of the skills necessary for your class,
+     either in addition to or instead of an age range. Please also describe the format
+     (lecture, discussion, hands-on, etc) and the expectations that you as a leader have for your students.
+     Clear expectations will allow students to decide more easily whether a class is right for them.
+  </p>
+  <p>Some examples: "students must have experience with [skill or ability]" or
+     "geared for children in [age range] younger siblings welcome/contact instructor
+      for age exceptions" or "strictly [this age] and up" or "students must be able to
+     focus and take direction" or "this is a casual program for anyone of any age that
+     is interested" or "this is a structured class" or "this class requires quiet
+     concentration" or "relaxed and playful, students can drift in and out of participation" etc)
+  </p>
+  <p>Please include information on whether or not parent presence or involvement is desired, and whether or not younger siblings are permitted in the room.</p>
+  <p>Please be clear about whether or not you will allow children outside the intended age range to enroll.</p>
+  <textarea name="childreq" cols="27" rows="2"></textarea>
+/div>
 
 <div class="inputcell">
 	<p><strong>Minimum/Maximum Number of Participants:</strong> (real numbers such as 10, 15,
@@ -123,7 +122,7 @@ how many students you are willing to take.</p>
 	  <li>whether the participants are expected or required to do work between meetings</li>
 	  <li>attendance requests including notifying the instructor if missing or discontinuing the class</li>
    </ul>
-	<p>              
+	<p>
    <textarea name="onesession" cols="27" rows="2" /></textarea>
    </p>
 </div>
@@ -143,43 +142,34 @@ how many students you are willing to take.</p>
 <div class="inputcell">
 	<p><strong>Suggested Reading or other preparation (if any):</strong>
    <textarea name="suggprep" cols="27" rows="2"></textarea></p>
-</div>		 		 		 		 		 		 		 		 		 		 
+</div>
 
 <div class="inputcell">
 	<p>Please describe any support needs you have so that other members can volunteer to help. (co-leader, childcare, etc. ) If there are no volunteers, you may need to request help from the parents of children enrolled in the program. Do you need any other support? (resources, information, etc.)
   <p>
   <textarea name="support" cols="27" rows="2"></textarea>
   </p>
-</div>	
+</div>
+
 
 <h2>Scheduling information</h2>
 <div class="inputcell">
-  <p><strong>Possible Days and Times: </strong>
-		    <ul>
-		      <li>Please indicate ALL of the days and times that you are available to lead this program. </li>
-		      <li>Note which times are preferred, or if you have a preference for how this program is grouped with other programs or types of programs. </li>
-		      <li>Please be very clear and think carefully when filling out this field. The web form may not have specific fields for all you need to include, please add the information in other appropriate locations on the form. </li>
-		      <li>Leaders can contact <a href="mailto:zealth_1@yahoo.com">Gina Varrichio</a> to update their available days/times prior to scheduling.<br>
-              </li>
-		      <li><b>Set up and or clean up time:</b> please add these
-requirements with specifics amounts of time to the days/times field.
-Leaders holding programs in the conference room and gym will need to
-either  add clean up time at the end of their program, or include time
-for this within the program.</li>
-
-<li><b>If a program needs to be run at the same time as another program</b> (for instance one program for older children running at
-the same time as a program for younger children), please indicate this as well.</li>
-<li><b>If a program is intended as part of a desired "cluster" of programs,</b> please also indicate this 
-along with names of the programs it should be clustered with.</li>
-<li><b>If your program does not begin and end along with the scheduled NLLC session (Sept 28 - Nov 20, 2009), please carefully indicate your exact start and end dates.</li>
-<li>Leader of offsite classes: It is better to offer choice of times and days for your program.  
-   If you pick one day and time that is convenient for you,  it might not work well with other programs, 
-   and therefore enrollment may be low.</li>
-	          </b></ul>
+<p><strong>Possible Days and Times:</strong></p>
+  <ul>
+    <li>Please indicate ALL of the days and times that you are available to lead this program. Include at least two time slots.</li>
+    <li>Note which times are preferred, or if you have a preference for how this program is grouped with other programs or types of programs.</li>
+    <li>Please be very clear and think carefully when filling out this field. The web form may not have specific fields for all you need to include, please add the information in other appropriate locations on the form.</li>
+    <li>Leaders can contact Gina Varrichio to update their available days/times prior to scheduling.</li>
+    <li>Set up and or clean up time: please add these requirements with specifics amounts of time to the days/times field.</li>
+    <li>If a program needs to be run at the same time as another program (for instance one program for older children running at the same time as a program for younger children), please indicate this as well.</li>
+    <li>If a program is intended as part of a desired "cluster" of programs, please also indicate this along with names of the programs it should be clustered with.</li>
+    <li>If your program does not begin and end along with the scheduled NLLC session please carefully indicate your exact start and end dates.</li>
+    <li>Leader of offsite classes: It is better to offer choice of times and days for your program. If you pick one day and time that is convenient for you, it might not work well with other programs, and therefore enrollment may be low.</li>
+  </ul>
 <p>Please include ALL your available times and preferred times (for example: M=1-3, T=10-12:30, WRF=no)</p>
 <textarea name="daystimes" cols="27" rows="2"></textarea>
-   <span class="style1"> </p>
-</span></div>
+</div>
+
 
 <div class="inputcell">
 	<p>Number of weeks your program will meet:<br />
